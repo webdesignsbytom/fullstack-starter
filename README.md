@@ -1,23 +1,21 @@
 # fullstack-starter
 
-Boiler plate code to set up and start a full stack project quickly and easily
+Boiler plate code to set up and start a full stack project quickly and easily.
+If you just want front end or back end you can remove the other file.
 Including perfect file guide for src
 Including serveral pre set functions such as findUserById and error codes
 React set up with out clutter and with BrowserRouter installed
 Set up guide
 
 # Folder set up
-
 - create folder
   - `mkdir server`
   - `npx create-react-app my-app`
-    - `npm install react-router-dom` ( expect in index.js import { BrowserRouter } from 'react-router-dom' )
+    - `npm install react-router-dom` expect in index.js `import { BrowserRouter } from 'react-router-dom'`
 
 ## Fork set up
-
 - fork and cd to file
-- `npm ci` for deps
-
+- go into the front end and backend file and run `npm ci` for dependencies
 # Steps to create frontend
 ## SRC
 
@@ -25,12 +23,13 @@ Set up guide
   - components
   - utils
   - styles
+  - images
 
-## Steps to create backend
+# Steps to create backend
 
 ## install dependencies
 
-- prisma
+- prisma - https://github.com/prisma/prisma
   - `npm install prisma --save-dev`
   - `npx prisma` for dev dependenceies
   - `npx prisma generate`
@@ -76,12 +75,13 @@ Set up guide
   - server.js
 
 ## env
-
+Be sure to update your .gitignore file to include .env
+Or remove .expample from the end of .env.example in the files
 - .env
-  - shadow db
-  - db
-  - port
-  - secretkey
+  - shadow db, testing db
+  - db,  url link
+  - port, (usually 4000)
+  - secretkey, used to hash and encrypt the header and payload (only you and the server should know this)
 
 ### Other Programs
 
@@ -90,6 +90,16 @@ Set up guide
 
 # Seeding/prisma
 
-- `npx prisma migrate reset` to execute the existing migrations & data seed. Use when changing seed or prisma
+- For admin roles use `enum Role { ADMIN, USER }` and attached `role Role` to the user in schema.
+- `npx prisma generate` to update the schema. Use when changing seed or prisma.schema
 - `npx prisma migrate dev --create-only --skip-seed --name XXXX` add relationships
 - `npx prisma migrate reset` reset database
+- `P002` means the field has a `?` it shouldnt
+## Run 
+
+- `npm start` 
+
+# Errors
+## common
+- `HTTP_HEADER_SENT` You are trying to return two headers. Add a `return` to any `res.` parts towards the end or shift them into a function
+- `P002` means the field has a `?` it shouldnt
