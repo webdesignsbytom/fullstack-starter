@@ -25,6 +25,9 @@ Set up guide
   - styles
   - images
 
+## Optional 
+- bootstrap
+- tailwind
 # Steps to create backend
 
 ## install dependencies
@@ -32,17 +35,15 @@ Set up guide
 - prisma - https://github.com/prisma/prisma
   - `npm install prisma --save-dev`
   - `npx prisma` for dev dependenceies
-  - `npx prisma generate`
-  - `npx prisma migrate dev --name init`
 - @prisma/client
   - `npm install @prisma/client`
 - express
   - `npm install express`
-- jsonwebtoken
+- jsonwebtoken - generate json web tokens
   - `npm install jsonwebtoken`
 - cors
   - `npm install cors`
-- bycrypt
+- bycrypt - used to hash our passwords
   - `npm install bcrypt`
 - morgan
   - `npm install morgan`
@@ -65,7 +66,7 @@ Set up guide
 
 - src
   - utils
-  - middleware
+  - middleware - add `const auth = require('./middleware/auth')` and below add `app.use('/user', auth, userRouter)` to server.js to apply the auth function to user routes
     - auth.js
   - routers
     - user.js
@@ -86,7 +87,7 @@ Or remove .expample from the end of .env.example in the files
 ### Other Programs
 
 - insomnia - connects to your localhost via port
-- elephantsql - hosts databases
+- elephantsql - hosts postgreSQL databases
 
 # Seeding/prisma
 
@@ -94,12 +95,12 @@ Or remove .expample from the end of .env.example in the files
 - `npx prisma generate` to update the schema. Use when changing seed or prisma.schema
 - `npx prisma migrate dev --create-only --skip-seed --name XXXX` add relationships
 - `npx prisma migrate reset` reset database
-- `P002` means the field has a `?` it shouldnt
 ## Run 
 
 - `npm start` 
 
 # Errors
 ## common
-- `HTTP_HEADER_SENT` You are trying to return two headers. Add a `return` to any `res.` parts towards the end or shift them into a function
-- `P002` means the field has a `?` it shouldnt
+- `HTTP_HEADER_SENT` You are trying to return two headers. Add a `return` to any `res.` parts towards the end.
+- `P002` means the field has a `@unique` it shouldnt - unique id issue
+- React wont return an object?
