@@ -28,11 +28,18 @@ Set up guide
 ## Optional 
 - bootstrap
 - tailwind
+
+## Using a Local database
+- In the terminal of your app run `npm install -g json-server`
+- create a folder called `database`
+- add the file db.json
+- in a second terminal run `npx json-server -p 4000 database/db.json`
+- install nodemon to auto restart database
 # Steps to create backend
 
 ## install dependencies
 
-- prisma - https://github.com/prisma/prisma
+- prisma - [https://github.com/prisma/prisma]
   - `npm install prisma --save-dev`
   - `npx prisma` for dev dependenceies
 - @prisma/client
@@ -56,20 +63,25 @@ Set up guide
 - express async errors
   - `npm install express-async-errors`
   - add `require('express-async-errors')` immedaitly after pages that require express at the top
+- jwt-decode 
+  - `npm install jwt-decode`
+  - `import jwt_decode from "jwt-decode"` `var token = "eyJ0eXAiO.../// jwt token";` `var decoded = jwt_decode(token);`
 
 ## Dev dependency
 
 - nodemon
-  - `npm install --save-dev nodemon`
+  - `npm install --save-dev nodemon` to autorestart server
 
 ## SRC
 
 - src
   - utils
-  - middleware - add `const auth = require('./middleware/auth')` and below add `app.use('/user', auth, userRouter)` to server.js to apply the auth function to user routes
+  - middleware - add `const auth = require('./middleware/auth')` and below add `app.use('/user', auth, userRouter)` to server.js to apply the auth function to user routes. Error catching can be handled through here. Set the last thing before module.exports in server.js to `app.use((error, req, res, next) => { })`
     - auth.js
   - routers
     - user.js
+  - domain
+    - 
   - controllers
     - user.js
   - index.js
@@ -84,13 +96,15 @@ Or remove .expample from the end of .env.example in the files
   - port, (usually 4000)
   - secretkey, used to hash and encrypt the header and payload (only you and the server should know this)
 
+## Libraries
+- react mui components `npm install @mui/material @emotion/react @emotion/styled` checkout the installation guide [https://mui.com/material-ui/getting-started/installation/]
 ### Other Programs
 
 - insomnia - connects to your localhost via port
 - elephantsql - hosts postgreSQL databases
 
 # Seeding/prisma
-
+- links to tech info [https://pris.ly/d/prisma-schema]
 - For admin roles use `enum Role { ADMIN, USER }` and attached `role Role` to the user in schema.
 - `npx prisma generate` to update the schema. Use when changing seed or prisma.schema
 - `npx prisma migrate dev --create-only --skip-seed --name XXXX` add relationships
@@ -99,6 +113,8 @@ Or remove .expample from the end of .env.example in the files
 
 - `npm start` 
 
+# Test
+- check node version `node -v`
 # Errors
 ## common
 - `HTTP_HEADER_SENT` You are trying to return two headers. Add a `return` to any `res.` parts towards the end.
