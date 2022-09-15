@@ -37,11 +37,19 @@ Set up guide
 - install nodemon to auto restart database
 # Steps to create backend
 
+## Initialize
+
+- `npm init -y`
 ## install dependencies
+
+- Quick install
+  - `npm install express jsonwebtoken cors bcrypt morgan express-async-errors jwt-decode`
 
 - prisma - [https://github.com/prisma/prisma]
   - `npm install prisma --save-dev`
   - `npx prisma` for dev dependenceies
+  - `npx prisma init` to add prisma files 
+
 - @prisma/client
   - `npm install @prisma/client`
 - express
@@ -70,7 +78,7 @@ Set up guide
 ## Dev dependency
 
 - nodemon
-  - `npm install --save-dev nodemon` to autorestart server
+  - `npm install --save-dev nodemon` to autorestart server `"scripts": {"start" : "nodemon index.js"},`
 
 ## SRC
 
