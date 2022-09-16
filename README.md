@@ -20,8 +20,10 @@ Set up guide
 ## SRC
 
 - src
-  - components
+  - components users/login/loginPage users/login/registrationPage  header/Header.jsx  posts/PostPage posts/PostForm
+  - pages
   - utils
+    - client.js containing paths for GET/POSt/PATCH/DELETE
   - styles
   - images
 

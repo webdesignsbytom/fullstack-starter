@@ -34,7 +34,7 @@ async function seed() {
   const adminProfile = await prisma.profile.create({
     data: {
       userId: adminUser.id,
-      firstName: 'Teacher',
+      firstName: 'Admin',
       lastName: 'Boolean'
     }
   })
