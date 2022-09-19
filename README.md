@@ -37,6 +37,7 @@ Set up guide
 - add the file db.json
 - in a second terminal run `npx json-server -p 4000 database/db.json`
 - install nodemon to auto restart database
+
 # Steps to create backend
 
 ## Initialize
@@ -76,6 +77,8 @@ Set up guide
 - jwt-decode 
   - `npm install jwt-decode`
   - `import jwt_decode from "jwt-decode"` `var token = "eyJ0eXAiO.../// jwt token";` `var decoded = jwt_decode(token);`
+- axios
+  - `npm install axios`
 
 ## Dev dependency
 
