@@ -23,7 +23,7 @@ Set up guide
   - components users/login/loginPage users/login/registrationPage  header/Header.jsx  posts/PostPage posts/PostForm
   - pages
   - utils
-    - client.js containing paths for GET/POSt/PATCH/DELETE
+    - client.js containing paths for GET/POST/PATCH/DELETE
   - styles
   - images
 
@@ -52,6 +52,7 @@ Set up guide
   - `npm install prisma --save-dev`
   - `npx prisma` for dev dependenceies
   - `npx prisma init` to add prisma files 
+  - if your file doesnt seed check your package.json to include `"prisma": {"seed": "node prisma/seed.js"}`.
 
 - @prisma/client
   - `npm install @prisma/client`
@@ -76,6 +77,7 @@ Set up guide
   - add `require('express-async-errors')` immedaitly after pages that require express at the top
 - jwt-decode 
   - `npm install jwt-decode`
+  - `const jwt_decode = require('jwt-decode');`
   - `import jwt_decode from "jwt-decode"` `var token = "eyJ0eXAiO.../// jwt token";` `var decoded = jwt_decode(token);`
 - axios
   - `npm install axios`
@@ -83,7 +85,7 @@ Set up guide
 ## Dev dependency
 
 - nodemon
-  - `npm install --save-dev nodemon` to autorestart server `"scripts": {"start" : "nodemon index.js"},`
+  - `npm install --save-dev nodemon` to autorestart server `"scripts": {"start" : "nodemon src/index.js"},`
 
 ## SRC
 
@@ -133,3 +135,20 @@ Or remove .expample from the end of .env.example in the files
 - `HTTP_HEADER_SENT` You are trying to return two headers. Add a `return` to any `res.` parts towards the end.
 - `P002` means the field has a `@unique` it shouldnt - unique id issue
 - React wont return an object?
+- `ReferenceError: require is not defined in ES module scope, you can use import instead` you have `type: module` in package.json. import as requested by error
+- `SyntaxError: Cannot use import statement outside a module` opposite of above error. add `type: module` in package.json.
+## Github
+- `git checkout main`
+- `git pull` 
+- `git checkout NAME`
+- `git merge main`
+- `git push`
+- `git checkout -b` create new branch
+
+## Parts/Notes
+
+### Deleting user 
+- log in and get a token, 
+- when calling the delete function req.get that token
+- to seperate bearer and token split the string 
+- 
