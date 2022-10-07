@@ -3,10 +3,10 @@ const prisma = require("../utils/prisma");
 
 const createNewUser = async (req, res) => {
     console.log('hi tom');
-    const { email, name } = req.body
+    const { email, password } = req.body
     // console.log('req.body', req.body);
 
-    if (!email || !name) {
+    if (!email || !password) {
         return res.status(400).json({
           error: "Missing fields in request body",
         });
@@ -15,7 +15,7 @@ const createNewUser = async (req, res) => {
     const createdUser = await prisma.user.create({
         data: {
             email,
-            name
+            password
         }
     })
 
