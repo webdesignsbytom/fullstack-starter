@@ -20,16 +20,13 @@ Set up guide
 ## SRC
 
 - src
+  - assets
   - components users/login/loginPage users/login/registrationPage  header/Header.jsx  posts/PostPage posts/PostForm
   - pages
   - utils
     - client.js containing paths for GET/POST/PATCH/DELETE
   - styles
   - images
-
-## Optional 
-- bootstrap
-- tailwind
 
 ## Using a Local database
 - In the terminal of your app run `npm install -g json-server`
@@ -40,11 +37,8 @@ Set up guide
 
 # Steps to create backend
 
-## Initialize
-
-- `npm init -y`
+- `npm init -y` to start dependencies and node
 ## install dependencies
-
 - Quick install
   - `npm install express jsonwebtoken cors bcrypt morgan express-async-errors jwt-decode`
 
@@ -52,11 +46,11 @@ Set up guide
   - `npm install prisma --save-dev`
   - `npx prisma` for dev dependenceies
   - `npx prisma init` to add prisma files 
-  - if your file doesnt seed check your package.json to include `"prisma": {"seed": "node prisma/seed.js"}`.
+  - if your file doesnt seed check your package.json to include `"prisma": {"seed": "node prisma/seed.js"},`.
 
 - @prisma/client
   - `npm install @prisma/client`
-- express
+- express 
   - `npm install express`
 - jsonwebtoken - generate json web tokens
   - `npm install jsonwebtoken`
@@ -104,20 +98,19 @@ Set up guide
 
 ## env
 Be sure to update your .gitignore file to include .env
-Or remove .expample from the end of .env.example in the files
 - .env
-  - shadow db, testing db
-  - db,  url link
-  - port, (usually 4000)
-  - secretkey, used to hash and encrypt the header and payload (only you and the server should know this)
+  - DATABASE_URL="?schema=prisma"
+  - SHADOW_DATABASE_URL="?schema=shadow"
+  - JWT_SECRET
+  - JWT_EXPIRY
 
 ## Libraries
-- react mui components `npm install @mui/material @emotion/react @emotion/styled` checkout the installation guide [https://mui.com/material-ui/getting-started/installation/]
+- react mui components `npm install @mui/material @emotion/react @emotion/styled` 
+  - checkout the installation guide [https://mui.com/material-ui/getting-started/installation/]
 ### Other Programs
 
 - insomnia - connects to your localhost via port
 - elephantsql - hosts postgreSQL databases
-
 # Seeding/prisma
 - links to tech info [https://pris.ly/d/prisma-schema]
 - For admin roles use `enum Role { ADMIN, USER }` and attached `role Role` to the user in schema.
@@ -125,30 +118,43 @@ Or remove .expample from the end of .env.example in the files
 - `npx prisma migrate dev --create-only --skip-seed --name XXXX` add relationships
 - `npx prisma migrate reset` reset database
 ## Run 
-
 - `npm start` 
-
-# Test
-- check node version `node -v`
 # Errors
-## common
 - `HTTP_HEADER_SENT` You are trying to return two headers. Add a `return` to any `res.` parts towards the end.
 - `P002` means the field has a `@unique` it shouldnt - unique id issue
 - React wont return an object?
 - `ReferenceError: require is not defined in ES module scope, you can use import instead` you have `type: module` in package.json. import as requested by error
 - `SyntaxError: Cannot use import statement outside a module` opposite of above error. add `type: module` in package.json.
 ## Github
-- `git checkout main`
-- `git pull` 
-- `git checkout NAME`
-- `git merge main`
-- `git push`
-- `git checkout -b` create new branch
-
-## Parts/Notes
-
-### Deleting user 
-- log in and get a token, 
-- when calling the delete function req.get that token
-- to seperate bearer and token split the string 
+- `git init` create a git repository on local machine
+- `git add .` adds all files to the repo
+- `git commit -m 'comment'` -m is 'message' then add to commit list 
+- If you tried to push now you would see `specify URL`. Create a git repo on the site then use
+- `git remote add origin ...` and then
+- `git push -u origin master`
+- Now everything is on git
+- `git push` - update and add commits live to repo
+- `git pull` updates your branch 
+- `git checkout -b NAME` create new branch and move unsaved stuff to the new branch
 - 
+- `git checkout main` switch branch to main branch
+- `git merge main` - merge file to main branch
+
+-`origin` location of repo on github 
+## Deploy react to gh-pages
+- `git remote add origin https://github.com/webdesignbytom/NAME.git`
+- `git branch -M main`
+- `git push -u origin main`
+- `git push`
+- `npm instal gh-pages --save-dev`
+- `npm run deploy`
+
+add to packagelock.json 
+- "homepage": "https://webdesignbytom.github.io/NAME",
+- "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+
+## Tailwind
+
+- requires node JS and npm package installed
+- `npm install tailwindcss` to install tailwind dependancy
