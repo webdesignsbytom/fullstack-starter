@@ -158,3 +158,13 @@ add to packagelock.json
 
 - requires node JS and npm package installed
 - `npm install tailwindcss` to install tailwind dependancy
+
+## json db
+
+import itemsDB from './items.json';
+
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    setItems(itemsDB);
+  }, []);
