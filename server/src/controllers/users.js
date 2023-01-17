@@ -27,7 +27,6 @@ const getAllUsers = async (req, res) => {
     console.log('hi tomus');
 
     const users = await prisma.user.findMany({
-
     })
 
     res.status(200).json({
@@ -35,7 +34,12 @@ const getAllUsers = async (req, res) => {
     })
 
 }    
+
+const editProfile = async (req, res) => {   
+ console.log('editing profile');   
+}
 module.exports = {
     createNewUser,
-    getAllUsers
+    getAllUsers,
+    editProfile
 }
