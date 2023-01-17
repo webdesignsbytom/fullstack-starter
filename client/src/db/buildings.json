@@ -1,0 +1,35 @@
+// import itemsDB from './items.json';
+
+//   const [items, setItems] = useState([]);
+
+//   useEffect(() => {
+//     setItems(itemsDB);
+//   }, []);
+
+[
+    {
+        "id": "1",
+        "name": "Small Building",
+        "type": "ppc",
+        "effect": 10,
+        "cost": 10,
+        "image": "../../assets/images/yoda.png"
+    },
+    {
+        "id": "2",
+        "name": "Medium Building",
+        "type": "pps",
+        "effect": 20,
+        "cost": 10,
+        "image": "../../assets/images/yoda.png"
+    },
+    {
+        "id": "3",
+        "name": "Large Building",
+        "type": "pps",
+        "effect": 100,
+        "cost": 10,
+        "image": "../../assets/images/yoda.png"
+    }
+]
+
