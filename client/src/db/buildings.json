@@ -1,11 +1,3 @@
-// import itemsDB from './items.json';
-
-//   const [items, setItems] = useState([]);
-
-//   useEffect(() => {
-//     setItems(itemsDB);
-//   }, []);
-
 [
     {
         "id": "1",
