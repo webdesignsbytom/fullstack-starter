@@ -167,6 +167,11 @@ add to packagelock.json
 - `npx tailwindcss init` installs .config file
 - `@tailwind base; @tailwind components; @tailwind utilities;` add to global css file
 
+## Tailwind/React
+- create react app with npx
+- `npm install -D tailwindcss`
+- `npx tailwindcss init` adds config file
+
 ## json db
 
 import itemsDB from './items.json';
