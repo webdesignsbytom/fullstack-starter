@@ -129,6 +129,7 @@ Be sure to update your .gitignore file to include .env
 - `ReferenceError: require is not defined in ES module scope, you can use import instead` you have `type: module` in package.json. import as requested by error
 - `SyntaxError: Cannot use import statement outside a module` opposite of above error. add `type: module` in package.json.
 ## Github
+- `-u` upstream
 - `git init` create a git repository on local machine
 - `git add .` adds all files to the repo
 - `git commit -m 'comment'` -m is 'message' then add to commit list 
