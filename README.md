@@ -14,12 +14,15 @@ Set up guide
     - `npm install react-router-dom` expect in index.js `import { BrowserRouter } from 'react-router-dom'`
 
 ## icons
-- `npm i react-icons` 
+- `npm i react-icons` or `npm install react-icons --save`
+- `npm i swiper` 
 
 ## Fork set up
 - fork and cd to file
 - go into the front end and backend file and run `npm ci` for dependencies
 # Steps to create frontend
+
+<!-- test -->
 ## SRC
 
 - src
