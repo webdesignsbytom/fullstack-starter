@@ -13,6 +13,9 @@ Set up guide
   - `npx create-react-app my-app`
     - `npm install react-router-dom` expect in index.js `import { BrowserRouter } from 'react-router-dom'`
 
+## icons
+- `npm i react-icons` 
+
 ## Fork set up
 - fork and cd to file
 - go into the front end and backend file and run `npm ci` for dependencies
@@ -157,7 +160,11 @@ add to packagelock.json
 ## Tailwind
 
 - requires node JS and npm package installed
+- Add link to tailwind in index.html
 - `npm install tailwindcss` to install tailwind dependancy
+- `npm install -d tailwind`
+- `npx tailwindcss init` installs .config file
+- `@tailwind base; @tailwind components; @tailwind utilities;` add to global css file
 
 ## json db
 
