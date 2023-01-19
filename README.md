@@ -169,7 +169,7 @@ add to packagelock.json
 - `npm install -d tailwind`
 - `npx tailwindcss init` installs .config file
 - `@tailwind base; @tailwind components; @tailwind utilities;` add to global css file
-
+-   `"scripts": { "build-css": "tailwindcss build src/styles.css -o public/styles.css"},`
 ## Tailwind/React
 - create react app with npx
 - `npm install -D tailwindcss`
