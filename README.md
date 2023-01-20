@@ -174,6 +174,7 @@ add to packagelock.json
 - create react app with npx
 - `npm install -D tailwindcss`
 - `npx tailwindcss init` adds config file
+- `npm install @heroicons/react` icons library `https://heroicons.com/#gh-light-mode-only`
 
 ## json db
 
