@@ -3,7 +3,6 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import jwt_decode from 'jwt-decode';
 import { userSampleData } from '../utils/UserData'
 import LoggedInUser from '../utils/LoggedInUser';
-import {  } from '../api/Requests';
 
 export const UserContext = React.createContext()
 

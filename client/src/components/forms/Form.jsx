@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Form() {
-    const [postCategory, setPostCategory] = useState(startingCategory);
+    const [postCategory, setPostCategory] = useState();
     const [posts, setPosts] = useState([]);
     const [creatingPost, setCreatingPost] = useState(false);
 
     const toggleCategory = (event) => {
-        const categories = categoryInfomation;
-        const newCategory = categories.filter((cat) => cat.id === event.target.id);
-        const categoryState = newCategory[0];
+        // const categories = categoryInfomation;
+        // const newCategory = categories.filter((cat) => cat.id === event.target.id);
+        // const categoryState = newCategory[0];
     
-        setPostCategory(categoryState);
+        // setPostCategory(categoryState);
       };
   return (
     <div>

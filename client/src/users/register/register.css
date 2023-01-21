@@ -1,0 +1,49 @@
+.register__page {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-content: center;
+}
+
+.register__form__container {
+  margin-top: 4rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  font-family: 'Oswald', sans-serif;
+  padding: 1rem;
+}
+
+.title__container {
+  text-align: center;
+  padding-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.register__form {
+  background-color: white;
+  display: grid;
+  padding: 2rem 4rem;
+  gap: 5px;
+  border: 1px solid black;
+  border-radius: 12px;
+  font-size: 1.6rem;
+}
+
+.register__form > * {
+  display: grid;
+  text-align: center;
+}
+.submit__container {
+    padding-top: 1rem;
+}
+
+.btn {
+    padding: 0.5rem;
+    border-radius: 12px;
+    border: 1px black;
+}
+
+.login__link {
+  padding-top: 1rem;
+  text-align: center;
+}
