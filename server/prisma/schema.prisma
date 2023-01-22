@@ -19,10 +19,12 @@ enum Role {
 model User {
   id           Int           @id @default(autoincrement())
   email        String        @unique
+  password     String
   name         String?
   posts        Post[]
   deliveryLogs DeliveryLog[]
   role         Role          @default(USER)
+  profile      Profile?
 }
 
 model Post {
@@ -49,13 +51,13 @@ model DeliveryLogLine {
   log     DeliveryLog @relation(fields: [logId], references: [id])
 }
 
-// model Profile {
-//   id              Int     @id @default(autoincrement())
-//   userId          Int     @unique
-//   user            User    @relation(fields: [userId], references: [id])
-//   firstName       String
-//   lastName        String
-//   bio             String?
-//   githubUrl       String?
-//   profileImageUrl String?
-// }
+model Profile {
+  id              Int     @id @default(autoincrement())
+  userId          Int     @unique
+  user            User    @relation(fields: [userId], references: [id])
+  firstName       String
+  lastName        String
+  bio             String?
+  githubUrl       String?
+  profileImageUrl String?
+}
