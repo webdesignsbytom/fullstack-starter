@@ -1,0 +1,11 @@
+.forms__container > * {
+    display: grid;
+}
+
+input {
+    width: 200px;
+}
+
+.form__results__container {
+    
+}

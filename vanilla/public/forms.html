@@ -1,22 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forms</title>
-    <link rel="stylesheet" href="../src/styles/index.css">
-    <link rel="stylesheet" href="../src/styles/forms.css">
-</head>
-<body>
-    
-    <div class="forms__container">
+    <link rel="stylesheet" href="../src/styles/index.css" />
+    <link rel="stylesheet" href="../src/styles/forms.css" />
+  </head>
+  <body>
+    <div class="page__container">
+
+      <div class="forms__container">
         <form action="">
-            <input type="text" name="name">
-            <input type="submit" value="Submit">
+          <label for="name"
+            >Name:
+            <input type="text" name="name" />
+          </label>
+          <label for="email"
+            >Email:
+            <input type="email" name="email" />
+          </label>
+          <label for="password"
+            >Password:
+            <input type="password" name="password" />
+          </label>
+          <label for="colour"
+            >Colour:
+            <input type="color" name="colour" />
+          </label>
+
+          <input type="submit" value="Submit" />
         </form>
+      </div>
+
+      <div class="form__results__container">
+        <div class="name" id="name">Name:</div>
+        <div class="email" id="email">Email:</div>
+        <div class="password" id="password">Password</div>
+        <div class="colour" id="colour">Colour</div>
+      </div>
     </div>
 
     <script src="../src/js/forms.js"></script>
-</body>
+  </body>
 </html>
