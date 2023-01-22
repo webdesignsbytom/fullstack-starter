@@ -20,3 +20,7 @@ passwordIn.addEventListener('input', (event) => {
 colourIn.addEventListener('input', (event) => {
     colourVar.innerText = `Colour: ` + event.target.value
 })
+
+function formTest(event) {
+    console.log('testin 123', event.target.value)
+}
