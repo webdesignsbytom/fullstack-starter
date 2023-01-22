@@ -16,3 +16,15 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes animate {
+  0% {
+      transform: translate(-50%, -50%) translateY(-200px)rotate(0deg);
+  }
+  50% {
+      transform: translate(-50%, -50%) translateY(0px)rotate(180deg);
+  }
+  100% {
+      transform: translate(-50%, -50%) translateY(-200px)rotate(360deg);
+  }
+}
