@@ -1,45 +1,45 @@
-const { Prisma } = require("@prisma/client");
-const prisma = require("../utils/prisma");
+const { Prisma } = require('@prisma/client');
+const prisma = require('../utils/prisma');
 
-const createNewUser = async (req, res) => {
-    console.log('hi tom');
-    const { email, password } = req.body
-    // console.log('req.body', req.body);
-
-    if (!email || !password) {
-        return res.status(400).json({
-          error: "Missing fields in request body",
-        });
-      }
-
-    const createdUser = await prisma.user.create({
-        data: {
-            email,
-            password
-        }
-    })
-
-    res.status(201).json({ user: createdUser})
-    // res.status(500).json({ error: e.message });
-}
+const { findAllUsers } = require('../domain/user')
 
 const getAllUsers = async (req, res) => {
-    console.log('hi tomus');
+  console.log('getting all users...');
 
-    const users = await prisma.user.findMany({
-    })
+  try {
 
-    res.status(200).json({
-        users
-    })
+    const foundUsers = await findAllUsers()
 
-}    
+    if (!foundUsers) {
+        return res.status(404).json({
+          status: `404 Not Found`,
+          message: `No users were found`,
+          code: `404`,
+        });
+      }
+  
+      if (foundUsers.length === 0) {
+        return res.status(403).json({
+          message: `Database is currently empty and no users were found`,
+        });
+      }
+  
+      return res.status(201).json({
+        message: `Found ${foundUsers.length} users`,
+        code: `201`,
+        data: foundUsers,
+      });
+      //
+  } catch (error) { 
+    //
+    return res.status(500).json({
+        code: `500`,
+        error: error.message,
+        message: `Internal server error: ${error.message}, code: 500`,
+      });
+  }
+};
 
-const editProfile = async (req, res) => {   
- console.log('editing profile');   
-}
 module.exports = {
-    createNewUser,
-    getAllUsers,
-    editProfile
-}
+  getAllUsers,
+};
