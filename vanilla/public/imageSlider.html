@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image slider HTML5</title>
+    <link rel="stylesheet" href="../src/styles/index.css" />
+    <link rel="stylesheet" href="../src/styles/slider.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <div class="slider__container">
+      <!-- Slider main container -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <img src="../src/images/aston-martin.jpg" alt="aston" />
+          </div>
+          <div class="swiper-slide">
+            <img src="../src/images/audi-rs-e-tron-gt.jpg" alt="aston" />
+          </div>
+          <div class="swiper-slide">
+            <img src="../src/images/maserati-mc20.jpg" alt="aston" />
+          </div>
+          <div class="swiper-slide">
+            <img src="../src/images/nio-et5.jpg" alt="aston" />
+          </div>
+          ...
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+
+    <script src="../src/js/slider.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <script>
+      const swiper = new Swiper('.swiper', {
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+        // Optional parameters
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+          // adds little buttons
+          clickable: true
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    </script>
+  </body>
+</html>

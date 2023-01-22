@@ -1,0 +1,21 @@
+.slider__container {
+    width: 100%;
+    height: 100vh;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper {
+    width: 80%;
+    height: fit-content;
+}
+
+.swiper-slide img {
+    width: 100%;
+}
+
+.swiper-button-next, .swiper-button-prev, .swiper-pagination {
+ scale: 1.5;
+}
