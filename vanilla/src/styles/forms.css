@@ -1,3 +1,16 @@
+.page__container {
+    padding: 1rem;
+}
+
+.sending__form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.forms__container {
+    border: 5px solid lightskyblue;
+
+}
 .forms__container > * {
     display: grid;
 }
@@ -7,5 +20,10 @@ input {
 }
 
 .form__results__container {
-    
+    border: 5px solid lightseagreen;
+}
+
+.sent__form__container {
+    border: 5px solid lightgoldenrodyellow;
+    margin-top: 5rem;
 }

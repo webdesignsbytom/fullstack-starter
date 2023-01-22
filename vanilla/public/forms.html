@@ -10,35 +10,42 @@
   </head>
   <body>
     <div class="page__container">
+      <div class="sending__form">
+        <div class="forms__container">
+          <form action="">
+            <label for="name"
+              >Name:
+              <input type="text" name="name" id="nameIn" />
+            </label>
+            <label for="email"
+              >Email:
+              <input type="email" name="email" id="emailIn" />
+            </label>
+            <label for="password"
+              >Password:
+              <input type="password" name="password" id="passwordIn" />
+            </label>
+            <label for="colour"
+              >Colour:
+              <input type="color" name="colour" id="colourIn" />
+            </label>
+            <div class="cta__buttons">
+              <input type="submit" value="Submit" />
+              <input type="reset" value="Reset" />
+            </div>
+          </form>
+        </div>
 
-      <div class="forms__container">
-        <form action="">
-          <label for="name"
-            >Name:
-            <input type="text" name="name" id="nameIn" />
-          </label>
-          <label for="email"
-            >Email:
-            <input type="email" name="email" id="emailIn" />
-          </label>
-          <label for="password"
-            >Password:
-            <input type="password" name="password" id="passwordIn" />
-          </label>
-          <label for="colour"
-            >Colour:
-            <input type="color" name="colour" id="colourIn" />
-          </label>
-
-          <input type="submit" value="Submit" />
-        </form>
+        <div class="form__results__container">
+          <div class="name" id="name">Name:</div>
+          <div class="email" id="email">Email:</div>
+          <div class="password" id="password">Password</div>
+          <div class="colour" id="colour">Colour</div>
+        </div>
       </div>
 
-      <div class="form__results__container">
-        <div class="name" id="name">Name:</div>
-        <div class="email" id="email">Email:</div>
-        <div class="password" id="password">Password</div>
-        <div class="colour" id="colour">Colour</div>
+      <div class="sent__form__container">
+        <h3>Form recieved</h3>
       </div>
     </div>
 
