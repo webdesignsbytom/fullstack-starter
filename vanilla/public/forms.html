@@ -29,6 +29,26 @@
               >Colour:
               <input type="color" name="colour" id="colourIn" />
             </label>
+            <label for="dob"
+              >Date of Birth:
+              <input type="date" name="dob" id="dobIn" />
+            </label>
+            <label for="file"
+              >File:
+              <input type="file" name="file" id="fileIn" />
+            </label>
+
+            <label for="quantity"
+              >Quantity (between 1 and 5):
+              <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                max="5"
+              />
+            </label>
+
             <div class="cta__buttons">
               <input type="submit" value="Submit" />
               <input type="reset" value="Reset" />
@@ -39,8 +59,11 @@
         <div class="form__results__container">
           <div class="name" id="name">Name:</div>
           <div class="email" id="email">Email:</div>
-          <div class="password" id="password">Password</div>
-          <div class="colour" id="colour">Colour</div>
+          <div class="password" id="password">Password:</div>
+          <div class="colour" id="colour">Colour:</div>
+          <div class="dob" id="dob">DOB:</div>
+          <div class="file" id="file">File name:</div>
+          <div class="quantity" id="quantity">Quantity:</div>
         </div>
       </div>
 
@@ -49,8 +72,19 @@
           <h3>Form recieved</h3>
         </div>
         <div class="revieved__data">
-          <div class="recieved__name" id="recieved__name">Name = </div>
+          <div class="recieved__name" id="recieved__name">Name =</div>
         </div>
+      </div>
+
+      <div class="test__form__container" id="test__form__container">
+          <div class="test__title">
+            <h2>TEST GENERATE FORM</h2>
+          </div>
+
+          <div class="forms__test" id="forms__test">
+            <div class="test__inputs" id="test__inputs"></div>
+            <div class="test__results" id="test__results"></div>
+          </div>
       </div>
     </div>
 
