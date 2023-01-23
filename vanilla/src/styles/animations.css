@@ -154,3 +154,40 @@
 .glowingtext__container > span:nth-child(7) {
     animation-delay: 1.5s;
 }
+
+/* LIGHTSPEED */
+
+.scene__container  {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    overflow: hidden;
+}
+
+.scene {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    perspective: 10vmin;
+}
+
+.scene div {
+    width: 1.5vmin;
+    height: 1.5vmin;
+    transform: translate(-100vmin) rotateY(90deg) rotateX(var(--rx)) translateZ(var(--x)) scale(1); 
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    animation: animate 1.5s infinite ease-in;
+    background-color: white;
+    box-shadow: 0 0 20px rgb(10, 239, 255);
+}
+
+@keyframes animate {
+    0%, 90% {
+        opacity: 1;
+    }
+    100% {
+        
+    }
+}
