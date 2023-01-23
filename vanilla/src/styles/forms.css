@@ -1,29 +1,59 @@
 .page__container {
-    padding: 1rem;
+  padding: 1rem;
 }
 
 .sending__form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .forms__container {
-    border: 5px solid lightskyblue;
-
+  border: 5px solid lightskyblue;
 }
 .forms__container > * {
-    display: grid;
+  display: grid;
 }
 
 input {
-    width: 200px;
+  width: 200px;
 }
 
 .form__results__container {
-    border: 5px solid lightseagreen;
+  border: 5px solid lightseagreen;
 }
 
 .sent__form__container {
-    border: 5px solid lightgoldenrodyellow;
-    margin-top: 5rem;
+  border: 5px solid lightgoldenrodyellow;
+  margin-top: 5rem;
+}
+
+/* tests */
+.test__title {
+    text-align: center;
+}
+.test__form__container {
+  display: grid;
+}
+
+.forms__test {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 200px;
+  border: 2px solid black;
+}
+
+.test__inputs {
+  /* background-color: red; */
+  border: 2px solid black;
+
+}
+
+.test__results {
+  /* background-color: blue; */
+  border: 2px solid black;
+
+}
+
+.test__results {
+    display: grid;
 }
