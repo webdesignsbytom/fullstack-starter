@@ -8,6 +8,7 @@ Boiler plate code to set up and start a full stack project quickly and easily.
 - `mkdir server`
 - `npx create-react-app my-app`
 - `npm install react-router-dom` expect in index.js `import { BrowserRouter } from 'react-router-dom'`
+- `npm install @mui/material @emotion/react @emotion/styled` material ui
 ## Fork set up
 
 - fork and cd to file then run `npm ci` for dependencies
