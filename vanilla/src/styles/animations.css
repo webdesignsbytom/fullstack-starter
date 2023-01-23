@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap');
+
 .tennisBall__container {
   position: absolute;
   top: 50%;
@@ -14,7 +16,7 @@
   border-radius: 50%;
   transform: translate(-50%, -50%);
   overflow: hidden;
-  animation: animate 1.5s linear infinite ;
+  animation: animate 1.5s linear infinite;
 }
 
 .ball::before {
@@ -44,66 +46,111 @@
 }
 
 @keyframes animate {
-    0% {
-        transform: translate(-50%, -50%) translateY(-200px)rotate(0deg);
-    }
-    50% {
-        transform: translate(-50%, -50%) translateY(0px)rotate(180deg);
-    }
-    100% {
-        transform: translate(-50%, -50%) translateY(-200px)rotate(360deg);
-    }
+  0% {
+    transform: translate(-50%, -50%) translateY(-200px) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(0px) rotate(180deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(-200px) rotate(360deg);
+  }
 }
 
 .shadow {
-    position: absolute;
-    width: 150px;
-    height: 50px;
-    background: rgba(0, 0, 0, 0.2);
-    transform: translate(-50%, 100%);
-    border-radius: 50%;
-    filter: blur(6px);
-    animation: shadow 1.5s linear infinite;
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.2);
+  transform: translate(-50%, 100%);
+  border-radius: 50%;
+  filter: blur(6px);
+  animation: shadow 1.5s linear infinite;
 }
 
 @keyframes shadow {
-    0% {
-        transform: translate(-50%, 100%) scale(1);
-    }
-    50% {
-        transform: translate(-50%, 100%) scale(0.5);
-    }
-    100% {
-        transform: translate(-50%, 100%) scale(1);
-    }
+  0% {
+    transform: translate(-50%, 100%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, 100%) scale(0.5);
+  }
+  100% {
+    transform: translate(-50%, 100%) scale(1);
+  }
 }
 
 /* text animation */
 
 .text__animation1 {
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    place-content: center;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-content: center;
 }
 
 .title {
-    font-size: 6rem;
-    font-weight: 900;
-    -webkit-text-stroke: 2px white;
-    color: transparent;
-    background-image: linear-gradient(#fff, #fff);
-    background-repeat: no-repeat;
-    -webkit-background-clip: text;
-    background-position: -670px 0;
-    animation: backcolor 4s linear infinite alternate;
+  font-size: 6rem;
+  font-weight: 900;
+  -webkit-text-stroke: 2px white;
+  color: transparent;
+  background-image: linear-gradient(#fff, #fff);
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-position: -670px 0;
+  animation: backcolor 4s linear infinite alternate;
 }
 
 @keyframes backcolor {
-    100% {
-        background-position: 0 0;
-        -webkit-text-stroke: 2px black;
+  100% {
+    background-position: 0 0;
+    -webkit-text-stroke: 2px black;
+  }
+}
 
+/* GLOWING FONTS */
+.glowingtext__container {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-content: center;
+  grid-auto-flow: column;
+  background-color: #000;
+}
+
+.glowingtext__container span {
+  font-size: 6rem;
+  font-family: 'Balsamiq Sans', cursive;
+
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        color: white;
+        text-shadow: 0 0 12px lime, 0 0 50px lime, 0 0 100px lime;
+    }
+    10%, 90% {
+        color: #111;
+        text-shadow: none;
     }
 }
 
+.glowingtext__container > span:nth-child(2) {
+    animation-delay: 0.25s;
+}
+.glowingtext__container > span:nth-child(3) {
+    animation-delay: 0.5s;
+}
+.glowingtext__container > span:nth-child(4) {
+    animation-delay: 0.75s;
+}
+.glowingtext__container > span:nth-child(5) {
+    animation-delay: 1s;
+}
+.glowingtext__container > span:nth-child(6) {
+    animation-delay: 1.25s;
+}
+.glowingtext__container > span:nth-child(7) {
+    animation-delay: 1.5s;
+}
