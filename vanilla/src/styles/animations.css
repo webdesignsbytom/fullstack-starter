@@ -324,3 +324,55 @@
     padding-right: 60rem;
   }
 }
+
+/* 3d sphere */
+
+.d3__container {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  background-color: yellow;
+}
+
+.circle__outer {
+  height: 300px;
+  width: 300px;
+}
+
+.circle {
+  background: #000;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#0097d1 0%, #00a2b3 10%, #00536c 50%, #004040 100%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.circle:before {
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: linear-gradient(#67d1e9 10%, #006a7b 50%, #00404e 100%);
+  transform: rotateZ(45deg);
+  filter: blur(20px);
+}
+
+.circle:after {
+  content: '';
+  position: absolute;
+  width: 90%;
+  height: 65px;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 50%;
+  bottom: -50%;
+  filter: blur(20px);
+}
+
+.circle:hover:before {
+  transform: rotateZ(190deg);
+}
