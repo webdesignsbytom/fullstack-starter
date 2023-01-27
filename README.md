@@ -3,26 +3,23 @@
 Set up guide
 Boiler plate code to set up and start a full stack project quickly and easily.
 
-# Creating Frontend React App
-
-## Folder set up
+### Creating Frontend React App
 
 - create folder
-- `mkdir server`
 - `npx create-react-app my-app`
-- `npm install react-router-dom` expect in index.js `import { BrowserRouter } from 'react-router-dom'`
-
+- `npm install react-router-dom` in index.js `import { BrowserRouter } from 'react-router-dom'`
 - `npm install @mui/material @emotion/react @emotion/styled` material ui
-## Fork set up
+
+### Forked set up
 
 - fork and cd to file then run `npm ci` for dependencies
 
-## icons
+### icons
 
 - `npm i react-icons` or `npm install react-icons --save`
 - `npm i swiper`
 
-## Tailwind
+### Tailwind
 
 - requires node JS and npm package installed `npm init -y`
 - `npm install tailwindcss` to install tailwind dependancy
@@ -31,14 +28,14 @@ Boiler plate code to set up and start a full stack project quickly and easily.
 - `@tailwind base; @tailwind components; @tailwind utilities;` add to global css file
 - `"scripts": { "build-css": "tailwindcss build -i src/styles.css -o public/styles.css"},`
 
-## Tailwind/React
+### Tailwind/React
 
 - create react app with npx
 - `npm install -D tailwindcss`
 - `npx tailwindcss init` adds config file
 - `npm install @heroicons/react` icons library `https://heroicons.com/#gh-light-mode-only`
 
-## Using a Local database
+### Using a Local database
 
 - In the terminal of your app run `npm install -g json-server`
 - create a folder called `database`
@@ -55,7 +52,6 @@ Boiler plate code to set up and start a full stack project quickly and easily.
 - `npx prisma` for dev dependenceies
 - `npx prisma init` to add prisma files
 - if your file doesnt seed check your package.json to include `"prisma": {"seed": "node prisma/seed.js"},`.
-
 - @prisma/client
   - `npm install @prisma/client`
 - express
@@ -80,13 +76,11 @@ Boiler plate code to set up and start a full stack project quickly and easily.
   - `import jwt_decode from "jwt-decode"` `var token = "eyJ0eXAiO.../// jwt token";` `var decoded = jwt_decode(token);`
 - axios
   - `npm install axios`
-- run
-  - `npm start`
+- run `npm start`
 
 ## Dev dependency
 
-- nodemon
-  - `npm install --save-dev nodemon` to autorestart server `"scripts": {"start" : "nodemon src/index.js"},`
+- nodemon `npm install --save-dev nodemon` to autorestart server `"scripts": {"start" : "nodemon src/index.js"},`
 
 ## Libraries
 
@@ -95,11 +89,11 @@ Boiler plate code to set up and start a full stack project quickly and easily.
 - `npm install @mui/material @mui/styled-engine-sc styled-components`
 - `npm install @fontsource/roboto`
 - `npm install @mui/icons-material`
-- <link
+<link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
   />
-  <link
+<link
     rel="stylesheet"
     href="https://fonts.googleapis.com/icon?family=Material+Icons"
   />
