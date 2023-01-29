@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  background-color: azure;
+}
+
+.phone {
+    display: grid;
+    place-content: center;
+}
+
+.outer__phone {
+    border: 2px solid black;
+    height: 200px;
+    width: 110px;
+
+    border-radius: 12px;
+    display: grid;
+    grid-template-rows: 1fr;
+    padding: 0.2rem;
+
+    position: relative;
+}
+
+.phone__screen {
+    border: 2px solid black;
+    border-radius: 12px;
+}
+
+.menu__circle {
+    height: 15px;
+    width: 15px;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: absolute;
+    
+    bottom: 0;
+    justify-content:center ;
+}
+
+.laptop {
+}
