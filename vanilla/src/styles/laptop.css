@@ -1,0 +1,65 @@
+.container {
+  height: 100vh;
+  display: grid;
+  background-color: azure;
+  place-content: center;
+}
+
+.laptop {
+  display: grid;
+  grid-template-rows: 10fr 1fr;
+  gap: 3px;
+  justify-content: center;
+}
+
+.laptop__screen__container {
+  display: grid;
+  justify-content: center;
+}
+
+.laptop__screen {
+  border: 2px solid black;
+  height: 180px;
+  width: 300px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  display: grid;
+  padding: 0.4rem;
+  padding-top: 0.8rem;
+}
+
+.inner__border {
+  border: 2px solid black;
+}
+
+.laptop__keyboard {
+  border: 2px solid black;
+  width: 330px;
+
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding-left: 2rem;
+}
+
+.plug__container {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 0.5rem;
+}
+
+.plug__jack {
+  width: 10px;
+  height: 10px;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.drive__container {
+}
