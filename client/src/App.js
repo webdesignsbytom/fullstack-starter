@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import RegistrationPage from './users/register/Register';
 import LoginPage from './users/login/Login';
 import Form from './components/forms/forms2/Form';
+import ImageContainer from './components/imageContainer/ImageContainer';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegistrationPage />} />
           <Route path="/forms" element={<Form />} />
+          <Route path="/imageContainer" element={<ImageContainer />} />
         </Routes>
       </main>
     </div>

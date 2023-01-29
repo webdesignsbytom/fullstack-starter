@@ -6,6 +6,7 @@ function Home() {
     <div>
         <h1>Home Page</h1>
         <Link to='/forms'>Forms</Link>
+        <Link to='/imageContainer'>Image Container</Link>
     </div>
   )
 }

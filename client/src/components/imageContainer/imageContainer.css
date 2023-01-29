@@ -1,0 +1,12 @@
+.imageContainer__container {
+    display: grid;
+    background-color: aqua;
+    height: 100vh;
+    place-content: center;
+}
+
+.main__container {
+    border: 3px solid black;
+    width: 300px;
+    height: 300px;
+}
