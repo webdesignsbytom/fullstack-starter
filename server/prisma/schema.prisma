@@ -25,6 +25,8 @@ model User {
   deliveryLogs DeliveryLog[]
   role         Role          @default(USER)
   profile      Profile?
+    createdAt  DateTime  @default(now())
+  updatedAt  DateTime? @updatedAt
 }
 
 model Post {
@@ -60,4 +62,6 @@ model Profile {
   bio             String?
   githubUrl       String?
   profileImageUrl String?
+    createdAt  DateTime  @default(now())
+  updatedAt  DateTime? @updatedAt
 }
