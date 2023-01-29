@@ -1,12 +1,24 @@
 .imageContainer__container {
-    display: grid;
-    background-color: aqua;
-    height: 100vh;
-    place-content: center;
+  display: grid;
+  background-color: aqua;
+  height: 100vh;
+  place-content: center;
 }
 
 .main__container {
-    border: 3px solid black;
-    width: 300px;
-    height: 300px;
+  border: 3px solid black;
+  width: 300px;
+  padding: 1rem;
+  display: grid;
+}
+
+.image__container {
+  border: 3px solid black;
+  object-fit: contain;
+  display: grid;
+}
+
+.image__container img {
+  width: 100%;
+  object-fit: cover;
 }
