@@ -77,7 +77,7 @@ Boiler plate code to set up and start a full stack project quickly and easily.
 - axios
   - `npm install axios`
 - run `npm start`
-
+- Quick uninstall `npm uninstall @testing-library/jest-dom @testing-library/react @testing-library/user-event web-vitals`
 ## Dev dependency
 
 - nodemon `npm install --save-dev nodemon` to autorestart server `"scripts": {"start" : "nodemon src/index.js"},`
