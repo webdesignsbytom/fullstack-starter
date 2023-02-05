@@ -15,16 +15,12 @@
   width: 400px;
   height: 290px;
   border: 2px solid black;
+  padding: 0.4rem;
+  grid-template-rows: 1fr
 }
 
-.stand__container {
-    display: grid;
-    width: 100%;
-}
-
-.stand__container {
-    width: 50px;
-    height: 50px;
-    border: 2px solid black;
-    background-color: black;
+.screen {
+  border: 2px solid black;
+  display: grid;
+  
 }
