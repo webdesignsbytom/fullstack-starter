@@ -14,18 +14,24 @@ class Algae {
     context.beginPath();
 
     context.strokeStyle = this.color;
-    context.lineWidth = 5;
+    context.lineWidth = 10;
 
     context.arc(this.xpos, this.ypos, this.radius, Math.PI * 2, false);
 
     context.stroke();
     context.closePath();
   }
+
+  update() {
+    
+  }
 }
 
 function createAlgae() {
     console.log('creating')
-    const newAlgae = new Algae(100, 100, 5, 'red')
+    let posx = 0 + 10
+    let posy = 0 + 10
+    const newAlgae = new Algae(posx, posy, 5, 'red')
     console.log('newAlgae', newAlgae)
     newAlgae.draw(context)
 }
