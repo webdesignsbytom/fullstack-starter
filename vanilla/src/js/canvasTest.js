@@ -39,6 +39,9 @@ function createAlgae() {
     const newAlgae = new Algae(posx, posy, 5, 'red')
     console.log('newAlgae', newAlgae)
     newAlgae.draw(context)
+    const test = newAlgae.addEventListener('click', () => {
+        console.log('click')
+    })
 }
 
 function draw() {
