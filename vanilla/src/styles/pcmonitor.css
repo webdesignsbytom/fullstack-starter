@@ -11,16 +11,35 @@
 }
 
 .screen__container {
-  background-color: yellow;
+  background-color: white;
   width: 400px;
   height: 290px;
   border: 2px solid black;
-  padding: 0.4rem;
-  grid-template-rows: 1fr
+
+  display: grid;
+  padding: .4rem;
+  border-radius: 8px;
+  grid-template-rows: 1fr auto;
+  gap: 0.3rem;
 }
 
 .screen {
-  border: 2px solid black;
   display: grid;
-  
+  border-radius: 4px;
+  border: 2px solid black;
+}
+
+.buttons__row {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+  gap: .5rem;
+  padding-right: 1rem;
+}
+
+.buttonX {
+  border: 2px solid black;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
 }

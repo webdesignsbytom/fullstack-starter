@@ -43,7 +43,6 @@ Boiler plate code to set up and start a full stack project quickly and easily.
 - in a second terminal run `npx json-server -p 4000 database/db.json`
 
 # Steps to create backend
-
 ## install dependencies
 
 - `npm init -y` to start dependencies and node
@@ -76,11 +75,15 @@ Boiler plate code to set up and start a full stack project quickly and easily.
   - `import jwt_decode from "jwt-decode"` `var token = "eyJ0eXAiO.../// jwt token";` `var decoded = jwt_decode(token);`
 - axios
   - `npm install axios`
+- redux - state management
+  - `npm i @reduxjs/toolkit react-redux`
 - run `npm start`
-
+- Quick uninstall `npm uninstall @testing-library/jest-dom @testing-library/react @testing-library/user-event web-vitals`
+  
 ## Dev dependency
 
 - nodemon `npm install --save-dev nodemon` to autorestart server `"scripts": {"start" : "nodemon src/index.js"},`
+- dates `npm i date-fns uuid`
 
 ## Libraries
 
