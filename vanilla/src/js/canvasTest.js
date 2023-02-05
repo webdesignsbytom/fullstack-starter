@@ -2,6 +2,11 @@ const canvas = document.getElementById('canvas');
 
 let context = canvas.getContext('2d');
 
+var window_height = window.innerHeight / 2;
+var window_width = window.innerWidth / 2;
+
+canvas.width = window_width;
+canvas.height = window_height;
 class Algae {
   constructor(xpos, ypos, radius, color) {
     this.xpos = xpos;
@@ -23,7 +28,7 @@ class Algae {
   }
 
   update() {
-    
+
   }
 }
 
