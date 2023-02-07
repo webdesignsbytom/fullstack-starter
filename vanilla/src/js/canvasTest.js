@@ -7,6 +7,8 @@ var window_width = window.innerWidth / 2;
 
 canvas.width = window_width;
 canvas.height = window_height;
+
+let algaeArray = []
 class Algae {
   constructor(xpos, ypos, radius, color) {
     this.xpos = xpos;
@@ -36,13 +38,13 @@ function createAlgae() {
     console.log('creating')
     let posx = 0 + 10
     let posy = 0 + 10
-    const newAlgae = new Algae(posx, posy, 5, 'red')
+    let newAlgae = new Algae(posx, posy, 5, 'red')
     console.log('newAlgae', newAlgae)
     newAlgae.draw(context)
-    const test = newAlgae.addEventListener('click', () => {
-        console.log('click')
-    })
+    algaeArray.push(newAlgae)
 }
+
+console.log('algae', algaeArray)
 
 function draw() {
     const canvas = document.getElementById("canvas");
