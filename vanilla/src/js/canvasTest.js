@@ -7,6 +7,7 @@ var window_width = window.innerWidth / 2;
 
 canvas.width = window_width;
 canvas.height = window_height;
+
 class Algae {
   constructor(xpos, ypos, radius, color) {
     this.xpos = xpos;
@@ -19,7 +20,7 @@ class Algae {
     context.beginPath();
 
     context.strokeStyle = this.color;
-    context.lineWidth = 10;
+    context.lineWidth = 4;
 
     context.arc(this.xpos, this.ypos, this.radius, Math.PI * 2, false);
 
@@ -30,19 +31,30 @@ class Algae {
   update() {}
 }
 
+let createArray = 10
+
 function createAlgae() {
-    console.log('creating')
-    let posx = 0 + 10
-    let posy = 0 + 10
-    const newAlgae = new Algae(posx, posy, 5, 'red')
-    console.log('newAlgae', newAlgae)
-    newAlgae.draw(context)
-    const test = newAlgae.addEventListener('click', () => {
-        console.log('click')
-    })
+  let posx = 0 + 10;
+  let posy = 0 + 10;
+
+  const newAlgae = new Algae(posx, posy, 5, 'red');
+  newAlgae.draw(context);
 }
 
-console.log('algae', algaeArray)
+function createAlgaeSwarm() {
+  for(i = 0; i < createArray; i++) {
+    let random_x = Math.random() * window_width;
+    let random_y = Math.random() * window_height;
+
+    const algaeSwarm = new Algae(random_x, random_y, 5, 'red');
+    algaeSwarm.draw(context);
+  }
+}
+
+function create() {
+
+}
+
 
 function drawSmiley() {
   const canvas = document.getElementById('canvas');
