@@ -51,8 +51,19 @@ function createAlgaeSwarm() {
   }
 }
 
-function create() {
+function createRandomColours() {
+  for(i = 0; i < createArray; i++) {
+    let random_x = Math.random() * window_width;
+    let random_y = Math.random() * window_height;
 
+    const colours = ['red', 'green', 'blue', 'magenta', 'pink']
+    let randomNum = Math.floor(Math.random() * colours.length)
+    console.log('randomNum', randomNum);
+    let colour = colours[randomNum]
+
+    const algaeSwarm = new Algae(random_x, random_y, 5, colour);
+    algaeSwarm.draw(context);
+  }
 }
 
 
