@@ -16,3 +16,10 @@
 #canvas {
     background: white;
 }
+
+button {
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: lightcoral;
+  cursor: pointer;
+}
