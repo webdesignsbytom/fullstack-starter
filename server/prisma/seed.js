@@ -8,23 +8,18 @@ async function seed() {
 
   const createdUser = await prisma.user.create({
     data: {
-      email: 'notmyrealemail@email.com',
+      email: 'maxpower@email.com',
       password,
-      name: 'ted'
-    }
-  })
+    },
+  });
 
   const adminUser = await prisma.user.create({
     data: {
-      email: 'ADMIN@admin.com',
+      email: 'admin@admin.com',
       password,
       role: 'ADMIN',
-      name: 'ted'
-
     }
   })
-
-  console.log('users', createdUser, adminUser)
 }
 
 seed().catch(async (error) => {
