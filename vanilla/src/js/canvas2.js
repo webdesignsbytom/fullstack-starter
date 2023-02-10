@@ -1,26 +1,5 @@
 const canvas = document.getElementById('canvas');
-
-// detect canvas events
-// function isIntersect(point, algae) {
-//     return (
-//       Math.sqrt((point.x - algae.xpos) ** 2 + (point.y - algae.ypos) ** 2) <
-//       algae.radius
-//     );
-//   }
-
-// canvas.addEventListener('click', (e) => {
-//   const pos = {
-//     x: e.clientX,
-//     y: e.clientY,
-//   };
-//   console.log('pos', pos)
-//   algaeArray.forEach((algae) => {
-//     if (isIntersect(pos, algae)) {
-//       alert('click on algae: ' + algae.count);
-//       console.log('xxx')
-//     }
-//   });
-// });
+const countContainer = document.getElementById('click__count')
 
 canvas.addEventListener('click', (e) => {
   var x = e.pageX - canvas.offsetLeft;
@@ -40,8 +19,8 @@ canvas.addEventListener('click', (e) => {
 
 let context = canvas.getContext('2d');
 
-var window_height = window.innerHeight / 2;
-var window_width = window.innerWidth / 2;
+let window_height = window.innerHeight / 2;
+let window_width = window.innerWidth / 2;
 
 canvas.width = window_width;
 canvas.height = window_height;
@@ -77,7 +56,7 @@ class Algae {
 }
 
 let createArray = 10;
-let circleCounter = 1;
+let algaeCounter = 1;
 let algaeArray = [];
 
 // On click event swarm
@@ -86,11 +65,10 @@ function clickFunctionSwarm() {
     let random_x = Math.random() * window_width;
     let random_y = Math.random() * window_height;
 
-    const algaeSwarm = new Algae(random_x, random_y, 20, 'red', circleCounter);
+    const algaeSwarm = new Algae(random_x, random_y, 20, 'red', algaeCounter);
     algaeSwarm.draw(context);
     algaeArray.push(algaeSwarm);
 
-    circleCounter++;
-    console.log('algaeArray', algaeArray);
+    algaeCounter++;
   }
 }
