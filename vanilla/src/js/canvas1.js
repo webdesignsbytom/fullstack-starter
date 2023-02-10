@@ -41,9 +41,6 @@ class Circle {
   }
 
   update() {
-
-    this.text = hit_counter
-
     context.clearRect(0, 0, window_width, window_height)
 
     this.draw(context);

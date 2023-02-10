@@ -27,7 +27,7 @@ canvas.width = window_width;
 canvas.height = window_height;
 
 class Algae {
-  constructor(xpos, ypos, radius, color, count) {
+  constructor(xpos, ypos, radius, color, count, speed) {
     this.xpos = xpos;
     this.ypos = ypos;
     this.radius = radius;
@@ -38,6 +38,10 @@ class Algae {
         clickedOnCount++;
         renderCounts();
     };
+    this.speed = speed;
+
+    this.dx = 1 * this.speed;
+    this.dy = 1 * this.speed;
   }
 
   draw(context) {
@@ -57,7 +61,30 @@ class Algae {
     context.closePath();
   }
 
-  update() {}
+  update() {
+    context.clearRect(0, 0, canvas.width, canvas.height)
+
+    this.draw(context);
+
+    if (this.xpos > canvas.width) {
+        this.dx = -this.dx;
+    }
+
+    if ( (this.xpos - this.radius) < 0) {
+        this.dx = -this.dx;
+    }
+
+    if (this.ypos > canvas.height) {
+        this.dy = -this.dy;
+    }
+
+    if ( (this.ypos - this.radius) < 0) {
+        this.dy = -this.dy;
+    }
+
+    this.xpos += this.dx;
+    this.ypos += this.dy;
+  }
 }
 
 let createArray = 10;
@@ -71,29 +98,28 @@ function clickFunctionSwarm() {
     let random_x = Math.random() * window_width;
     let random_y = Math.random() * window_height;
 
-    const algaeSwarm = new Algae(random_x, random_y, 20, 'red', algaeCounter);
+    const algaeSwarm = new Algae(random_x, random_y, 20, 'red', algaeCounter, 2);
     algaeSwarm.draw(context);
     algaeArray.push(algaeSwarm);
 
     algaeCounter++;
   }
 }
-clickFunctionSwarm()
 
-let testCount = 1
-function textClick() {
-    testCount++;
-    console.log('testCount: ' + testCount);
-    renderCounts()
+function updateSwarm() {
+    requestAnimationFrame(updateSwarm);
+    algaeArray.forEach((algaeSwarm => {
+        algaeSwarm.update()
+    })) 
 }
 
 function renderCounts() {
-    testContainer.innerHTML = testCount
     countContainer.innerText = `Algae Clicked On: ${clickedOnCount}`
 }
 
 function run() {
     renderCounts();
+    updateSwarm()
 }
 
 run();
