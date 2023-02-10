@@ -1,5 +1,6 @@
 const canvas = document.getElementById('canvas');
 const countContainer = document.getElementById('click__count')
+const testContainer = document.getElementById('test__count')
 
 canvas.addEventListener('click', (e) => {
   var x = e.pageX - canvas.offsetLeft;
@@ -32,7 +33,11 @@ class Algae {
     this.radius = radius;
     this.color = color;
     this.count = count;
-    this.clicked = function() {console.log('CLIIIIIIICKED')};
+    this.clicked = function() {
+        console.log('CLIIIIIIICKED');
+        clickedOnCount++;
+        renderCounts();
+    };
   }
 
   draw(context) {
@@ -58,6 +63,7 @@ class Algae {
 let createArray = 10;
 let algaeCounter = 1;
 let algaeArray = [];
+let clickedOnCount = 0
 
 // On click event swarm
 function clickFunctionSwarm() {
@@ -72,3 +78,22 @@ function clickFunctionSwarm() {
     algaeCounter++;
   }
 }
+clickFunctionSwarm()
+
+let testCount = 1
+function textClick() {
+    testCount++;
+    console.log('testCount: ' + testCount);
+    renderCounts()
+}
+
+function renderCounts() {
+    testContainer.innerHTML = testCount
+    countContainer.innerText = `Algae Clicked On: ${clickedOnCount}`
+}
+
+function run() {
+    renderCounts();
+}
+
+run();
