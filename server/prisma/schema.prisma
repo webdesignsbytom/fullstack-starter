@@ -14,54 +14,15 @@ datasource db {
 enum Role {
   USER
   ADMIN
+  DEV
 }
 
 model User {
-  id           Int           @id @default(autoincrement())
-  email        String        @unique
-  password     String
-  name         String?
-  posts        Post[]
-  deliveryLogs DeliveryLog[]
-  role         Role          @default(USER)
-  profile      Profile?
-    createdAt  DateTime  @default(now())
-  updatedAt  DateTime? @updatedAt
-}
-
-model Post {
-  id        Int     @id @default(autoincrement())
-  title     String
-  content   String?
-  published Boolean @default(false)
-  userId    Int
-  user      User    @relation(fields: [userId], references: [id])
-}
-
-model DeliveryLog {
-  id     Int               @id @default(autoincrement())
-  date   DateTime
-  userId Int
-  user   User              @relation(fields: [userId], references: [id])
-  lines  DeliveryLogLine[]
-}
-
-model DeliveryLogLine {
-  id      Int         @id @default(autoincrement())
-  content String
-  logId   Int
-  log     DeliveryLog @relation(fields: [logId], references: [id])
-}
-
-model Profile {
-  id              Int     @id @default(autoincrement())
-  userId          Int     @unique
-  user            User    @relation(fields: [userId], references: [id])
-  firstName       String
-  lastName        String
-  bio             String?
-  githubUrl       String?
-  profileImageUrl String?
-    createdAt  DateTime  @default(now())
-  updatedAt  DateTime? @updatedAt
+  id       Int     @id @default(autoincrement())
+  email    String  @unique
+  password String
+  name     String?
+  role Role @default(USER)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
 }

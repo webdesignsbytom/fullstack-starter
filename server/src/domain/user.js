@@ -12,12 +12,11 @@ const findUserByEmail = (email) =>
     },
   });
 
-  const createUser = (email, password, name) =>
+  const createUser = (email, password) =>
   prisma.user.create({
     data: {
       email: email,
-      password: password,
-      name: name
+      password: password
     },
   });
 
