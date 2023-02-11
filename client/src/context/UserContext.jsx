@@ -1,6 +1,5 @@
 import React from 'react'
-import { createContext, useContext, useEffect, useState } from 'react';
-import jwt_decode from 'jwt-decode';
+import { useEffect, useState } from 'react';
 import { userSampleData } from '../utils/UserData'
 import LoggedInUser from '../utils/LoggedInUser';
 
@@ -10,15 +9,12 @@ const initUserState = userSampleData
 
 const UserContextProvider = ({ children }) => {
   const [user, setUser] = useState(initUserState)  
-  console.log('CONTEXT USER', user); 
 
   useEffect(() => {
     const decodedUserData = LoggedInUser()
-    console.log('decodedUserData', decodedUserData);
     
     if (decodedUserData) {
       const id = decodedUserData.id
-      console.log('id', id);
 
       fetch(`http://localhost:4000/user/${id}`)
         .then((res) => res.json())
