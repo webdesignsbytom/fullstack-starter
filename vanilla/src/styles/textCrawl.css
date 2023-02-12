@@ -2,7 +2,8 @@
     display: inline-block;
     background-color: rgba(0, 0, 0, 0.442);
 
-    animation: anyName 10s linear infinite alternate;
+    animation: anyName 10s linear infinite;
+    overflow: hidden;
 }
 
 @keyframes anyName {
@@ -10,7 +11,7 @@
     25% {  }
     50% {  }
     75% {  }
-    100% { transform: translateX(101%); }
+    100% { transform: translateX(200%); }
 }
 
 /* array */

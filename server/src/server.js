@@ -12,6 +12,14 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.get('*', (req, res) => {
+    res.status(404).json({
+      status: 'fail',
+      data: {
+        resource: 'Not found 404 error'
+      }
+    })
+  })
 
 // Tell express to use your routers here
 const userRouter = require('./routes/users');
