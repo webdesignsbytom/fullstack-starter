@@ -27,6 +27,8 @@ Boiler plate code to set up and start a full stack project quickly and easily.
 - `npx tailwindcss init` installs .config file
 - `@tailwind base; @tailwind components; @tailwind utilities;` add to global css file
 - `"scripts": { "build-css": "tailwindcss build -i src/styles.css -o public/styles.css"},`
+- `"prettier": "npx prettier --write **/*.html"` inbuild to tailwind - add to scripts
+
 
 ### Tailwind/React
 

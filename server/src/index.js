@@ -6,5 +6,5 @@ const app = require('./server.js')
 const PORT = process.env.PORT || 4000;
 // Start our API server
 app.listen(PORT, () => {
-    console.log(`\n AAA Server is running on ${URL}${PORT}\n `);
+    console.log(`\nServer is running on ${URL}${PORT}\n`);
 });

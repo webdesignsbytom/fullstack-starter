@@ -20,8 +20,8 @@ canvas.addEventListener('click', (e) => {
 
 let context = canvas.getContext('2d');
 
-let window_height = window.innerHeight / 2;
-let window_width = window.innerWidth / 2;
+let window_height = window.innerHeight / 2
+let window_width = window.innerWidth / 2
 
 canvas.width = window_width;
 canvas.height = window_height;
