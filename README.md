@@ -9,17 +9,13 @@ Boiler plate code to set up and start a full stack project quickly and easily.
 - `npx create-react-app my-app`
 - `npm install react-router-dom` in index.js `import { BrowserRouter } from 'react-router-dom'`
 - `npm install @mui/material @emotion/react @emotion/styled` material ui
-
-### Forked set up
-
-- fork and cd to file then run `npm ci` for dependencies
-
-### icons
+file then run `npm ci` for dependencies
+### icons / libraries
 
 - `npm i react-icons` or `npm install react-icons --save`
 - `npm i swiper`
 
-### Tailwind
+### Tailwind - Vanilla
 
 - requires node JS and npm package installed `npm init -y`
 - `npm install tailwindcss` to install tailwind dependancy
@@ -29,8 +25,7 @@ Boiler plate code to set up and start a full stack project quickly and easily.
 - `"scripts": { "build-css": "tailwindcss build -i src/styles.css -o public/styles.css"},`
 - `"prettier": "npx prettier --write **/*.html"` inbuild to tailwind - add to scripts
 
-
-### Tailwind/React
+### Tailwind - React
 
 - create react app with npx
 - `npm install -D tailwindcss`
@@ -77,6 +72,8 @@ Boiler plate code to set up and start a full stack project quickly and easily.
   - `import jwt_decode from "jwt-decode"` `var token = "eyJ0eXAiO.../// jwt token";` `var decoded = jwt_decode(token);`
 - axios
   - `npm install axios`
+- Nodemailer
+  - `npm install nodemailer` send emails via node
 - redux - state management
   - `npm i @reduxjs/toolkit react-redux`
 - run `npm start`
@@ -151,13 +148,3 @@ Boiler plate code to set up and start a full stack project quickly and easily.
 - `git push`
 - `npm instal gh-pages --save-dev`
 - `npm run deploy`
-
-## json db
-
-import itemsDB from './items.json';
-
-const [items, setItems] = useState([]);
-
-useEffect(() => {
-setItems(itemsDB);
-}, []);

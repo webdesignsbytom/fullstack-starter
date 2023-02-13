@@ -10,3 +10,5 @@
     );
     return urlPattern.test(urlString);
   };
+
+  const characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
