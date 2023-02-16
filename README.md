@@ -9,7 +9,8 @@ Boiler plate code to set up and start a full stack project quickly and easily.
 - `npx create-react-app my-app`
 - `npm install react-router-dom` in index.js `import { BrowserRouter } from 'react-router-dom'`
 - `npm install @mui/material @emotion/react @emotion/styled` material ui
-file then run `npm ci` for dependencies
+  file then run `npm ci` for dependencies
+
 ### icons / libraries
 
 - `npm i react-icons` or `npm install react-icons --save`
@@ -40,6 +41,7 @@ file then run `npm ci` for dependencies
 - in a second terminal run `npx json-server -p 4000 database/db.json`
 
 # Steps to create backend
+
 ## install dependencies
 
 - `npm init -y` to start dependencies and node
@@ -78,11 +80,12 @@ file then run `npm ci` for dependencies
   - `npm i @reduxjs/toolkit react-redux`
 - run `npm start`
 - Quick uninstall `npm uninstall @testing-library/jest-dom @testing-library/react @testing-library/user-event web-vitals`
-  
+
 ## Dev dependency
 
 - nodemon `npm install --save-dev nodemon` to autorestart server `"scripts": {"start" : "nodemon src/index.js"},`
 - dates `npm i date-fns uuid`
+- dates `npm install moment`
 
 ## Libraries
 
@@ -103,8 +106,24 @@ file then run `npm ci` for dependencies
 - checkout the installation guide [https://mui.com/material-ui/getting-started/installation/]
 
 ### Socket io
+
 - Client Install `npm i socket.io-client`
 - Server install `npm i socket.io`
+- index requires const http = require('http')
+  const { Server } = require('socket.io')
+  const cors = require('cors')
+
+app.use(cors())
+
+const server = http.createServer(app)
+
+const io = new Server(server, {
+cors: {
+origin: 'https://localhost:3000',
+methods: ['GET', 'POST']
+},
+})
+
 # Seeding/prisma
 
 - links to tech info [https://pris.ly/d/prisma-schema]
