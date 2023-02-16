@@ -4,8 +4,8 @@ Set up guide
 Boiler plate code to set up and start a full stack project quickly and easily.
 
 ### Creating Frontend React App
-<code>npx create-react-app my-app</code>
-- ""
+
+- `npx create-react-app my-app`
 - `npm install react-router-dom` in index.js `import { BrowserRouter } from 'react-router-dom'`
 - `npm install @mui/material @emotion/react @emotion/styled` material ui
 ### icons / libraries
