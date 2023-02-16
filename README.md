@@ -102,6 +102,9 @@ file then run `npm ci` for dependencies
 
 - checkout the installation guide [https://mui.com/material-ui/getting-started/installation/]
 
+### Socket io
+- Client Install `npm i socket.io-client`
+- Server install `npm i socket.io`
 # Seeding/prisma
 
 - links to tech info [https://pris.ly/d/prisma-schema]
