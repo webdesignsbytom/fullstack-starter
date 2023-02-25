@@ -6,13 +6,13 @@ A list of programs, libraries and compoents along with quick installs and web li
 
 - [Fullstack Starter](#fullstack-starter)
   - [Table of contents](#table-of-contents)
-  - [Creating Frontend React App](#creating-frontend-react-app)
+  - [Creating Frontend App](#creating-frontend-app)
   - [icons / libraries](#icons--libraries)
   - [Tailwind](#tailwind)
     - [Vanilla](#vanilla)
     - [React](#react)
   - [Using a Local database](#using-a-local-database)
-- [Steps to create backend](#steps-to-create-backend)
+  - [Steps to create backend](#steps-to-create-backend)
   - [install dependencies](#install-dependencies)
     - [Socket io](#socket-io)
   - [Seeding/prisma](#seedingprisma)
@@ -20,9 +20,10 @@ A list of programs, libraries and compoents along with quick installs and web li
   - [Github](#github)
     - [General Comanads](#general-comanads)
     - [Deploy react to gh-pages](#deploy-react-to-gh-pages)
-- [Other Programs](#other-programs)
+  - [Vercel](#vercel)
+  - [Other Programs](#other-programs)
 
-## Creating Frontend React App
+## Creating Frontend App
 
 - `npx create-react-app my-app`
 - `npm install react-router-dom` in index.js `import { BrowserRouter } from 'react-router-dom'`
@@ -62,7 +63,7 @@ A list of programs, libraries and compoents along with quick installs and web li
 - add the file db.json
 - in a second terminal run `npx json-server -p 4000 database/db.json`
 
-# Steps to create backend
+## Steps to create backend
 
 ## install dependencies
 
@@ -158,7 +159,7 @@ methods: ['GET', 'POST']
 - `git reset` to unstage changes
 - `git reset HEAD~1` undo last commit
 - `origin` location of repo on github
-
+  
 ### Deploy react to gh-pages
 
 - `git remote add origin https://github.com/webdesignbytom/NAME.git`
@@ -168,8 +169,15 @@ methods: ['GET', 'POST']
 - `npm instal gh-pages --save-dev`
 - `npm run deploy`
 
-# Other Programs
+
+## Vercel
+- Set deploy from server file
+- use 'vercel.json' template for deploy
+- 
+
+## Other Programs
 
 - insomnia - connects to your localhost via port
 - elephantsql - hosts postgreSQL databases
 - prisma - [https://github.com/prisma/prisma]
+
