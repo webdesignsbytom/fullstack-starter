@@ -1,19 +1,42 @@
-# fullstack-starter
+# Fullstack Starter
 
-Set up guide
-Boiler plate code to set up and start a full stack project quickly and easily.
+A list of programs, libraries and compoents along with quick installs and web links for details
 
-### Creating Frontend React App
+## Table of contents
+
+- [Fullstack Starter](#fullstack-starter)
+  - [Table of contents](#table-of-contents)
+  - [Creating Frontend React App](#creating-frontend-react-app)
+  - [icons / libraries](#icons--libraries)
+  - [Tailwind](#tailwind)
+    - [Vanilla](#vanilla)
+    - [React](#react)
+  - [Using a Local database](#using-a-local-database)
+- [Steps to create backend](#steps-to-create-backend)
+  - [install dependencies](#install-dependencies)
+    - [Socket io](#socket-io)
+  - [Seeding/prisma](#seedingprisma)
+  - [Errors](#errors)
+  - [Github](#github)
+    - [General Comanads](#general-comanads)
+    - [Deploy react to gh-pages](#deploy-react-to-gh-pages)
+- [Other Programs](#other-programs)
+
+## Creating Frontend React App
 
 - `npx create-react-app my-app`
 - `npm install react-router-dom` in index.js `import { BrowserRouter } from 'react-router-dom'`
 - `npm install @mui/material @emotion/react @emotion/styled` material ui
-### icons / libraries
+- Quick uninstall `npm uninstall @testing-library/jest-dom @testing-library/react @testing-library/user-event web-vitals`
+
+## icons / libraries
 
 - `npm i react-icons` or `npm install react-icons --save`
 - `npm i swiper`
 
-### Tailwind - Vanilla
+## Tailwind
+
+### Vanilla
 
 - requires node JS and npm package installed `npm init -y`
 - `npm install tailwindcss` to install tailwind dependancy
@@ -23,15 +46,16 @@ Boiler plate code to set up and start a full stack project quickly and easily.
 - `"scripts": { "build-css": "tailwindcss build -i src/styles.css -o public/styles.css"},`
 - `"prettier": "npx prettier --write **/*.html"` inbuild to tailwind - add to scripts
 
-### Tailwind - React
+### React
 
 - create react app with npx
 - `npm install -D tailwindcss`
 - `npx tailwindcss init` adds config file
+- `@tailwind base; @tailwind components; @tailwind utilities;` add to global css file
 - `npm install @heroicons/react` icons library `https://heroicons.com/#gh-light-mode-only`
 - `npm install @headlessui/react` component library
 
-### Using a Local database
+## Using a Local database
 
 - In the terminal of your app run `npm install -g json-server`
 - create a folder called `database`
@@ -77,31 +101,10 @@ Boiler plate code to set up and start a full stack project quickly and easily.
 - redux - state management
   - `npm i @reduxjs/toolkit react-redux`
 - run `npm start`
-- Quick uninstall `npm uninstall @testing-library/jest-dom @testing-library/react @testing-library/user-event web-vitals`
-
-## Dev dependency
 
 - nodemon `npm install --save-dev nodemon` to autorestart server `"scripts": {"start" : "nodemon src/index.js"},`
 - dates `npm i date-fns uuid`
 - dates `npm install moment`
-
-## Libraries
-
-- react mui components
-- `npm install @mui/material @emotion/react @emotion/styled`
-- `npm install @mui/material @mui/styled-engine-sc styled-components`
-- `npm install @fontsource/roboto`
-- `npm install @mui/icons-material`
-<link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-  />
-<link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/icon?family=Material+Icons"
-  />
-
-- checkout the installation guide [https://mui.com/material-ui/getting-started/installation/]
 
 ### Socket io
 
@@ -122,7 +125,7 @@ methods: ['GET', 'POST']
 },
 })
 
-# Seeding/prisma
+## Seeding/prisma
 
 - links to tech info [https://pris.ly/d/prisma-schema]
   - For admin roles use `enum Role { ADMIN, USER }` and attached `role Role` to the user in schema.
@@ -130,7 +133,7 @@ methods: ['GET', 'POST']
   - `npx prisma migrate dev --create-only --skip-seed --name XXXX` add relationships
   - `npx prisma migrate reset` reset database
 
-### Errors
+## Errors
 
 - `HTTP_HEADER_SENT` You are trying to return two headers. Add a `return` to any `res.` parts towards the end.
 - `P002` means the field has a `@unique` it shouldnt - unique id issue
@@ -138,6 +141,8 @@ methods: ['GET', 'POST']
 - `SyntaxError: Cannot use import statement outside a module` opposite of above error. add `type: module` in package.json.
 
 ## Github
+
+### General Comanads
 
 - `-u` upstream `m` message
 - `git init` create a git repository on local machine
@@ -154,13 +159,7 @@ methods: ['GET', 'POST']
 - `git reset HEAD~1` undo last commit
 - `origin` location of repo on github
 
-### Other Programs
-
-- insomnia - connects to your localhost via port
-- elephantsql - hosts postgreSQL databases
-- prisma - [https://github.com/prisma/prisma]
-
-## Deploy react to gh-pages
+### Deploy react to gh-pages
 
 - `git remote add origin https://github.com/webdesignbytom/NAME.git`
 - `git branch -M main`
@@ -168,3 +167,9 @@ methods: ['GET', 'POST']
 - `git push`
 - `npm instal gh-pages --save-dev`
 - `npm run deploy`
+
+# Other Programs
+
+- insomnia - connects to your localhost via port
+- elephantsql - hosts postgreSQL databases
+- prisma - [https://github.com/prisma/prisma]
