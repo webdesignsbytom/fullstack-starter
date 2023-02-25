@@ -6,7 +6,7 @@ const app = require('./server.js')
 
 // Set the port and URl
 const PORT = process.env.PORT || 4000;
-const URL = process.env.HTTP_URL || 'http://localhost:'
+const URL = process.env.URL || 'http://localhost:'
 
 // Start our API server
 app.listen(PORT, () => {

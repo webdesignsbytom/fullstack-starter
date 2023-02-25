@@ -14,7 +14,7 @@ datasource db {
 enum Role {
   USER
   ADMIN
-  DEV
+  DEVELOPER
 }
 
 model User {
