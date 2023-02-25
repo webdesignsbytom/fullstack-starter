@@ -29,6 +29,7 @@ Boiler plate code to set up and start a full stack project quickly and easily.
 - `npm install -D tailwindcss`
 - `npx tailwindcss init` adds config file
 - `npm install @heroicons/react` icons library `https://heroicons.com/#gh-light-mode-only`
+- `npm install @headlessui/react` component library
 
 ### Using a Local database
 
