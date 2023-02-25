@@ -68,42 +68,27 @@ A list of programs, libraries and compoents along with quick installs and web li
 ## install dependencies
 
 - `npm init -y` to start dependencies and node
+- run `npm start`
 - `npm install express jsonwebtoken cors bcrypt morgan express-async-errors jwt-decode`
 - `npm install prisma --save-dev`
 - `npx prisma` for dev dependenceies
 - `npx prisma init` to add prisma files
 - if your file doesnt seed check your package.json to include `"prisma": {"seed": "node prisma/seed.js"},`.
-- @prisma/client
-  - `npm install @prisma/client`
-- express
-  - `npm install express`
-- jsonwebtoken - generate json web tokens
-  - `npm install jsonwebtoken`
-- cors
-  - `npm install cors`
-- bycrypt - used to hash our passwords
-  - `npm install bcrypt`
-- morgan
-  - `npm install morgan`
-- dotenv
-  - `npm install dotenv --save`
-  - add `require('dotenv').config()` to index.js at the top
-- cookies
-  - `npm install cookie-parser` add `const cookieParser = require('cookie-parser')` to index.js
-- express async errors
-  - `npm install express-async-errors` add `require('express-async-errors')` immedaitly after pages that require express at the top
-- jwt-decode
-  - `npm install jwt-decode` add to page: `const jwt_decode = require('jwt-decode');`
-  - `import jwt_decode from "jwt-decode"` `var token = "eyJ0eXAiO.../// jwt token";` `var decoded = jwt_decode(token);`
-- axios
-  - `npm install axios`
-- Nodemailer
-  - `npm install nodemailer` send emails via node
-- redux - state management
-  - `npm i @reduxjs/toolkit react-redux`
-- run `npm start`
-
+- `npm install @prisma/client` @prisma/client
+- express `npm install express`
+- jsonwebtoken - generate json web tokens `npm install jsonwebtoken`
+- cors `npm install cors`
+- bycrypt - used to hash our passwords `npm install bcrypt`
+- morgan `npm install morgan`
+- dotenv `npm install dotenv --save` `require('dotenv').config()` to index.js at the top
+- cookies `npm install cookie-parser` add `const cookieParser = require('cookie-parser')` to index.js
+- express async errors `npm install express-async-errors` add `require('express-async-errors')` immedaitly after pages that require express at the top
+- jwt-decode `npm install jwt-decode` add to page: `const jwt_decode = require('jwt-decode');` `import jwt_decode from "jwt-decode"`
+- axios `npm install axios`
+- Nodemailer `npm install nodemailer` send emails via node
+- redux - state management `npm i @reduxjs/toolkit react-redux`
 - nodemon `npm install --save-dev nodemon` to autorestart server `"scripts": {"start" : "nodemon src/index.js"},`
+- time and date `npm install uuid` `import { v4 as uuidv4 } from 'uuid'; uuidv4();`
 - dates `npm i date-fns uuid`
 - dates `npm install moment`
 
@@ -111,20 +96,21 @@ A list of programs, libraries and compoents along with quick installs and web li
 
 - Client Install `npm i socket.io-client`
 - Server install `npm i socket.io`
-- index requires const http = require('http')
-  const { Server } = require('socket.io')
-  const cors = require('cors')
+- index requires:
+    const http = require('http')
+    const { Server } = require('socket.io')
+    const cors = require('cors')
 
-app.use(cors())
+    app.use(cors())
 
-const server = http.createServer(app)
+    const server = http.createServer(app)
 
-const io = new Server(server, {
-cors: {
-origin: 'https://localhost:3000',
-methods: ['GET', 'POST']
-},
-})
+    const io = new Server(server, {
+    cors: {
+    origin: 'https://localhost:3000',
+    methods: ['GET', 'POST']
+    },
+    })
 
 ## Seeding/prisma
 
@@ -145,7 +131,7 @@ methods: ['GET', 'POST']
 
 ### General Comanads
 
-- `-u` upstream `m` message
+- `-u` upstream `-m` message
 - `git init` create a git repository on local machine
 - `git add .` adds all files to the repo
 - `git commit -m 'comment'` commit staged changes
@@ -171,13 +157,13 @@ methods: ['GET', 'POST']
 
 
 ## Vercel
-- Set deploy from server file
-- use 'vercel.json' template for deploy
-- 
+
+- Set deploy from server file.
+- use 'vercel.json' template for deploy - must have src/server.js or whatever starting connection is.
+- drag and drop .env into the environment variables section in settings.
 
 ## Other Programs
 
 - insomnia - connects to your localhost via port
 - elephantsql - hosts postgreSQL databases
-- prisma - [https://github.com/prisma/prisma]
-
+- prisma - [https://github.com/prisma/prisma](https://github.com/prisma/prisma)
