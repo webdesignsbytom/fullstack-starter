@@ -86,6 +86,7 @@ A list of programs, libraries and compoents along with quick installs and web li
 - jwt-decode `npm install jwt-decode` add to page: `const jwt_decode = require('jwt-decode');` `import jwt_decode from "jwt-decode"`
 - axios `npm install axios`
 - Nodemailer `npm install nodemailer` send emails via node
+- `npm i nodemailer-express-handlebars`
 - redux - state management `npm i @reduxjs/toolkit react-redux`
 - nodemon `npm install --save-dev nodemon` to autorestart server `"scripts": {"start" : "nodemon src/index.js"},`
 - time and date `npm install uuid` `import { v4 as uuidv4 } from 'uuid'; uuidv4();`
