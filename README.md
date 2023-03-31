@@ -8,6 +8,7 @@ A list of programs, libraries and compoents along with quick installs and web li
   - [Table of contents](#table-of-contents)
   - [Creating Frontend App](#creating-frontend-app)
   - [icons / libraries](#icons--libraries)
+  - [Google](#google)
   - [Tailwind](#tailwind)
     - [Vanilla](#vanilla)
     - [React](#react)
@@ -34,6 +35,9 @@ A list of programs, libraries and compoents along with quick installs and web li
 
 - `npm i react-icons` or `npm install react-icons --save`
 - `npm i swiper`
+
+## Google
+- `npm i react-ga -S` install google analytics
 
 ## Tailwind
 
