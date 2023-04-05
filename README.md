@@ -12,6 +12,7 @@ A list of programs, libraries and compoents along with quick installs and web li
   - [Tailwind](#tailwind)
     - [Vanilla](#vanilla)
     - [React](#react)
+    - [tailwind notes](#tailwind-notes)
   - [Using a Local database](#using-a-local-database)
   - [Steps to create backend](#steps-to-create-backend)
   - [install dependencies](#install-dependencies)
@@ -60,6 +61,8 @@ A list of programs, libraries and compoents along with quick installs and web li
 - `npm install @heroicons/react` icons library `https://heroicons.com/#gh-light-mode-only`
 - `npm install @headlessui/react` component library
 
+### tailwind notes
+- center `absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`
 ## Using a Local database
 
 - In the terminal of your app run `npm install -g json-server`
