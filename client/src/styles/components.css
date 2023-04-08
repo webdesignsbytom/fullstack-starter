@@ -1,0 +1,126 @@
+/* Containers */
+.interaction__container {
+  @apply mx-2 my-4 grid lg:grid-rows-none lg:grid-cols-xo gap-2 overflow-hidden lg:mx-6
+}
+/* Text */
+.nav__link {
+  @apply cursor-pointer transition ease-in-out duration-200 text-alt-text hover:text-hover-text active:text-active-text dark:text-white
+}
+
+.selected__link {
+  @apply cursor-pointer transition ease-in-out duration-200 text-colour-med hover:text-hover-text active:text-active-text dark:text-white bg-main-colour
+}
+
+.selected__option__link {
+  @apply cursor-pointer text-xs bg-main-colour text-gray-100 lg:text-base transition ease-in-out duration-200 hover:text-hover-text active:text-active-text border-2 border-solid border-black rounded text-center 
+  lg:text-left hover:bg-white active:bg-main-colour dark:text-main-text py-2
+}
+
+.menu__link {
+  @apply grid md:flex cursor-pointer align-middle items-center text-xs md:text-sm lg:text-base transition ease-in-out duration-200 text-main-text hover:text-hover-text active:text-active-text dark:text-main-text 
+}
+
+.options__link {
+  @apply cursor-pointer text-xs lg:text-base transition ease-in-out duration-200 text-main-text hover:text-hover-text active:text-active-text border-2 border-solid border-black rounded text-center 
+  lg:text-left hover:bg-zinc-400 active:bg-red-300 dark:text-white py-2
+}
+
+.account__link {
+  @apply cursor-pointer text-xs lg:text-base transition ease-in-out duration-200 text-main-text hover:text-hover-text active:text-active-text border-2 border-solid border-black rounded text-center 
+  lg:text-left hover:bg-white active:bg-main-colour dark:text-main-text py-2
+}
+
+/* Nav */
+.phone__nav__li {
+  @apply bg-gradient-to-r from-slate-500 to-slate-400 outline outline-2 outline-slate-300 text-white mx-2 p-1 rounded transition duration-75 ease-in-out focus:scale-125 active:scale-105 active:bg-colour-light active:text-active-text;
+} 
+
+.selected__nav__li {
+  @apply mx-2 p-1 rounded;
+} 
+
+.phone__nav__link {
+  @apply flex font-bold gap-2 align-middle;
+}
+
+/* Buttons */
+
+.submit__button {
+  @apply bg-main-colour grid justify-center p-2 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-colour-light hover:shadow-lg focus:bg-colour-med focus:shadow-lg focus:outline-none focus:ring-0 active:bg-colour-dark active:shadow-lg transition duration-150 ease-in-out w-full 
+}
+
+.alt__submit__button {
+  @apply bg-colour-med grid justify-center p-2 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-colour-light hover:shadow-lg focus:bg-colour-med focus:shadow-lg focus:outline-none focus:ring-0 active:bg-colour-dark active:shadow-lg transition duration-150 ease-in-out w-full 
+}
+
+.delete__button {
+  @apply bg-red-600 p-2 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-red-800 hover:shadow-lg focus:bg-red-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out w-full
+}
+
+/* Inputs */
+
+.standard__inputs {
+  @apply block w-full px-4 py-2 text-xl font-normal text-placeholder-text bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-placeholder-text focus:bg-white focus:border-main-colour focus:outline-none
+}
+
+.profile__inputs {
+  @apply block w-full px-2 py-1 text-base font-normal text-placeholder-text bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-placeholder-text focus:bg-white focus:border-main-colour focus:outline-none
+}
+
+.textbox__inputs {
+  @apply block w-full px-2 py-2 font-normal text-placeholder-text bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-placeholder-text focus:bg-white focus:border-main-colour focus:outline-none
+}
+
+.country__inputs {
+  @apply block w-full px-4 py-2 text-xl font-normal text-placeholder-text bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-placeholder-text focus:bg-white focus:border-main-colour focus:outline-none
+}
+
+.contact__inputs {
+  @apply block w-full px-2 py-1 text-base font-normal text-placeholder-text bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-placeholder-text focus:bg-white focus:border-main-colour focus:outline-none
+}
+
+.error__inputs {
+  @apply block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-red-600 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none
+}
+
+.standard__checkbox {
+  @apply border-solid h-4 w-4 border border-gray-300 rounded-sm bg-white focus:outline-none transition duration-200 bg-no-repeat bg-center bg-contain float-left cursor-pointer mr-2
+}
+
+.inactive__select {
+  @apply inline-flex border-2 items-center justify-center text-center w-full py-1 px-2 bg-non-selected border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 text-white hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700
+}
+
+.active__select {
+  @apply inline-flex border-2 items-center justify-center text-center w-full py-1 px-2 rounded-lg cursor-pointer bg-secleted 
+}
+
+/* Social */
+.social__link {
+  @apply w-4 cursor-pointer hover:text-white transition ease-in-out duration-200
+}
+
+/* TIMED BUTTONS */
+.night__button__one {
+  @apply bg-blue-800 border-2 border-solid border-black grid justify-center py-2 px-8 text-white font-semibold text-sm leading-snug uppercase rounded shadow-md hover:text-black hover:bg-colour-light hover:shadow-lg focus:bg-colour-med focus:shadow-lg focus:outline-none focus:ring-0 active:bg-colour-dark active:shadow-lg transition duration-150 ease-in-out w-full
+}
+
+.night__button__two {
+  @apply bg-blue-400 border-2 border-solid border-black grid justify-center py-2 px-8 text-white font-semibold text-sm leading-snug uppercase rounded shadow-md hover:text-black hover:bg-colour-light hover:shadow-lg focus:bg-colour-med focus:shadow-lg focus:outline-none focus:ring-0 active:bg-colour-dark active:shadow-lg transition duration-150 ease-in-out w-full
+}
+
+.day__button__one {
+  @apply bg-yellow-400 border-2 border-solid border-black grid justify-center py-2 px-8 text-white font-semibold text-sm leading-snug uppercase rounded shadow-md hover:text-black hover:bg-orange-600 hover:shadow-lg focus:bg-orange-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-colour-dark active:shadow-lg transition duration-150 ease-in-out w-full
+}
+
+.day__button__two {
+  @apply bg-yellow-300 border-2 border-solid border-black grid justify-center py-2 px-8 text-white font-semibold text-sm leading-snug uppercase rounded shadow-md hover:text-black hover:bg-orange-400 hover:shadow-lg focus:bg-orange-500 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-colour-dark active:shadow-lg transition duration-150 ease-in-out w-full
+}
+
+.afternoon__button__one {
+  @apply bg-yellow-400 border-2 border-solid border-black grid justify-center py-2 px-8 text-white font-semibold text-sm leading-snug uppercase rounded shadow-md hover:text-black hover:bg-colour-light hover:shadow-lg focus:bg-colour-med focus:shadow-lg focus:outline-none focus:ring-0 active:bg-colour-dark active:shadow-lg transition duration-150 ease-in-out w-full
+}
+
+.afternoon__button__two {
+  @apply bg-yellow-200 border-2 border-solid border-black grid justify-center py-2 px-8 text-white font-semibold text-sm leading-snug uppercase rounded shadow-md hover:text-black hover:bg-colour-light hover:shadow-lg focus:bg-colour-med focus:shadow-lg focus:outline-none focus:ring-0 active:bg-colour-dark active:shadow-lg transition duration-150 ease-in-out w-full
+}
