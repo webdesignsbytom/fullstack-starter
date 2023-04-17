@@ -1,38 +1,41 @@
-import React from 'react'
+import React from 'react';
 import { useEffect, useState } from 'react';
-import { userSampleData } from '../utils/UserData'
+// Data
+import { sampleUserData } from '../users/utils/utils';
 import LoggedInUser from '../utils/LoggedInUser';
+// Fetch
+import { getUserById } from '../utils/Fetch';
+// Context
+export const UserContext = React.createContext();
 
-export const UserContext = React.createContext()
-
-const initUserState = userSampleData
+const initUserState = sampleUserData;
 
 const UserContextProvider = ({ children }) => {
-  const [user, setUser] = useState(initUserState)  
+  const [user, setUser] = useState(initUserState);
+  const [token, setToken] = useState(
+    localStorage.getItem(process.env.REACT_APP_USER_TOKEN) || ''
+  );
+  const [toggleCookiePolicy, setToggleCookiePolicy] = useState(false)
 
   useEffect(() => {
     const decodedUserData = LoggedInUser()
-    
-    if (decodedUserData) {
-      const id = decodedUserData.id
 
-      fetch(`http://localhost:4000/user/${id}`)
-        .then((res) => res.json())
-        .then((data) => {
-          setUser(data.data);
-        })
-        .catch((error) => {
-          console.log('error', error);
-        }, []);
+    if (decodedUserData) {
+      const userId = decodedUserData.id
+      getUserById(userId, setUser)
     }
 
+    const cookie = localStorage.getItem('CookiePolicy')
+    if (cookie) {
+      setToggleCookiePolicy(true)
+    }
   }, [])
 
-    return (
-        <UserContext.Provider value={{ user, setUser }}>
-          {children}
-        </UserContext.Provider> 
-      );
-}
+  return (
+    <UserContext.Provider value={{ user, setUser, token, setToken, toggleCookiePolicy, setToggleCookiePolicy }}>
+      {children}
+    </UserContext.Provider>
+  );
+};
 
-export default UserContextProvider
+export default UserContextProvider;

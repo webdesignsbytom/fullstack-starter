@@ -1,0 +1,231 @@
+.orbit__container {
+  width: 100%;
+  display: grid;
+  z-index: -5;
+}
+
+.boundry__container {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgb(192, 192, 192);
+  background: linear-gradient(
+    153deg,
+    rgba(192, 192, 192, 1) 0%,
+    rgba(168, 168, 210, 1) 37%,
+    rgba(255, 255, 255, 1) 77%,
+    rgba(192, 192, 192, 1) 100%
+  );
+  background-size: cover;
+  background-repeat: repeat-x;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 1) 0 0 50px #4069ff;
+  transform: rotate(-21deg);
+  z-index: 1;
+  border: none;
+  position: absolute;
+}
+
+.satellite img {
+  width: 50px;
+  height: 50px;
+}
+
+/* REACT ICON */
+.satellite1 {
+  position: absolute;
+  z-index: 2;
+  animation: animateSatellite1 5s linear infinite;
+}
+
+@keyframes animateSatellite1 {
+  25% {
+    padding-left: 30rem;
+    z-index: 2;
+  }
+  26% {
+    z-index: -1;
+  }
+  50% {
+    scale: 0.1;
+  }
+  75% {
+    padding-right: 40rem;
+  }
+}
+
+/* GIT HUB ICON */
+.satellite2 {
+  position: absolute;
+  z-index: 2;
+  animation: animateSatellite2 7s linear infinite;
+  transform: rotate(45deg);
+}
+
+@keyframes animateSatellite2 {
+  25% {
+    padding-left: 30rem;
+    z-index: 2;
+  }
+  26% {
+    z-index: -1;
+  }
+  50% {
+    scale: 0.1;
+  }
+  75% {
+    padding-right: 30rem;
+  }
+}
+
+/* HTML5 */
+.satellite3 {
+  position: absolute;
+  z-index: 2;
+  animation: animateSatellite3 6s linear infinite;
+  transform: rotate(76deg);
+}
+
+@keyframes animateSatellite3 {
+  25% {
+    padding-left: 35rem;
+    z-index: 2;
+  }
+  26% {
+    z-index: -1;
+  }
+  50% {
+    scale: 0.1;
+  }
+  75% {
+    padding-right: 30rem;
+  }
+}
+
+/* NODE JS */
+.satellite4 {
+  position: absolute;
+  z-index: 2;
+  animation: animateSatellite4 7s linear infinite;
+  transform: rotate(-5deg);
+}
+
+@keyframes animateSatellite4 {
+  25% {
+    padding-left: 40rem;
+    z-index: 2;
+  }
+  26% {
+    z-index: -1;
+  }
+  50% {
+    scale: 0.1;
+  }
+  75% {
+    padding-right: 30rem;
+  }
+}
+
+/* EXPRESS JS */
+.satellite5 {
+  position: absolute;
+  z-index: 2;
+  animation: animateSatellite5 5s linear infinite;
+  transform: rotate(-75deg);
+}
+
+@keyframes animateSatellite5 {
+  25% {
+    padding-left: 40rem;
+    z-index: 2;
+  }
+  26% {
+    z-index: -1;
+  }
+  50% {
+    scale: .1;
+  }
+  75% {
+    padding-right: 40rem;
+  }
+}
+
+.satellite6 {
+  position: absolute;
+  z-index: 2;
+  animation: animateSatellite6 4s linear infinite;
+  transform: rotate(-98deg);
+  filter: brightness(2);
+}
+
+@keyframes animateSatellite6 {
+  25% {
+    padding-left: 30rem;
+    z-index: 2;
+  }
+  26% {
+    z-index: -1;
+  }
+  50% {
+    scale: 0.1;
+    filter: brightness(0.3);
+
+  }
+  75% {
+    padding-right: 30rem;
+  }
+}
+
+/* PRISMA */
+.satellite7 {
+  position: absolute;
+  z-index: 2;
+  animation: animateSatellite7 5s linear infinite;
+  transform: rotate(-22deg);
+}
+
+@keyframes animateSatellite7 {
+  25% {
+    padding-left: 30rem;
+    z-index: 2;
+  }
+  26% {
+    z-index: -1;
+  }
+  50% {
+    scale: 0.1;
+  }
+  75% {
+    padding-right: 30rem;
+  }
+}
+
+/* JAVASCRIPT */
+.satellite8 {
+  position: absolute;
+  z-index: 2;
+  animation: animateSatellite7 5s linear infinite;
+  transform: rotate(-22deg);
+}
+
+@keyframes animateSatellite7 {
+  25% {
+    padding-left: 30rem;
+    z-index: 2;
+  }
+  26% {
+    z-index: -1;
+  }
+  50% {
+    scale: 0.1;
+  }
+  75% {
+    padding-right: 30rem;
+  }
+}

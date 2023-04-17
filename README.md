@@ -8,9 +8,11 @@ A list of programs, libraries and compoents along with quick installs and web li
   - [Table of contents](#table-of-contents)
   - [Creating Frontend App](#creating-frontend-app)
   - [icons / libraries](#icons--libraries)
+  - [Google](#google)
   - [Tailwind](#tailwind)
     - [Vanilla](#vanilla)
     - [React](#react)
+    - [tailwind notes](#tailwind-notes)
   - [Using a Local database](#using-a-local-database)
   - [Steps to create backend](#steps-to-create-backend)
   - [install dependencies](#install-dependencies)
@@ -36,6 +38,9 @@ A list of programs, libraries and compoents along with quick installs and web li
 - `npm i react-icons` or `npm install react-icons --save`
 - `npm i swiper`
 
+## Google
+- `npm i react-ga -S` install google analytics
+
 ## Tailwind
 
 ### Vanilla
@@ -57,6 +62,8 @@ A list of programs, libraries and compoents along with quick installs and web li
 - `npm install @heroicons/react` icons library `https://heroicons.com/#gh-light-mode-only`
 - `npm install @headlessui/react` component library
 
+### tailwind notes
+- center `absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`
 ## Using a Local database
 
 - In the terminal of your app run `npm install -g json-server`
@@ -87,6 +94,7 @@ A list of programs, libraries and compoents along with quick installs and web li
 - jwt-decode `npm install jwt-decode` add to page: `const jwt_decode = require('jwt-decode');` `import jwt_decode from "jwt-decode"`
 - axios `npm install axios`
 - Nodemailer `npm install nodemailer` send emails via node
+- `npm i nodemailer-express-handlebars`
 - redux - state management `npm i @reduxjs/toolkit react-redux`
 - nodemon `npm install --save-dev nodemon` to autorestart server `"scripts": {"start" : "nodemon src/index.js"},`
 - time and date `npm install uuid` `import { v4 as uuidv4 } from 'uuid'; uuidv4();`
