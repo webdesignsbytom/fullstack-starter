@@ -24,7 +24,6 @@ A list of programs, libraries and compoents along with quick installs and web li
     - [Deploy react to gh-pages](#deploy-react-to-gh-pages)
   - [Vercel](#vercel)
   - [Other Programs](#other-programs)
-    - [Google search bar](#google-search-bar)
 
 ## Creating Frontend App
 
@@ -160,33 +159,3 @@ A list of programs, libraries and compoents along with quick installs and web li
 - insomnia - connects to your localhost via port
 - elephantsql - hosts postgreSQL databases
 - prisma - [https://github.com/prisma/prisma](https://github.com/prisma/prisma)
-
-### Google search bar
-
-````<script async src="https://cse.google.com/cse.js?cx=[code]">
-</script>
-<div class="gcse-search"></div>```
-````
-<form method = "get" title = "Search Form" action="https://cse.google.com/cse/publicurl">
- <div>
-    <input type="text" id="q" name="q" title="Search this site" alt="Search Text" maxlength="256" />
-    <input type="hidden" id="cx" name="cx" value="013626029654558379071:ze3tw4csia4" />
-   <input type="image" id="searchSubmit" name="submit" src="https://www.flaticon.com/free-icon/active-search-symbol_34148" alt="Go" title="Submit Search Query" />
- </div>
-</form>
-
-import React, { useEffect } from "react";
-
-function NewsletterGcseSearch() {
-    useEffect(() => {
-        const script = document.createElement("script");
-        document.head.append(script);
-        script.src = "https://cse.google.com/cse.js?cx=00111 .... 6146:di0ylihvlxu";
-    }, []);
-
-    return (
-            <div className="gcse-search"></div>
-    );
-}
-
-export { NewsletterGcseSearch };
