@@ -104,21 +104,6 @@ A list of programs, libraries and compoents along with quick installs and web li
 
 - Client Install `npm i socket.io-client`
 - Server install `npm i socket.io`
-- index requires:
-    const http = require('http')
-    const { Server } = require('socket.io')
-    const cors = require('cors')
-
-    app.use(cors())
-
-    const server = http.createServer(app)
-
-    const io = new Server(server, {
-    cors: {
-    origin: 'https://localhost:3000',
-    methods: ['GET', 'POST']
-    },
-    })
 
 ## Seeding/prisma
 
@@ -153,7 +138,7 @@ A list of programs, libraries and compoents along with quick installs and web li
 - `git reset` to unstage changes
 - `git reset HEAD~1` undo last commit
 - `origin` location of repo on github
-  
+
 ### Deploy react to gh-pages
 
 - `git remote add origin https://github.com/webdesignbytom/NAME.git`
@@ -162,7 +147,6 @@ A list of programs, libraries and compoents along with quick installs and web li
 - `git push`
 - `npm instal gh-pages --save-dev`
 - `npm run deploy`
-
 
 ## Vercel
 

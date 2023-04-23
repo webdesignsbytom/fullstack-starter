@@ -1,8 +1,9 @@
 {
   "name": "fullstack-starter",
   "version": "1.0.0",
+  "type": "module",
   "description": "Boiler plate code to set up and start a full stack project quickly and easily.\r If you just want front end or back end you can remove the other file.\r Including perfect file guide for src\r Including serveral pre set functions such as findUserById and error codes\r React set up with out clutter and with BrowserRouter installed\r Set up guide",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon src/index.js"
