@@ -159,3 +159,17 @@ A list of programs, libraries and compoents along with quick installs and web li
 - insomnia - connects to your localhost via port
 - elephantsql - hosts postgreSQL databases
 - prisma - [https://github.com/prisma/prisma](https://github.com/prisma/prisma)
+- 
+const result = await prisma.user.create({
+  data: {
+    email: 'saanvi@prisma.io',
+    posts: {
+      createMany: {
+        data: [{ title: 'My first post' }, { title: 'My second post' }],
+      },
+    },
+  },
+  include: {
+    posts: true,
+  },
+})
