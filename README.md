@@ -23,6 +23,7 @@ A list of programs, libraries and compoents along with quick installs and web li
     - [General Comanads](#general-comanads)
     - [Deploy react to gh-pages](#deploy-react-to-gh-pages)
   - [Vercel](#vercel)
+  - [Hosting](#hosting)
   - [Other Programs](#other-programs)
 
 ## Creating Frontend App
@@ -31,6 +32,7 @@ A list of programs, libraries and compoents along with quick installs and web li
 - `npm install react-router-dom` in index.js `import { BrowserRouter } from 'react-router-dom'`
 - `npm install @mui/material @emotion/react @emotion/styled` material ui
 - Quick uninstall `npm uninstall @testing-library/jest-dom @testing-library/react @testing-library/user-event web-vitals`
+- Quick install `npm install axios jwt-decode uuid`
 
 ## icons / libraries
 
@@ -38,6 +40,7 @@ A list of programs, libraries and compoents along with quick installs and web li
 - `npm i swiper`
 
 ## Google
+
 - `npm i react-ga -S` install google analytics
 
 ## Tailwind
@@ -62,7 +65,9 @@ A list of programs, libraries and compoents along with quick installs and web li
 - `npm install @headlessui/react` component library
 
 ### tailwind notes
+
 - center `absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`
+
 ## Using a Local database
 
 - In the terminal of your app run `npm install -g json-server`
@@ -76,7 +81,7 @@ A list of programs, libraries and compoents along with quick installs and web li
 
 - `npm init -y` to start dependencies and node
 - run `npm start`
-- `npm install express jsonwebtoken cors bcrypt morgan express-async-errors jwt-decode`
+- `npm install express jsonwebtoken cors bcrypt morgan express-async-errors jwt-decode uuid nodemailer`
 - `npm install prisma --save-dev`
 - `npx prisma` for dev dependenceies
 - `npx prisma init` to add prisma files
@@ -154,22 +159,25 @@ A list of programs, libraries and compoents along with quick installs and web li
 - use 'vercel.json' template for deploy - must have src/server.js or whatever starting connection is.
 - drag and drop .env into the environment variables section in settings.
 
+## Hosting
+
+- `npm run build`
+
 ## Other Programs
 
 - insomnia - connects to your localhost via port
 - elephantsql - hosts postgreSQL databases
 - prisma - [https://github.com/prisma/prisma](https://github.com/prisma/prisma)
-- 
-const result = await prisma.user.create({
+- const result = await prisma.user.create({
   data: {
-    email: 'saanvi@prisma.io',
-    posts: {
-      createMany: {
-        data: [{ title: 'My first post' }, { title: 'My second post' }],
-      },
-    },
+  email: 'saanvi@prisma.io',
+  posts: {
+  createMany: {
+  data: [{ title: 'My first post' }, { title: 'My second post' }],
+  },
+  },
   },
   include: {
-    posts: true,
+  posts: true,
   },
-})
+  })
