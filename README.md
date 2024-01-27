@@ -17,6 +17,7 @@ A list of programs, libraries and compoents along with quick installs and web li
   - [Steps to create backend](#steps-to-create-backend)
   - [install dependencies](#install-dependencies)
     - [Socket io](#socket-io)
+  - [Node](#node)
   - [Seeding/prisma](#seedingprisma)
   - [Errors](#errors)
   - [Github](#github)
@@ -38,6 +39,7 @@ A list of programs, libraries and compoents along with quick installs and web li
 - `npm i swiper`
 
 ## Google
+
 - `npm i react-ga -S` install google analytics
 
 ## Tailwind
@@ -62,7 +64,9 @@ A list of programs, libraries and compoents along with quick installs and web li
 - `npm install @headlessui/react` component library
 
 ### tailwind notes
+
 - center `absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`
+
 ## Using a Local database
 
 - In the terminal of your app run `npm install -g json-server`
@@ -104,6 +108,11 @@ A list of programs, libraries and compoents along with quick installs and web li
 
 - Client Install `npm i socket.io-client`
 - Server install `npm i socket.io`
+
+## Node
+
+- `npm install -g npm@latest` update node
+- `nvm install node` install latest
 
 ## Seeding/prisma
 
