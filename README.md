@@ -24,7 +24,6 @@ A list of programs, libraries and compoents along with quick installs and web li
     - [Deploy react to gh-pages](#deploy-react-to-gh-pages)
   - [Vercel](#vercel)
   - [Hosting](#hosting)
-  - [Other Programs](#other-programs)
 
 ## Creating Frontend App
 
@@ -144,6 +143,8 @@ A list of programs, libraries and compoents along with quick installs and web li
 - `git reset` to unstage changes
 - `git reset HEAD~1` undo last commit
 - `origin` location of repo on github
+- `git remote remove origin` remove git
+- `rm -rf .git` remove git
 
 ### Deploy react to gh-pages
 
@@ -164,21 +165,3 @@ A list of programs, libraries and compoents along with quick installs and web li
 
 - `npm run build`
 
-## Other Programs
-
-- insomnia - connects to your localhost via port
-- elephantsql - hosts postgreSQL databases
-- prisma - [https://github.com/prisma/prisma](https://github.com/prisma/prisma)
-- const result = await prisma.user.create({
-  data: {
-  email: 'saanvi@prisma.io',
-  posts: {
-  createMany: {
-  data: [{ title: 'My first post' }, { title: 'My second post' }],
-  },
-  },
-  },
-  include: {
-  posts: true,
-  },
-  })
