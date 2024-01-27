@@ -24,14 +24,16 @@ A list of programs, libraries and compoents along with quick installs and web li
     - [General Comanads](#general-comanads)
     - [Deploy react to gh-pages](#deploy-react-to-gh-pages)
   - [Vercel](#vercel)
-  - [Other Programs](#other-programs)
+  - [Hosting](#hosting)
 
 ## Creating Frontend App
 
 - `npx create-react-app my-app`
 - `npm install react-router-dom` in index.js `import { BrowserRouter } from 'react-router-dom'`
 - `npm install @mui/material @emotion/react @emotion/styled` material ui
+- `npm install react-icons --save` react icons
 - Quick uninstall `npm uninstall @testing-library/jest-dom @testing-library/react @testing-library/user-event web-vitals`
+- Quick install `npm install axios jwt-decode uuid`
 
 ## icons / libraries
 
@@ -80,7 +82,7 @@ A list of programs, libraries and compoents along with quick installs and web li
 
 - `npm init -y` to start dependencies and node
 - run `npm start`
-- `npm install express jsonwebtoken cors bcrypt morgan express-async-errors jwt-decode`
+- `npm install express jsonwebtoken cors bcrypt morgan express-async-errors jwt-decode uuid nodemailer`
 - `npm install prisma --save-dev`
 - `npx prisma` for dev dependenceies
 - `npx prisma init` to add prisma files
@@ -147,6 +149,8 @@ A list of programs, libraries and compoents along with quick installs and web li
 - `git reset` to unstage changes
 - `git reset HEAD~1` undo last commit
 - `origin` location of repo on github
+- `git remote remove origin` remove git
+- `rm -rf .git` remove git
 
 ### Deploy react to gh-pages
 
@@ -163,8 +167,7 @@ A list of programs, libraries and compoents along with quick installs and web li
 - use 'vercel.json' template for deploy - must have src/server.js or whatever starting connection is.
 - drag and drop .env into the environment variables section in settings.
 
-## Other Programs
+## Hosting
 
-- insomnia - connects to your localhost via port
-- elephantsql - hosts postgreSQL databases
-- prisma - [https://github.com/prisma/prisma](https://github.com/prisma/prisma)
+- `npm run build`
+
