@@ -1,0 +1,14 @@
+/* src/pages/TermsAndConditionsPage.css */
+.ion-padding {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+}
+
+.drawing-canvas {
+  border: 1px solid #000;
+  touch-action: none; /* Prevent touch scrolling on the canvas */
+  display: block;
+  margin: 0 auto;
+}

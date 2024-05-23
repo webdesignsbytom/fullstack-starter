@@ -1,0 +1,30 @@
+/* src/components/SplashScreen.css */
+.ion-padding {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+}
+
+.splash-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+.splash-container {
+  text-align: center;
+}
+
+.splash-logo {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+ion-progress-bar {
+  width: 80%;
+  margin-top: 20px;
+}
