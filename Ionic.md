@@ -74,7 +74,14 @@ import './tailwind.css'; // <-- Import Tailwind CSS here
 
 ### Rebuild apk
 
+`cd ..`
 `ionic build`
 `ionic capacitor copy android`
 `cd android`
 `./gradlew assembleDebug`
+
+`cd .. && ionic build && ionic capacitor copy android && cd android && ./gradlew assembleDebug`
+
+## Analytics
+
+`npm install react-ga`
