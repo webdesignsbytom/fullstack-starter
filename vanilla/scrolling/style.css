@@ -1,0 +1,18 @@
+/* Invisible scroll */
+.scrollbar-hidden {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  width: 0px;
+}
+
+.scrollbar-hidden::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.blurry-screen {
+  filter: blur(5px);
+  transition: filter 0.3s;
+}

@@ -24,6 +24,7 @@ A list of programs, libraries and compoents along with quick installs and web li
     - [Deploy react to gh-pages](#deploy-react-to-gh-pages)
   - [Vercel](#vercel)
   - [Hosting](#hosting)
+  - [Animation](#animation)
 
 ## Creating Frontend App
 
@@ -165,3 +166,23 @@ A list of programs, libraries and compoents along with quick installs and web li
 
 - `npm run build`
 
+## Animation
+
+animation-name: name
+animation-duration: 0
+animation-timing-function: ease
+animation-delay: 0
+animation-iteration-count: 1
+animation-direction: normal
+animation-fill-mode: none
+animation-play-state: running
+
+
+div{
+  width: 200px;
+  height: 200px;
+  background: red;
+  animation: animScale 2000ms ease-in-out 1000ms infinite,
+             animOpacity 2000ms ease-in-out 2000ms infinite;
+  /* scale will start after 1s and opacity after 2s (1s after the scale)*/
+}
