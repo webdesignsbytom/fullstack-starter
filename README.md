@@ -17,6 +17,7 @@ A list of programs, libraries and compoents along with quick installs and web li
   - [Steps to create backend](#steps-to-create-backend)
   - [install dependencies](#install-dependencies)
     - [Socket io](#socket-io)
+  - [Node](#node)
   - [Seeding/prisma](#seedingprisma)
   - [Errors](#errors)
   - [Github](#github)
@@ -110,6 +111,11 @@ A list of programs, libraries and compoents along with quick installs and web li
 
 - Client Install `npm i socket.io-client`
 - Server install `npm i socket.io`
+
+## Node
+
+- `npm install -g npm@latest` update node
+- `nvm install node` install latest
 
 ## Seeding/prisma
 

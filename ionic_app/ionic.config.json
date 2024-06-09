@@ -1,0 +1,7 @@
+{
+  "name": "catapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
