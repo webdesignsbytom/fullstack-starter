@@ -20,6 +20,7 @@ A list of programs, libraries and compoents along with quick installs and web li
   - [Node](#node)
   - [Seeding/prisma](#seedingprisma)
   - [Errors](#errors)
+  - [Completing projects](#completing-projects)
   - [Github](#github)
     - [General Comanads](#general-comanads)
     - [Deploy react to gh-pages](#deploy-react-to-gh-pages)
@@ -131,6 +132,10 @@ A list of programs, libraries and compoents along with quick installs and web li
 - `P002` means the field has a `@unique` it shouldnt - unique id issue
 - `ReferenceError: require is not defined in ES module scope, you can use import instead` you have `type: module` in package.json. import as requested by error
 - `SyntaxError: Cannot use import statement outside a module` opposite of above error. add `type: module` in package.json.
+
+## Completing projects
+
+`find . -path './node_modules' -prune -o -path './logs' -prune -o -path './.git' -prune -o -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g' > file_structure.txt`
 
 ## Github
 
