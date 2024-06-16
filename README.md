@@ -135,6 +135,7 @@ A list of programs, libraries and compoents along with quick installs and web li
 
 ## Completing projects
 
+Make a file structure
 `find . -path './node_modules' -prune -o -path './logs' -prune -o -path './.git' -prune -o -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g' > file_structure.txt`
 
 ## Github
