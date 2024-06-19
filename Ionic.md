@@ -85,3 +85,44 @@ import './tailwind.css'; // <-- Import Tailwind CSS here
 ## Analytics
 
 `npm install react-ga`
+
+## Splash and Icon
+
+First, install @capacitor/assets:
+
+`npm install @capacitor/assets --save-dev`
+
+Provide icon and splash screen source images using this folder/filename structure:
+
+assets/
+├── icon-only.png
+├── icon-foreground.png
+├── icon-background.png
+├── splash.png
+└── splash-dark.png
+
+Icon files should be at least 1024px x 1024px.
+Splash screen files should be at least 2732px x 2732px.
+The format can be jpg or png.
+Then generate (which applies to your native projects or generates a PWA manifest file):
+
+`npx capacitor-assets generate`
+`npx cap sync`
+
+Alternatively you can generate for a specific platform with --ios, --android or --pwa.
+
+Before generating a new set run the clean up functions 
+
+Clear cache
+
+`rm -rf android/app/build`
+`npm run build`
+`npx cap sync`
+
+Clean and reinstall plugins
+
+`npx cap clean`
+`npx cap add android`
+`npx cap sync`
+
+`rm -rf android/app/build && npm run build && npx cap sync && npx cap clean && npx cap add android && npx cap sync`
