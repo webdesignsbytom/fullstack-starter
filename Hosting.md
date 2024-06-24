@@ -48,14 +48,24 @@ Used to prevent Cross Site Scripting attacks XSS
 
 1. `sudo apt-get update`
 2. `sudo apt-get upgrade`
-3. this line installs curl on the Ubuntu server `sudo apt-get install curl`
-4. `sudo apt install nodejs` // this line installs node
-5. `sudo apt install npm`
-6. `sudo npm install pm2@latest -g` to keep server alive
-7. `git clone 'your repo link'`
-8. cd into and `npm ci`
-9. `pm2 start src/server.js --name server`
-10. In AWS go to security for you instance and edit the inbound rules
-11. Add a custom tcp with your port i.e. 4001
-12. Anywhere ip4
-13. Go to your server `http://3.9.178.161:4001/`
+3. `sudo apt-get install nginx`
+4. `sudo ufw status`
+5. `sudo ufw enable`
+6. `sudo ufw allow 'OpenSSH'`
+7. `sudo ufw allow 'Nginx Full'`
+8. this line installs curl on the Ubuntu server `sudo apt-get install curl`
+9. `sudo apt install nodejs` 
+10. `sudo apt install npm`
+11. `sudo npm install pm2@latest -g` to keep server alive
+12. `git clone 'your repo link'`
+13. cd into and `npm ci`
+14. `pm2 start src/server.js --name server`
+15. In AWS go to security for you instance and edit the inbound rules
+16. Add a custom tcp with your port i.e. 4001
+17. Anywhere ip4
+18. Go to your server `http://3.9.178.161:4001/`
+
+### SSL
+
+1. `sudo apt-get install certbot`
+2. `sudo certbot certonly --standalone -d https://streamy-app-test.netlify.app/`
