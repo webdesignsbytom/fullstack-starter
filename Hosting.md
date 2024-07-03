@@ -46,16 +46,44 @@ Used to prevent Cross Site Scripting attacks XSS
 
 ### Set up
 
-1. `sudo apt-get update`
-2. `sudo apt-get upgrade`
-3. this line installs curl on the Ubuntu server `sudo apt-get install curl`
-4. `sudo apt install nodejs` // this line installs node
-5. `sudo apt install npm`
-6. `sudo npm install pm2@latest -g` to keep server alive
+1. `sudo su`
+2. `apt-get update`
+3. `apt-get upgrade`
+   1. `apt-get update && upgrade -y`
+4. `apt install nodejs` // this line installs node
+5. `apt install npm`
+6. `npm install pm2@latest -g` to keep server alive
 7. `git clone 'your repo link'`
 8. cd into and `npm ci`
 9. `pm2 start src/server.js --name server`
-10. In AWS go to security for you instance and edit the inbound rules
-11. Add a custom tcp with your port i.e. 4001
-12. Anywhere ip4
-13. Go to your server `http://3.9.178.161:4001/`
+10. `nano /etc/nginx/sites-available/default`
+
+    ```md
+    server {
+        listen 80;
+        server_name localhost;
+
+        location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+        }
+    }
+    ```
+
+11. `nginx -t` check syntax
+12. `service nginx restart`
+13. `systemctl status nginx`
+14. Go to your server `http://3.9.178.161` and it will have your node home page
+15. `apt install certbot python3-certbot-nginx`
+16. `certbot --nginx -d api.myecoapp.org`
+
+
+`pm2 restart app_name`
+`pm2 reload app_name`
+`pm2 stop app_name`
+`pm2 delete app_name`
+
