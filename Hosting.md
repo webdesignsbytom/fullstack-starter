@@ -52,16 +52,17 @@ Used to prevent Cross Site Scripting attacks XSS
    1. `apt-get update && upgrade -y`
 4. `apt install nodejs` // this line installs node
 5. `apt install npm`
-6. `npm install pm2@latest -g` to keep server alive
-7. `git clone 'your repo link'`
-8. cd into and `npm ci`
-9. `pm2 start src/server.js --name server`
-10. `nano /etc/nginx/sites-available/default`
+6. `apt-get install nginx`
+7. `npm install pm2@latest -g` to keep server alive
+8. `git clone 'your repo link'`
+9. cd into and `npm ci`
+10. `pm2 start src/server.js --name server`
+11. `nano /etc/nginx/sites-available/default`
 
     ```md
     server {
-        listen 80;
-        server_name localhost;
+    listen 80;
+    server_name <name>;
 
         location / {
         proxy_pass http://localhost:3000;
@@ -71,16 +72,28 @@ Used to prevent Cross Site Scripting attacks XSS
         proxy_set_header Host $host;
         proxy_cache_bypass $http_upgrade;
         }
+
     }
     ```
 
-11. `nginx -t` check syntax
-12. `service nginx restart`
-13. `systemctl status nginx`
-14. Go to your server `http://3.9.178.161` and it will have your node home page
-15. `apt install certbot python3-certbot-nginx`
-16. `certbot --nginx -d api.myecoapp.org`
+12. `nginx -t` check syntax
+13. `service nginx restart`
+14. `systemctl status nginx`
+15. Go to your server `http://3.9.178.161` and it will have your node home page
+16. `apt install certbot python3-certbot-nginx`
+17. `certbot --nginx -d api.myecoapp.org`
+18. `cat /etc/nginx/sites-enabled/default`
 
+Custom api folder
+
+1. `rm -rf /etc/nginx/sites-available/default && rm -rf /etc/nginx/sites-enabled/default`
+2. `ln -s /etc/nginx/sites-available/api.myecoapp.org /etc/nginx/sites-enabled/`
+3. `service nginx restart`
+4. `systemctl status nginx`
+5. `sudo certbot --nginx -d api.myecoapp.org`
+
+`sudo apt install ffmpeg`
+`ffmpeg -version`
 
 `pm2 restart app_name`
 `pm2 reload app_name`
