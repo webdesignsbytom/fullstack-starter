@@ -95,7 +95,13 @@ Custom api folder
 `sudo apt install ffmpeg`
 `ffmpeg -version`
 
+
+### Pm2
+
 `pm2 restart app_name`
 `pm2 reload app_name`
 `pm2 stop app_name`
 `pm2 delete app_name`
+`pm2 start cat_app_server/src/server.js -n api` start with name
+`pm2 startup` restart if crashed generates a code to set 
+`sudo env PATH=$PATH:/usr/bin pm2 startup systemd -u ubuntu --hp /home/ubuntu` example of code generated
