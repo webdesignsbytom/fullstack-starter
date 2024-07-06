@@ -159,6 +159,11 @@ Make a file structure
 - `git remote remove origin` remove git
 - `rm -rf .git` remove git
 
+Connect code to server
+
+1. Create ssh key `ssh-keygen -t rsa`
+2. copy key and add to github then use `git clone ssh..`
+
 ### Deploy react to gh-pages
 
 - `git remote add origin https://github.com/webdesignbytom/NAME.git`
@@ -189,12 +194,11 @@ animation-direction: normal
 animation-fill-mode: none
 animation-play-state: running
 
-
 div{
-  width: 200px;
-  height: 200px;
-  background: red;
-  animation: animScale 2000ms ease-in-out 1000ms infinite,
-             animOpacity 2000ms ease-in-out 2000ms infinite;
-  /* scale will start after 1s and opacity after 2s (1s after the scale)*/
+width: 200px;
+height: 200px;
+background: red;
+animation: animScale 2000ms ease-in-out 1000ms infinite,
+animOpacity 2000ms ease-in-out 2000ms infinite;
+/_ scale will start after 1s and opacity after 2s (1s after the scale)_/
 }
