@@ -56,8 +56,8 @@ Used to prevent Cross Site Scripting attacks XSS
 7. `npm install pm2@latest -g` to keep server alive
 8. `git clone 'your repo link'`
 9. cd into and `npm ci`
-10. `pm2 start src/server.js --name server`
-11. `nano /etc/nginx/sites-available/default`
+10. `nano /etc/nginx/sites-available/api.cat-app.app`
+11. `ln -s /etc/nginx/sites-available/api.cat-app.app /etc/nginx/sites-enabled/`
 
     ```md
     server {
@@ -83,14 +83,15 @@ Used to prevent Cross Site Scripting attacks XSS
 16. `apt install certbot python3-certbot-nginx`
 17. `certbot --nginx -d api.myecoapp.org`
 18. `cat /etc/nginx/sites-enabled/default`
+19. `pm2 start src/server.js --name server`
 
 Custom api folder
 
 1. `rm -rf /etc/nginx/sites-available/default && rm -rf /etc/nginx/sites-enabled/default`
-2. `ln -s /etc/nginx/sites-available/api.myecoapp.org /etc/nginx/sites-enabled/`
+2. `ln -s /etc/nginx/sites-available/api.cat-app.app /etc/nginx/sites-enabled/`
 3. `service nginx restart`
 4. `systemctl status nginx`
-5. `sudo certbot --nginx -d api.myecoapp.org`
+5. `sudo certbot --nginx -d api.cat-app.app`
 
 `sudo apt install ffmpeg`
 `ffmpeg -version`
@@ -105,3 +106,16 @@ Custom api folder
 `pm2 start cat_app_server/src/server.js -n api` start with name
 `pm2 startup` restart if crashed generates a code to set 
 `sudo env PATH=$PATH:/usr/bin pm2 startup systemd -u ubuntu --hp /home/ubuntu` example of code generated
+
+### PostgreSQL
+
+`sudo apt install postgresql postgresql-contrib`
+`sudo systemctl start postgresql`
+`sudo systemctl enable postgresql`
+`sudo -i -u postgres`
+`psql`
+
+CREATE USER myuser WITH PASSWORD 'mypassword';
+
+CREATE DATABASE mydatabase;
+GRANT ALL PRIVILEGES ON DATABASE mydatabase TO myuser;
