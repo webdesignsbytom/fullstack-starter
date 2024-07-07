@@ -161,8 +161,9 @@ Make a file structure
 
 Connect code to server
 
-1. Create ssh key `ssh-keygen -t rsa`
-2. copy key and add to github then use `git clone ssh..`
+1. Create ssh key `ssh-keygen -t rsa` 
+2. find .pub file
+3. copy key and add to github then use `git clone ssh..`
 
 ### Deploy react to gh-pages
 
