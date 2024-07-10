@@ -155,6 +155,7 @@ Make a file structure
 - `git merge main` - merge file to main branch
 - `git reset` to unstage changes
 - `git reset HEAD~1` undo last commit
+- `git reset --hard HEAD`
 - `origin` location of repo on github
 - `git remote remove origin` remove git
 - `rm -rf .git` remove git
