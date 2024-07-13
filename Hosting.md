@@ -119,3 +119,9 @@ CREATE USER myuser WITH PASSWORD 'mypassword';
 
 CREATE DATABASE mydatabase;
 GRANT ALL PRIVILEGES ON DATABASE mydatabase TO myuser;
+
+
+## Nginx
+
+`-s` to use a nginx command
+`nginx -s start`
