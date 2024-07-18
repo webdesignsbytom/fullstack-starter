@@ -123,5 +123,7 @@ GRANT ALL PRIVILEGES ON DATABASE mydatabase TO myuser;
 
 ## Nginx
 
+Nginx is a reverse proxy that can communicate with the system and the outside world through por
+
 `-s` to use a nginx command
 `nginx -s start`
