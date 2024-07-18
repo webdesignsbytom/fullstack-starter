@@ -27,6 +27,7 @@ A list of programs, libraries and compoents along with quick installs and web li
   - [Vercel](#vercel)
   - [Hosting](#hosting)
   - [Animation](#animation)
+  - [PostgreSQL](#postgresql)
 
 ## Creating Frontend App
 
@@ -204,3 +205,15 @@ animation: animScale 2000ms ease-in-out 1000ms infinite,
 animOpacity 2000ms ease-in-out 2000ms infinite;
 /_ scale will start after 1s and opacity after 2s (1s after the scale)_/
 }
+
+## PostgreSQL
+
+`sudo apt install postgresql postgresql-contrib`
+`sudo -i -u postgres`
+
+`\l` list databases
+`\d` list tables
+`\d <name>` list table of name
+`\dn` list scema
+`\du` list users and roles
+`createdb <name>` create database
