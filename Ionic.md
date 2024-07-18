@@ -1,5 +1,9 @@
 # Ionic
 
+- [Fullstack Starter](#fullstack-starter)
+  - [Table of contents](#table-of-contents)
+  - [Web and Mobile Framework](#web-and-mobile-framework)
+
 ## Web and Mobile Framework
 
 Ionic is a Javascript framework that allows you to create web and mobile applications.
@@ -24,7 +28,6 @@ Android environment
 `npm install tailwindcss postcss autoprefixer` tailwind install
 `npx tailwindcss init -p` init tailwind
 
-
 ```js
 // tailwind.config.js
 module.exports = {
@@ -37,7 +40,7 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}
+};
 ```
 
 Create a new CSS file in the src directory called tailwind.css and add the following Tailwind directives:
@@ -111,7 +114,7 @@ Then generate (which applies to your native projects or generates a PWA manifest
 
 Alternatively you can generate for a specific platform with --ios, --android or --pwa.
 
-Before generating a new set run the clean up functions 
+Before generating a new set run the clean up functions
 
 Clear cache
 

@@ -1,5 +1,8 @@
 # Hosting
 
+- [Fullstack Starter](#fullstack-starter)
+  - [Table of contents](#table-of-contents)
+
 ## FRONTEND
 
 ## Where to host
@@ -96,7 +99,6 @@ Custom api folder
 `sudo apt install ffmpeg`
 `ffmpeg -version`
 
-
 ### Pm2
 
 `pm2 restart app_name`
@@ -104,7 +106,7 @@ Custom api folder
 `pm2 stop app_name`
 `pm2 delete app_name`
 `pm2 start cat_app_server/src/server.js -n api` start with name
-`pm2 startup` restart if crashed generates a code to set 
+`pm2 startup` restart if crashed generates a code to set
 `sudo env PATH=$PATH:/usr/bin pm2 startup systemd -u ubuntu --hp /home/ubuntu` example of code generated
 
 ### PostgreSQL
@@ -119,7 +121,6 @@ CREATE USER myuser WITH PASSWORD 'mypassword';
 
 CREATE DATABASE mydatabase;
 GRANT ALL PRIVILEGES ON DATABASE mydatabase TO myuser;
-
 
 ## Nginx
 
