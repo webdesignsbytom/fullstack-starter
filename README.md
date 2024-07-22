@@ -28,6 +28,7 @@ A list of programs, libraries and compoents along with quick installs and web li
   - [Hosting](#hosting)
   - [Animation](#animation)
   - [PostgreSQL](#postgresql)
+  - [API](#api)
 
 ## Creating Frontend App
 
@@ -217,3 +218,41 @@ animOpacity 2000ms ease-in-out 2000ms infinite;
 `\dn` list scema
 `\du` list users and roles
 `createdb <name>` create database
+
+
+## API 
+
+Swagger is a YAML api designer
+
+```yaml
+  /pet:
+    put:
+      tags:
+        - pet
+      summary: Update an existing pet
+      description: Update an existing pet by Id
+      operationId: updatePet
+      requestBody:
+        description: Update an existent pet in the store
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Pet'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/Pet'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Pet'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Pet'          
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Pet'
+```
