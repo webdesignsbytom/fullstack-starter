@@ -6,16 +6,18 @@ A list of programs, libraries and compoents along with quick installs and web li
 
 - [Fullstack Starter](#fullstack-starter)
   - [Table of contents](#table-of-contents)
-  - [Creating Frontend App](#creating-frontend-app)
-  - [icons / libraries](#icons--libraries)
-  - [Google](#google)
-  - [Tailwind](#tailwind)
+  - [React App](#react-app)
+  - [Vue JS APP](#vue-js-app)
+  - [NEXT JS APP](#next-js-app)
+  - [Icons / Libraries](#icons--libraries)
+  - [Google Add ons](#google-add-ons)
+  - [Tailwind CSS](#tailwind-css)
     - [Vanilla](#vanilla)
     - [React](#react)
-    - [tailwind notes](#tailwind-notes)
+    - [Tailwind notes](#tailwind-notes)
   - [Using a Local database](#using-a-local-database)
   - [Steps to create backend](#steps-to-create-backend)
-  - [install dependencies](#install-dependencies)
+  - [NPM Install Dependencies](#npm-install-dependencies)
     - [Socket io](#socket-io)
   - [Node](#node)
   - [Seeding/prisma](#seedingprisma)
@@ -23,14 +25,12 @@ A list of programs, libraries and compoents along with quick installs and web li
   - [Completing projects](#completing-projects)
   - [Github](#github)
     - [General Comanads](#general-comanads)
-    - [Deploy react to gh-pages](#deploy-react-to-gh-pages)
+    - [Git SSH Keygen](#git-ssh-keygen)
   - [Vercel](#vercel)
-  - [Hosting](#hosting)
   - [Animation](#animation)
   - [PostgreSQL](#postgresql)
-  - [API](#api)
 
-## Creating Frontend App
+## React App
 
 - `npx create-react-app my-app`
 - `npm install react-router-dom` in index.js `import { BrowserRouter } from 'react-router-dom'`
@@ -39,16 +39,20 @@ A list of programs, libraries and compoents along with quick installs and web li
 - Quick uninstall `npm uninstall @testing-library/jest-dom @testing-library/react @testing-library/user-event web-vitals`
 - Quick install `npm install react-router-dom axios jwt-decode uuid`
 
-## icons / libraries
+## Vue JS APP
+
+## NEXT JS APP
+
+## Icons / Libraries
 
 - `npm i react-icons` or `npm install react-icons --save`
 - `npm i swiper`
 
-## Google
+## Google Add ons
 
 - `npm i react-ga -S` install google analytics
 
-## Tailwind
+## Tailwind CSS
 
 ### Vanilla
 
@@ -69,7 +73,7 @@ A list of programs, libraries and compoents along with quick installs and web li
 - `npm install @heroicons/react` icons library `https://heroicons.com/#gh-light-mode-only`
 - `npm install @headlessui/react` component library
 
-### tailwind notes
+### Tailwind notes
 
 - center `absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`
 
@@ -82,7 +86,7 @@ A list of programs, libraries and compoents along with quick installs and web li
 
 ## Steps to create backend
 
-## install dependencies
+## NPM Install Dependencies
 
 - `npm init -y` to start dependencies and node
 - run `npm start`
@@ -164,21 +168,14 @@ Make a file structure
 - `git log --oneline --decorate --grap` decent log
 - `git tag <TAG>` add a tag to the head
 - `git tag <TAG> <COMMIT>` add a tag to a previous commit `git tag V1.0 d786063`
- 
+
+### Git SSH Keygen
+
 Connect code to server
 
-1. Create ssh key `ssh-keygen -t rsa` 
+1. Create ssh key `ssh-keygen -t rsa`
 2. find .pub file
 3. copy key and add to github then use `git clone ssh..`
-
-### Deploy react to gh-pages
-
-- `git remote add origin https://github.com/webdesignbytom/NAME.git`
-- `git branch -M main`
-- `git push -u origin main`
-- `git push`
-- `npm instal gh-pages --save-dev`
-- `npm run deploy`
 
 ## Vercel
 
@@ -186,12 +183,9 @@ Connect code to server
 - use 'vercel.json' template for deploy - must have src/server.js or whatever starting connection is.
 - drag and drop .env into the environment variables section in settings.
 
-## Hosting
-
-- `npm run build`
-
 ## Animation
 
+```css
 animation-name: name
 animation-duration: 0
 animation-timing-function: ease
@@ -202,13 +196,14 @@ animation-fill-mode: none
 animation-play-state: running
 
 div{
-width: 200px;
-height: 200px;
-background: red;
-animation: animScale 2000ms ease-in-out 1000ms infinite,
-animOpacity 2000ms ease-in-out 2000ms infinite;
-/_ scale will start after 1s and opacity after 2s (1s after the scale)_/
+  width: 200px;
+  height: 200px;
+  background: red;
+  animation: animScale 2000ms ease-in-out 1000ms infinite,
+  animOpacity 2000ms ease-in-out 2000ms infinite;
+  /_ scale will start after 1s and opacity after 2s (1s after the scale)_/
 }
+```
 
 ## PostgreSQL
 
@@ -222,40 +217,3 @@ animOpacity 2000ms ease-in-out 2000ms infinite;
 `\du` list users and roles
 `createdb <name>` create database
 
-
-## API 
-
-Swagger is a YAML api designer
-
-```yaml
-  /pet:
-    put:
-      tags:
-        - pet
-      summary: Update an existing pet
-      description: Update an existing pet by Id
-      operationId: updatePet
-      requestBody:
-        description: Update an existent pet in the store
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Pet'
-          application/xml:
-            schema:
-              $ref: '#/components/schemas/Pet'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/Pet'
-        required: true
-      responses:
-        '200':
-          description: Successful operation
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Pet'          
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/Pet'
-```
