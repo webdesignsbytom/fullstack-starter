@@ -161,7 +161,10 @@ Make a file structure
 - `origin` location of repo on github
 - `git remote remove origin` remove git
 - `rm -rf .git` remove git
-
+- `git log --oneline --decorate --grap` decent log
+- `git tag <TAG>` add a tag to the head
+- `git tag <TAG> <COMMIT>` add a tag to a previous commit `git tag V1.0 d786063`
+ 
 Connect code to server
 
 1. Create ssh key `ssh-keygen -t rsa` 
