@@ -29,6 +29,8 @@ A list of programs, libraries and compoents along with quick installs and web li
   - [Vercel](#vercel)
   - [Animation](#animation)
   - [PostgreSQL](#postgresql)
+  - [Docker](#docker)
+    - [Terminology](#terminology)
 
 ## React App
 
@@ -42,6 +44,9 @@ A list of programs, libraries and compoents along with quick installs and web li
 ## Vue JS APP
 
 ## NEXT JS APP
+
+`npx create-next-app@latest next-app-one`
+`npm run dev`
 
 ## Icons / Libraries
 
@@ -131,6 +136,9 @@ A list of programs, libraries and compoents along with quick installs and web li
   - `npx prisma generate` to update the schema. Use when changing seed or prisma.schema
   - `npx prisma migrate dev --create-only --skip-seed --name XXXX` add relationships
   - `npx prisma migrate reset` reset database
+- Create
+- `npm i prisma --save-dev` isntall prisma as dev
+- `npx prisma init --datasource-provider sqlite` create a database type
 
 ## Errors
 
@@ -217,3 +225,43 @@ div{
 `\du` list users and roles
 `createdb <name>` create database
 
+
+## Docker
+
+`docker pull <name>` pull an Image
+`docker run <name>` run the Container 
+  `docker run --rm` run the container and delete when exited
+`docker images` list of images
+`docker ps` list of Containers currently running
+`docker ps -a` list of all Containers
+`docker stop <id>` stop the container
+`docker rm 178ad54331a2` delete container
+`docker container prune` delete all exited containers
+`docker port <container>` list ports exposed
+
+`docker build` when you have a Dockerfile
+`docker build -t <hubname>/<filename> .` build file to a path
+
+`docker run -it busybox sh`
+
+`docker run -d -P --name static-site prakhar1989/static-site` 
+  `-d` detach terminal 
+  `-P` publish exposed port
+
+`docker run`: This command is used to create and start a new container.
+`-it`: These are two flags:
+  `-i` (interactive): Keeps STDIN open even if not attached.
+  `-t` (tty): Allocates a pseudo-TTY (terminal).
+`busybox`: The name of the Docker image to use. Busybox is a lightweight Unix utility toolkit.
+`sh`: The command to run inside the container, in this case, the sh shell.
+By using the -it flags, you are opening an interactive terminal session within the container.
+
+### Terminology
+
+In the last section, we used a lot of Docker-specific jargon which might be confusing to some. So before we go further, let me clarify some terminology that is used frequently in the Docker ecosystem.
+
+- Images - The blueprints of our application which form the basis of containers. In the demo above, we used the docker pull command to download the busybox image.
+- Containers - Created from Docker images and run the actual application. We create a container using docker run which we did using the busybox image that we downloaded. A list of running containers can be seen using the docker ps command.
+- Docker Daemon - The background service running on the host that manages building, running and distributing Docker containers. The daemon is the process that runs in the operating system which clients talk to.
+- Docker Client - The command line tool that allows the user to interact with the daemon. More generally, there can be other forms of clients too - such as Kitematic which provide a GUI to the users.
+- Docker Hub - A registry of Docker images. You can think of the registry as a directory of all available Docker images. If required, one can host their own Docker registries and can use them for pulling images.
