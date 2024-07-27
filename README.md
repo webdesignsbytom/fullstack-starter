@@ -27,7 +27,6 @@ A list of programs, libraries and compoents along with quick installs and web li
     - [General Comanads](#general-comanads)
     - [Git SSH Keygen](#git-ssh-keygen)
   - [Vercel](#vercel)
-  - [Animation](#animation)
   - [PostgreSQL](#postgresql)
   - [Docker](#docker)
     - [Terminology](#terminology)
@@ -118,6 +117,10 @@ A list of programs, libraries and compoents along with quick installs and web li
 - time and date `npm install uuid` `import { v4 as uuidv4 } from 'uuid'; uuidv4();`
 - dates `npm i date-fns uuid`
 - dates `npm install moment`
+- `npm install swagger-ui-react` use swagger display
+- `npm install react-codemirror2 codemirror` code display 
+- `npm install codemirror/mode/yaml/yaml` yaml code display
+- ``
 
 ### Socket io
 
@@ -191,28 +194,6 @@ Connect code to server
 - use 'vercel.json' template for deploy - must have src/server.js or whatever starting connection is.
 - drag and drop .env into the environment variables section in settings.
 
-## Animation
-
-```css
-animation-name: name
-animation-duration: 0
-animation-timing-function: ease
-animation-delay: 0
-animation-iteration-count: 1
-animation-direction: normal
-animation-fill-mode: none
-animation-play-state: running
-
-div{
-  width: 200px;
-  height: 200px;
-  background: red;
-  animation: animScale 2000ms ease-in-out 1000ms infinite,
-  animOpacity 2000ms ease-in-out 2000ms infinite;
-  /_ scale will start after 1s and opacity after 2s (1s after the scale)_/
-}
-```
-
 ## PostgreSQL
 
 `sudo apt install postgresql postgresql-contrib`
@@ -225,12 +206,11 @@ div{
 `\du` list users and roles
 `createdb <name>` create database
 
-
 ## Docker
 
 `docker pull <name>` pull an Image
-`docker run <name>` run the Container 
-  `docker run --rm` run the container and delete when exited
+`docker run <name>` run the Container
+`docker run --rm` run the container and delete when exited
 `docker images` list of images
 `docker ps` list of Containers currently running
 `docker ps -a` list of all Containers
@@ -244,14 +224,14 @@ div{
 
 `docker run -it busybox sh`
 
-`docker run -d -P --name static-site prakhar1989/static-site` 
-  `-d` detach terminal 
-  `-P` publish exposed port
+`docker run -d -P --name static-site prakhar1989/static-site`
+`-d` detach terminal
+`-P` publish exposed port
 
 `docker run`: This command is used to create and start a new container.
 `-it`: These are two flags:
-  `-i` (interactive): Keeps STDIN open even if not attached.
-  `-t` (tty): Allocates a pseudo-TTY (terminal).
+`-i` (interactive): Keeps STDIN open even if not attached.
+`-t` (tty): Allocates a pseudo-TTY (terminal).
 `busybox`: The name of the Docker image to use. Busybox is a lightweight Unix utility toolkit.
 `sh`: The command to run inside the container, in this case, the sh shell.
 By using the -it flags, you are opening an interactive terminal session within the container.
@@ -265,3 +245,6 @@ In the last section, we used a lot of Docker-specific jargon which might be conf
 - Docker Daemon - The background service running on the host that manages building, running and distributing Docker containers. The daemon is the process that runs in the operating system which clients talk to.
 - Docker Client - The command line tool that allows the user to interact with the daemon. More generally, there can be other forms of clients too - such as Kitematic which provide a GUI to the users.
 - Docker Hub - A registry of Docker images. You can think of the registry as a directory of all available Docker images. If required, one can host their own Docker registries and can use them for pulling images.
+
+
+
