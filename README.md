@@ -30,6 +30,7 @@ A list of programs, libraries and compoents along with quick installs and web li
   - [PostgreSQL](#postgresql)
   - [Docker](#docker)
     - [Terminology](#terminology)
+  - [React updates](#react-updates)
 
 ## React App
 
@@ -247,4 +248,19 @@ In the last section, we used a lot of Docker-specific jargon which might be conf
 - Docker Hub - A registry of Docker images. You can think of the registry as a directory of all available Docker images. If required, one can host their own Docker registries and can use them for pulling images.
 
 
+## React updates
 
+- useTransition()
+
+```js
+const [isPending, startTransition] = useTransition();
+  function navigate(url) {
+    startTransition(() => {
+      setPage(url);
+    });
+  }
+  {isPending && <div>Loading...<div>}
+```
+
+- useOptimistic()
+- useActionState()
