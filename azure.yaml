@@ -1,0 +1,113 @@
+
+trigger:
+  branches:
+    include:
+    - main
+    exclude:
+    - feature_branches
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  - name: tag
+    value: '$(Build.BuildNumber)'
+  - name: ImageName
+    value: "demo Image"
+  - name: python.version
+    value: '3.8'
+
+stages:
+  - stage: Lint
+    displayName: Format and lint code
+    jobs:
+      - job: Linting
+        steps:
+        - script: |
+            python3 -m pip install black
+            python3 -m pip install pylint
+          displayName: "Install dependencies"  
+
+        - script: |
+            #app is the folder in which the application code resides
+            python3 -m black ./app
+          displayName: "Apply black code formatting"
+
+        - script: |
+            python3 -m pylint ./app --recursive=true --exit-zero
+          displayName: "Static code analysis with pylint"
+  
+  - stage: Test
+    displayName: Unit test
+    jobs:
+      - job: Test
+        steps:
+        - script: |
+            python3 -m pip install -r requirements.txt
+            python3 -m pip install pytest-azurepipelines
+          displayName: "Install dependencies"
+        
+        - script: |
+            python3 -m pytest -v -s --junitxml=unittest/junit.xml --cov=. --cov-report=term-missing --cov-report=xml
+  
+  - stage: Build
+    displayName: 'Build and Push Docker Image'
+    jobs:
+      - job: BuildAndPush
+        displayName: 'Build and Push Docker Image'
+        steps:
+       - task: Docker@1
+         displayName: 'Build an image'
+        inputs:
+        containerregistrytype: 'Azure Container Registry'
+        azureSubscriptionEndpoint: 'Service connection name'
+        azureContainerRegistry: '<<democontainer-DEV.azurecr.io>>'
+        command: 'Build an Image'
+        dockerFile: '$(System.DefaultWorkingDirectory)/Dockerfile'
+        tags: |
+          latest
+          $(Build.BuildId)
+        imageName: '$(ImageName):$(tag)'
+
+       - task: Docker@1
+         displayName: 'Push image to ACR to TEST'
+         inputs:
+           containerregistrytype: 'Azure Container Registry'
+           azureSubscriptionEndpoint: '<<demoserviceconenction>>'
+           azureContainerRegistry: 'container registary name-DEV.azurecr.io'
+           command: 'Push an image'
+           imageName: '$(ImageName):$(tag)'
+      
+       - task: Docker@1
+         displayName: 'Build an image'
+         inputs:
+           containerregistrytype: 'Azure Container Registry'
+           azureSubscriptionEndpoint: 'Service connection name'
+           azureContainerRegistry: 'container registary name-PROD.azurecr.io'
+           command: 'Build an Image'
+           dockerFile: '$(System.DefaultWorkingDirectory)/Dockerfile'
+           tags: |
+               latest
+               $(Build.BuildId)
+           imageName: '$(ImageName):$(tag)'
+      
+       - task: Docker@1
+         displayName: 'Push image to ACR to PROD'
+         inputs:
+           containerregistrytype: 'Azure Container Registry'
+           azureSubscriptionEndpoint: 'Service connection name'
+           azureContainerRegistry: 'container registary name-PROD.azurecr.io'
+           command: 'Push an image'
+           imageName: '$(ImageName):$(tag)'      
+           
+       - task: CopyFiles@2
+         inputs:
+           SourceFolder: 'kubernetes'
+           Contents: '*.yaml'
+           TargetFolder: '$(Build.ArtifactStagingDirectory)'
+      
+       - task: PublishBuildArtifacts@1
+         inputs:
+           PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+           ArtifactName: 'manifest'
+           publishLocation: 'Container'
