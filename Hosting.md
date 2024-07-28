@@ -81,12 +81,13 @@ Used to prevent Cross Site Scripting attacks XSS
 
 12. `nginx -t` check syntax
 13. `service nginx restart`
-14. `systemctl status nginx`
-15. Go to your server `http://3.9.178.161` and it will have your node home page
-16. `apt install certbot python3-certbot-nginx`
-17. `certbot --nginx -d api.myecoapp.org`
-18. `cat /etc/nginx/sites-enabled/default`
-19. `pm2 start src/server.js --name server`
+14. `systemctl restart nginx`
+15. `systemctl status nginx`
+16. Go to your server `http://3.9.178.161` and it will have your node home page
+17. `apt install certbot python3-certbot-nginx`
+18. `certbot --nginx -d api.myecoapp.org`
+19. `cat /etc/nginx/sites-enabled/default`
+20. `pm2 start src/server.js --name server`
 
 Custom api folder
 
@@ -98,6 +99,11 @@ Custom api folder
 
 `sudo apt install ffmpeg`
 `ffmpeg -version`
+
+### Logs
+
+`sudo tail -f /var/log/nginx/access.log`
+`sudo tail -f /var/log/nginx/error.log`
 
 ### Pm2
 
@@ -128,3 +134,68 @@ Nginx is a reverse proxy that can communicate with the system and the outside wo
 
 `-s` to use a nginx command
 `nginx -s start`
+
+## Fancy text
+
+`apt-get install -y figlet`
+Edit the .bashrc file and add: `figlet serverpi` replace serverpi with text
+`source ~/.bashrc`
+
+## Double hosting servers
+
+1. Normal set up
+2. Cloned streaming app on local:3000
+3. Cloned ec2-deploy local:4000
+
+```md
+server {
+    listen 80;
+    server_name api.webdesignsbytom.com www.api.webdesignsbytom.com;
+
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+    location /be1/ {
+        rewrite ^/be1/(.*)$ /$1 break;
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+
+server {
+    listen 80;
+    server_name tom.cat-app.app www.tom.cat-app.app;
+
+    location / {
+        proxy_pass http://localhost:4000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+    location /be2/ {
+        rewrite ^/be2/(.*)$ /$1 break;
+        proxy_pass http://localhost:4000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+
+```
+
+4. created this file
