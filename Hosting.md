@@ -96,6 +96,7 @@ Custom api folder
 3. `service nginx restart`
 4. `systemctl status nginx`
 5. `sudo certbot --nginx -d api.cat-app.app`
+6. `sudo certbot renew --dry-run` verify renewal process
 
 `sudo apt install ffmpeg`
 `ffmpeg -version`
@@ -141,11 +142,18 @@ Nginx is a reverse proxy that can communicate with the system and the outside wo
 Edit the .bashrc file and add: `figlet serverpi` replace serverpi with text
 `source ~/.bashrc`
 
+## Load Balancing
+
+Servers can be load balanced with nginx using several methods such as
+1. round robin
+
+With Nginx you must define a group of servers with the `upstream` directive placed in the http context
+
 ## Double hosting servers
 
 1. Normal set up
-2. Cloned streaming app on local:3000
-3. Cloned ec2-deploy local:4000
+2. Cloned streaming app on local:3000 api.webdesignsbytom.com
+3. Cloned ec2-deploy local:4000 for tom.cat-app.app
 
 ```md
 server {
@@ -197,5 +205,37 @@ server {
 }
 
 ```
-
 4. created this file
+
+
+## Docker hosting
+
+1. `docker pull techdesigntavistock/trading-card-game`
+2. `docker run -d --name myproject-instance1 -p 5001:5000 techdesigntavistock/trading-card-game:latest`
+    `docker run -d --name myproject-instance2 -p 5002:5000 techdesigntavistock/trading-card-game:latest`
+    `docker run -d --name myproject-instance3 -p 5003:5000 techdesigntavistock/trading-card-game:latest`
+
+```md
+upstream myproject {
+    server localhost:5001;
+    server localhost:5002;
+    server localhost:5003;
+}
+
+server {
+    listen 80;
+
+    server_name docker.webdesignsbytom.com;
+
+    location / {
+        proxy_pass http://myproject;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+```
+
+`sudo ln -s /etc/nginx/sites-available/docker.webdesignsbytom.com.conf /etc/nginx/sites-enabled/`
+`systemctl restart nginx`

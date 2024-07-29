@@ -48,6 +48,9 @@ A list of programs, libraries and compoents along with quick installs and web li
 `npx create-next-app@latest next-app-one`
 `npm run dev`
 
+`npx shadcn-ui@latest init` tailwind update library for next `const inter = Inter({ subsets: ["latin"], variable: "--font-sans",});`
+`https://ui.shadcn.com/docs/installation/next` link to installation doc
+
 ## Icons / Libraries
 
 - `npm i react-icons` or `npm install react-icons --save`
@@ -119,7 +122,7 @@ A list of programs, libraries and compoents along with quick installs and web li
 - dates `npm i date-fns uuid`
 - dates `npm install moment`
 - `npm install swagger-ui-react` use swagger display
-- `npm install react-codemirror2 codemirror` code display 
+- `npm install react-codemirror2 codemirror` code display
 - `npm install codemirror/mode/yaml/yaml` yaml code display
 - ``
 
@@ -219,6 +222,8 @@ Connect code to server
 `docker rm 178ad54331a2` delete container
 `docker container prune` delete all exited containers
 `docker port <container>` list ports exposed
+`docker push myhubusername/myproject:modified` push to hub
+
 
 `docker build` when you have a Dockerfile
 `docker build -t <hubname>/<filename> .` build file to a path
@@ -246,7 +251,6 @@ In the last section, we used a lot of Docker-specific jargon which might be conf
 - Docker Daemon - The background service running on the host that manages building, running and distributing Docker containers. The daemon is the process that runs in the operating system which clients talk to.
 - Docker Client - The command line tool that allows the user to interact with the daemon. More generally, there can be other forms of clients too - such as Kitematic which provide a GUI to the users.
 - Docker Hub - A registry of Docker images. You can think of the registry as a directory of all available Docker images. If required, one can host their own Docker registries and can use them for pulling images.
-
 
 ## React updates
 
