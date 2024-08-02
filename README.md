@@ -183,6 +183,8 @@ Make a file structure
 - `git log --oneline --decorate --grap` decent log
 - `git tag <TAG>` add a tag to the head
 - `git tag <TAG> <COMMIT>` add a tag to a previous commit `git tag V1.0 d786063`
+- `git rm --cached -- .env;` remove env
+- `git rm --cached -- .env.*`
 
 ### Git SSH Keygen
 
@@ -223,7 +225,6 @@ Connect code to server
 `docker container prune` delete all exited containers
 `docker port <container>` list ports exposed
 `docker push myhubusername/myproject:modified` push to hub
-
 
 `docker build` when you have a Dockerfile
 `docker build -t <hubname>/<filename> .` build file to a path
