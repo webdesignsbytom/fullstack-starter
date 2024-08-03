@@ -190,7 +190,7 @@ Make a file structure
 
 Connect code to server
 
-1. Create ssh key `ssh-keygen -t rsa`
+1. Create ssh key `ssh-keygen -t rsa` || `ssh-keygen -t rsa -b 4096 -C "cat-app"`
 2. find .pub file
 3. copy key and add to github then use `git clone ssh..`
 
@@ -229,6 +229,8 @@ Connect code to server
 `docker build` when you have a Dockerfile
 `docker build -t <hubname>/<filename> .` build file to a path
 
+`docker logs moncards-instance1` get log
+
 `docker run -it busybox sh`
 
 `docker run -d -P --name static-site prakhar1989/static-site`
@@ -242,6 +244,15 @@ Connect code to server
 `busybox`: The name of the Docker image to use. Busybox is a lightweight Unix utility toolkit.
 `sh`: The command to run inside the container, in this case, the sh shell.
 By using the -it flags, you are opening an interactive terminal session within the container.
+
+Update running container
+
+`sudo docker pull techdesigntavistock/trading-card-game:latest`
+`sudo docker stop myproject-instance1 myproject-instance2 myproject-instance3`
+`sudo docker rm myproject-instance1 myproject-instance2 myproject-instance3`
+`sudo docker run -d --name myproject-instance1 -p 5001:5000 techdesigntavistock/trading-card-game:latest`
+`sudo docker run -d --name myproject-instance2 -p 5002:5000 techdesigntavistock/trading-card-game:latest`
+`sudo docker run -d --name myproject-instance3 -p 5003:5000 techdesigntavistock/trading-card-game:latest`
 
 ### Terminology
 
@@ -259,6 +270,7 @@ In the last section, we used a lot of Docker-specific jargon which might be conf
 
 ```js
 const [isPending, startTransition] = useTransition();
+
   function navigate(url) {
     startTransition(() => {
       setPage(url);
