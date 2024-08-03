@@ -233,6 +233,8 @@ Connect code to server
 
 `docker run -it busybox sh`
 
+`--restart unless-stopped`
+
 `docker run -d -P --name static-site prakhar1989/static-site`
 `-d` detach terminal
 `-P` publish exposed port

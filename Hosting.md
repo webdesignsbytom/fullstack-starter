@@ -212,9 +212,9 @@ server {
 
 1. `apt get install docker.io`
 2. `docker pull techdesigntavistock/trading-card-game`
-3. `docker run -d --name moncards-instance1 -p 5001:5000 techdesigntavistock/trading-card-game:latest`
-    `docker run -d --name moncards-instance2 -p 5002:5000 techdesigntavistock/trading-card-game:latest`
-    `docker run -d --name moncards-instance3 -p 5003:5000 techdesigntavistock/trading-card-game:latest`
+3. `docker run -d --name moncards-instance1 --restart unless-stopped -p 5001:5000 techdesigntavistock/trading-card-game:latest`
+    `docker run -d --name moncards-instance2 --restart unless-stopped -p 5002:5000 techdesigntavistock/trading-card-game:latest`
+    `docker run -d --name moncards-instance3 --restart unless-stopped -p 5003:5000 techdesigntavistock/trading-card-game:latest`
 
 ```md
 upstream myproject {
