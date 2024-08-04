@@ -252,8 +252,8 @@ Update running container
 `sudo docker pull techdesigntavistock/trading-card-game:latest`
 `sudo docker stop myproject-instance1 myproject-instance2 myproject-instance3`
 `sudo docker rm myproject-instance1 myproject-instance2 myproject-instance3`
-`sudo docker run -d --name myproject-instance1 -p 5001:5000 techdesigntavistock/trading-card-game:latest`
-`sudo docker run -d --name myproject-instance2 -p 5002:5000 techdesigntavistock/trading-card-game:latest`
+`sudo docker run -d --name moncards-instance1 -p 5001:5000 techdesigntavistock/trading-card-game:latest`
+`sudo docker run -d --name moncards-instance2 -p 5002:5000 techdesigntavistock/trading-card-game:latest`
 `sudo docker run -d --name myproject-instance3 -p 5003:5000 techdesigntavistock/trading-card-game:latest`
 
 ### Terminology
