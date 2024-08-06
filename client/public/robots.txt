@@ -1,3 +1,15 @@
 # https://www.robotstxt.org/robotstxt.html
+
 User-agent: *
-Disallow:
+Allow: /
+
+# Disallow web crawlers from accessing specific directories (if they exist)
+Disallow: /admin/
+Disallow: /user/
+
+# Block specific bots
+User-agent: BadBot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://www.myecoapp.org/sitemap.xml

@@ -38,6 +38,7 @@ A list of programs, libraries and compoents along with quick installs and web li
 - `npm install react-router-dom` in index.js `import { BrowserRouter } from 'react-router-dom'`
 - `npm install @mui/material @emotion/react @emotion/styled` material ui
 - `npm install react-icons --save` react icons
+- `npm install --save-dev @babel/plugin-proposal-private-property-in-object` general udpate needed
 - Quick uninstall `npm uninstall @testing-library/jest-dom @testing-library/react @testing-library/user-event web-vitals`
 - Quick install `npm install react-router-dom axios jwt-decode uuid`
 
