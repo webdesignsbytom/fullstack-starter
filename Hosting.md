@@ -116,6 +116,28 @@ Custom api folder
 `pm2 startup` restart if crashed generates a code to set
 `sudo env PATH=$PATH:/usr/bin pm2 startup systemd -u ubuntu --hp /home/ubuntu` example of code generated
 
+### Security
+
+DDOS protection
+`sudo apt install fail2ban -y`
+`sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local` create local config
+`sudo systemctl restart fail2ban` reset
+
+```sh
+bantime  = 600
+findtime  = 600
+maxretry = 5
+```
+
+```sh
+[sshd]
+enabled = true
+port    = ssh
+filter  = sshd
+logpath = /var/log/auth.log
+maxretry = 5
+```
+
 ### PostgreSQL
 
 `sudo apt install postgresql postgresql-contrib`
@@ -145,6 +167,7 @@ Edit the .bashrc file and add: `figlet serverpi` replace serverpi with text
 ## Load Balancing
 
 Servers can be load balanced with nginx using several methods such as
+
 1. round robin
 
 With Nginx you must define a group of servers with the `upstream` directive placed in the http context
@@ -157,8 +180,8 @@ With Nginx you must define a group of servers with the `upstream` directive plac
 
 ```md
 server {
-    listen 80;
-    server_name api.webdesignsbytom.com www.api.webdesignsbytom.com;
+listen 80;
+server_name api.webdesignsbytom.com www.api.webdesignsbytom.com;
 
     location / {
         proxy_pass http://localhost:3000;
@@ -178,11 +201,12 @@ server {
         proxy_set_header Host $host;
         proxy_cache_bypass $http_upgrade;
     }
+
 }
 
 server {
-    listen 80;
-    server_name tom.cat-app.app www.tom.cat-app.app;
+listen 80;
+server_name tom.cat-app.app www.tom.cat-app.app;
 
     location / {
         proxy_pass http://localhost:4000;
@@ -202,29 +226,29 @@ server {
         proxy_set_header Host $host;
         proxy_cache_bypass $http_upgrade;
     }
+
 }
-
 ```
-4. created this file
 
+4. created this file
 
 ## Docker hosting
 
 1. `apt get install docker.io`
 2. `docker pull techdesigntavistock/trading-card-game`
 3. `docker run -d --name moncards-instance1 --restart unless-stopped -p 5001:5000 techdesigntavistock/trading-card-game:latest`
-    `docker run -d --name moncards-instance2 --restart unless-stopped -p 5002:5000 techdesigntavistock/trading-card-game:latest`
-    `docker run -d --name moncards-instance3 --restart unless-stopped -p 5003:5000 techdesigntavistock/trading-card-game:latest`
+   `docker run -d --name moncards-instance2 --restart unless-stopped -p 5002:5000 techdesigntavistock/trading-card-game:latest`
+   `docker run -d --name moncards-instance3 --restart unless-stopped -p 5003:5000 techdesigntavistock/trading-card-game:latest`
 
 ```md
 upstream myproject {
-    server localhost:5001;
-    server localhost:5002;
-    server localhost:5003;
+server localhost:5001;
+server localhost:5002;
+server localhost:5003;
 }
 
 server {
-    listen 80;
+listen 80;
 
     server_name docker.webdesignsbytom.com;
 
@@ -235,19 +259,17 @@ server {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
     }
+
 }
 ```
 
 `sudo ln -s /etc/nginx/sites-available/docker.webdesignsbytom.com.conf /etc/nginx/sites-enabled/`
 `systemctl restart nginx`
 
-
-
-
 ### JUNK
 
 server {
-    server_name api.webdesignsbytom.com www.api.webdesignsbytom.com;
+server_name api.webdesignsbytom.com www.api.webdesignsbytom.com;
 
     location / {
         proxy_pass http://localhost:3000;
@@ -276,30 +298,25 @@ server {
 
 }
 server {
-    if ($host = api.webdesignsbytom.com) {
+if ($host = api.webdesignsbytom.com) {
         return 301 https://$host$request_uri;
-    } # managed by Certbot
-
+} # managed by Certbot
 
     listen 80;
     server_name api.webdesignsbytom.com www.api.webdesignsbytom.com;
     return 404; # managed by Certbot
 
-
 }
 
-
-
-
-  GNU nano 7.2                           /etc/nginx/sites-available/docker.webdesignsbytom.com.conf
+GNU nano 7.2 /etc/nginx/sites-available/docker.webdesignsbytom.com.conf
 upstream myproject {
-    server localhost:5001;
-    server localhost:5002;
-    server localhost:5003;
+server localhost:5001;
+server localhost:5002;
+server localhost:5003;
 }
 
 server {
-    listen 80;
+listen 80;
 
     server_name docker.webdesignsbytom.com;
 
@@ -310,8 +327,5 @@ server {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
     }
+
 }
-
-
-
-
