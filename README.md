@@ -29,6 +29,10 @@ A list of programs, libraries and compoents along with quick installs and web li
   - [Vercel](#vercel)
   - [PostgreSQL](#postgresql)
   - [Docker](#docker)
+    - [Prune all unused Docker objects](#prune-all-unused-docker-objects)
+    - [Prune dangling volumes](#prune-dangling-volumes)
+    - [Prune Docker builder cache](#prune-docker-builder-cache)
+    - [Prune unused Docker networks](#prune-unused-docker-networks)
     - [Terminology](#terminology)
   - [React updates](#react-updates)
 
@@ -247,6 +251,22 @@ Connect code to server
 `busybox`: The name of the Docker image to use. Busybox is a lightweight Unix utility toolkit.
 `sh`: The command to run inside the container, in this case, the sh shell.
 By using the -it flags, you are opening an interactive terminal session within the container.
+
+### Prune all unused Docker objects
+
+docker system prune -a
+
+### Prune dangling volumes
+
+docker volume prune
+
+### Prune Docker builder cache
+
+docker builder prune
+
+### Prune unused Docker networks
+
+docker network prune
 
 Update running container
 
