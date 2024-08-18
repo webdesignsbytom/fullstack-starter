@@ -33,6 +33,7 @@ A list of programs, libraries and compoents along with quick installs and web li
     - [Prune dangling volumes](#prune-dangling-volumes)
     - [Prune Docker builder cache](#prune-docker-builder-cache)
     - [Prune unused Docker networks](#prune-unused-docker-networks)
+    - [Update running container ???](#update-running-container-)
     - [Terminology](#terminology)
   - [React updates](#react-updates)
 
@@ -254,21 +255,21 @@ By using the -it flags, you are opening an interactive terminal session within t
 
 ### Prune all unused Docker objects
 
-docker system prune -a
+`docker system prune -a`
 
 ### Prune dangling volumes
 
-docker volume prune
+`docker volume prune`
 
 ### Prune Docker builder cache
 
-docker builder prune
+`docker builder prune`
 
 ### Prune unused Docker networks
 
-docker network prune
+`docker network prune`
 
-Update running container
+### Update running container ???
 
 `sudo docker pull techdesigntavistock/trading-card-game:latest`
 `sudo docker stop myproject-instance1 myproject-instance2 myproject-instance3`
