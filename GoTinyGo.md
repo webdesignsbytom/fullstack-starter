@@ -25,12 +25,13 @@ source ~/.bashrc
 ## Install TinyGo
 
 `wget https://github.com/tinygo-org/tinygo/releases/download/v0.33.0/tinygo_0.33.0_armhf.deb`
-`sudo apt-get install libstdc++6:armhf`
-`sudo dpkg -i tinygo_0.33.0_armhf.deb`
-`sudo apt-get install -f`
+`sudo apt-get install libstdc++6:armhf` use 32bit
+`sudo apt-get install avrdude` flash to arduino 
+`sudo dpkg -i tinygo_0.33.0_armhf.deb` unpack
+`sudo apt-get install -f` install missing dependencies
 
-`sudo nano /boot/firmware/config.txt`
-`kernel=kernel8.img`
+`sudo nano /boot/firmware/config.txt` edit for pi 5
+`kernel=kernel8.img` Add this at bottom of config
 `sudo reboot`
 `tinygo version`
 
@@ -52,3 +53,7 @@ func main() {
     fmt.Println("Hello")
 }
 ```
+
+## Connect to Arduino
+
+`go get github.com/tarm/serial`
