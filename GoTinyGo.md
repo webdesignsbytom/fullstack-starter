@@ -26,7 +26,7 @@ source ~/.bashrc
 
 `wget https://github.com/tinygo-org/tinygo/releases/download/v0.33.0/tinygo_0.33.0_armhf.deb`
 `sudo apt-get install libstdc++6:armhf` use 32bit
-`sudo apt-get install avrdude` flash to arduino 
+`sudo apt-get install avrdude` flash to arduino
 `sudo dpkg -i tinygo_0.33.0_armhf.deb` unpack
 `sudo apt-get install -f` install missing dependencies
 
@@ -57,3 +57,18 @@ func main() {
 ## Connect to Arduino
 
 `go get github.com/tarm/serial`
+
+## Code
+
+In tinygo we import the device/avr package to have access to registry addresses, bitmasks and flags along with several registry modifying primitives. To do the same thing in tinygo we write
+
+```go
+package main
+
+import "device/avr"
+
+func main() {
+    avr.SPCR.Set(avr.SPCR_SPE | avr.SPCR_MSTR)
+    avr.SPSR.SetBits(avr.SPSR_SPI2X)
+}
+```
