@@ -1,8 +1,8 @@
 export default class TileMap {
-  constructor(tileSize) {
+  constructor(tileSize, player) {
     this.tileSize = tileSize;
     this.wall = this.#image('wall.png');
-    this.pacman = this.#image('pacman.png');
+    this.pacman = player.image;
     this.dot = this.#image('yellowDot.png');
     this.ghost = this.#image('ghost.png');
   }
@@ -35,6 +35,23 @@ export default class TileMap {
     this.#setCanvasSize(canvas);
     this.#clearCanvas(canvas, ctx);
     this.#drawMap(ctx);
+  }
+
+  movePlayer(movementArray) {
+    if (movementArray) {
+      let x = movementArray.includes('left');
+      console.log('go this way', x);
+
+      if (x) {
+        this.#moveMapLeft(movementArray);
+      }
+    }
+  }
+
+  #moveMapLeft(movementArray) {
+    for (let row = 0; row < movementArray.length; row++) {
+      this.map[row].pop();
+    }
   }
 
   #drawMap(ctx) {
