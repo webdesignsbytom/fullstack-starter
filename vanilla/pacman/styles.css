@@ -1,0 +1,25 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: red;
+  text-align: center;
+}
+
+#game {
+  box-shadow: 10px 10px 15px black;
+}
+
+body {
+  display: grid;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(
+    0deg,
+    rgba(8, 217, 67, 0%),
+    rgba(48, 4, 227, 60%)
+  );
+}

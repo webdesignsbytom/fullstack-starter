@@ -37,6 +37,9 @@ source ~/.bashrc
 
 `tinygo run`
 
+`tinygo flash -target=arduino path/to/your-program.go`
+`tinygo flash -target=arduino-mega2560 path/to/your-program.go`
+
 ### Docker TinyGo
 
 `docker pull tinygo/tinygo:0.33.0`
