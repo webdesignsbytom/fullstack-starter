@@ -8,6 +8,7 @@
   - [Closures](#closures)
   - [Getters and Setters](#getters-and-setters)
   - [Arrow Functions](#arrow-functions)
+  - [Function Currying](#function-currying)
 
 ## OOP Object Orientated Programming
 
@@ -181,4 +182,30 @@ const numbers = [1, 2, 3, 4, 5, 6]
 const squares = numbers.map((element) => Math.pow(element, 2))
 const cubes = numbers.map((element) => Math.pow(element, 3))
 const total = numbers.reduce((accumulator, element) => accumulator + element)
+```
+
+## Function Currying
+
+The process in Functional programming. Coverting multiple arguments in to nested functions
+function f(a, b, c)  will become function f(a)(b)(c)
+
+```javascript
+function addUp(a, b, c) {
+  return a + b + c;
+}
+
+console.log('adding up', addUp());
+
+function curry(fn) {
+  return function (a) {
+    return function (b) {
+      return function (c) {
+        return fn()
+      }
+    }
+  }
+}
+
+const curriedFunction = curry(addup())
+console.log('curriedFunction', curriedFunction(5)(4)(3));
 ```
