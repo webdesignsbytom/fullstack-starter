@@ -23,3 +23,7 @@ body {
     rgba(48, 4, 227, 60%)
   );
 }
+
+.left {
+  transform: rotate(180deg);
+}
