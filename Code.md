@@ -6,6 +6,8 @@
   - [Table of contents](#table-of-contents)
   - [OOP Object Orientated Programming](#oop-object-orientated-programming)
   - [Closures](#closures)
+  - [Getters and Setters](#getters-and-setters)
+  - [Arrow Functions](#arrow-functions)
 
 ## OOP Object Orientated Programming
 
@@ -63,33 +65,120 @@ function outer() {
     console.log('Message: ', message);
   }
 
-  inner() // Now outer() will call inner()
+  inner(); // Now outer() will call inner()
 }
 
 outer(); // This will not call the inner function on its own
-
 
 // Real example
 // Create a counter and keep the state private
 // Return the function that increments the counter
 // The Closure will maintain the state!
 function createCounter() {
-    let count = 0;
+  let count = 0;
 
-    function incrementCounter() {
-        count++;
-        console.log(`Count increased to ${count}`);
-    }
+  function incrementCounter() {
+    count++;
+    console.log(`Count increased to ${count}`);
+  }
 
-    function getCount() {
-        return count;
-    }
+  function getCount() {
+    return count;
+  }
 
-    return { incrementCounter, getCount };
+  return { incrementCounter, getCount };
 }
 
-const counter = createCounter() // Create a counter
+const counter = createCounter(); // Create a counter
 
-counter.incrementCounter() // Increment the counter and return data
-counter.getCount() // Return the number
+counter.incrementCounter(); // Increment the counter and return data
+counter.getCount(); // Return the number
+
+// This is about scope chain, the return value with return the function AND its scope i.e the counter variable
+function outer() {
+  let counter = 0;
+
+  function inner() {
+    counter++;
+    console.log('counter', counter);
+  }
+
+  return inner;
+}
+
+const fn = outer();
+fn(); // 1
+fn(); // 2
+```
+
+## Getters and Setters
+
+Used to control data in a class or object
+
+```javascript
+class Rectangle {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+
+  set width(newWidth) {
+    if (newWidth > 0 && typeof newWidth === 'number') {
+      this._width = newWidth;
+    } else {
+      console.error('Must be greater than 0');
+    }
+  }
+
+  set height(newHeight) {
+    if (newHeight > 0 && typeof newHeight === 'number') {
+      this._height = newHeight;
+    } else {
+      console.error('Must be greater than 0');
+    }
+  }
+
+  get width() {
+    return this._width;
+  }
+
+  get height() {
+    return this._height;
+  }
+
+  get area() {
+    return this._width * this._height;
+  }
+}
+
+const rect = new Rectangle(3, 4);
+console.log('rect: ', rect.width); // getter from get
+console.log('rect: ', rect.height); // getter from get
+console.log('rect: ', rect.area); // Gets a value not from the class constructor
+```
+
+## Arrow Functions
+
+A consise way to write a simple single use expression
+(parameters) => some code;
+
+const thingy = () => console.log('');
+empty paramters then function
+
+```javascript
+const thingy = function {
+  console.log('hello');
+}
+thingy()
+
+// becomes
+
+const arrow = () => console.log('hello');
+
+
+const numbers = [1, 2, 3, 4, 5, 6]
+
+const squares = numbers.map((element) => Math.pow(element, 2))
+const cubes = numbers.map((element) => Math.pow(element, 3))
+const total = numbers.reduce((accumulator, element) => accumulator + element)
 ```
