@@ -32,5 +32,8 @@ window.addEventListener('keyup', (event) => {
     case 'ArrowDown':
       movementDirection.down = false;
       break;
+    case 'ArrowUp':
+      movementDirection.up = false;
+      break;
   }
 });

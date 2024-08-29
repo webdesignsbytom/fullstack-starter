@@ -45,6 +45,7 @@ export default class TileMap {
 
       if (movementArray.includes('left')) {
         column--;
+        this.player.rotateImage()
       }
       if (movementArray.includes('right')) {
         column++;

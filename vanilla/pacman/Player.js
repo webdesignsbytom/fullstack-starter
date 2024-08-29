@@ -13,4 +13,10 @@ export default class Player {
     img.src = `images/${fileName}`;
     return img;
   }
+
+  rotateImage() {
+    console.log('aaa');
+    this.image.classList.add('left')
+    console.log('this.image', this.image);
+  }
 }
