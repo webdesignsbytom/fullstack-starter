@@ -1,7 +1,11 @@
 export default class Player {
-  constructor(name) {
+  constructor(name, game) {
     this.name = name;
     this.image = this.#loadImage('pacman.png');
+    this.position = {
+      row: game.startingRow,
+      column: game.startingColumn
+    };
   }
 
   #loadImage(fileName) {

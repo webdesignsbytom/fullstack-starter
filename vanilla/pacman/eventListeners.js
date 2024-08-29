@@ -1,4 +1,4 @@
-import { movementDirection } from './game.js';
+import { movementDirection } from './main.js';
 
 window.addEventListener('keydown', (event) => {
   switch (event.key) {

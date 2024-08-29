@@ -5,6 +5,7 @@ export default class TileMap {
     this.pacman = player.image;
     this.dot = this.#image('yellowDot.png');
     this.ghost = this.#image('ghost.png');
+    this.player = player;
   }
 
   #image(fileName) {
@@ -20,7 +21,7 @@ export default class TileMap {
   // 3 = ghost
   map = [
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // 1
-    [1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1], // 2
+    [1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1], // 2
     [1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1], // 3
     [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1], // 4
     [1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1], // 5
@@ -39,12 +40,32 @@ export default class TileMap {
 
   movePlayer(movementArray) {
     if (movementArray) {
-      let x = movementArray.includes('left');
-      console.log('go this way', x);
+      let row = this.player.position.row;
+      let column = this.player.position.column;
 
-      if (x) {
-        this.#moveMapLeft(movementArray);
+      if (movementArray.includes('left')) {
+        console.log('go this way left');
+        column--;
       }
+      if (movementArray.includes('right')) {
+        console.log('go this way right');
+        column++;
+      }
+      if (movementArray.includes('up')) {
+        console.log('go this way up');
+        row--;
+      }
+      if (movementArray.includes('down')) {
+        console.log('go this way down');
+        row++;
+      }
+
+      // Update the map to move the player
+      this.map[this.player.position.row][this.player.position.column] = 0; // Clear the old position
+      this.map[row][column] = 2; // Set the new position
+
+      this.player.position.row = row;
+      this.player.position.column = column;
     }
   }
 
