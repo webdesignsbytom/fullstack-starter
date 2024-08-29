@@ -6,7 +6,8 @@ const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d');
 const tileSize = 32;
 
-const game = new Game()
+// const engine = new Engine()
+const game = new Game();
 const player = new Player('Paccmanny', game);
 const tileMap = new TileMap(tileSize, player);
 
@@ -17,15 +18,18 @@ export let movementDirection = {
   right: false,
 };
 
-function gameLoop() {
-  tileMap.draw(canvas, ctx);
+window.addEventListener('load', () => {
+  function gameLoop() {
+    tileMap.draw(canvas, ctx);
 
-  let res = getKey();
-  if (res.length > 0) {
-    console.log('res', res);
-    tileMap.movePlayer(res);
+    let res = getKey();
+    if (res.length > 0) {
+      tileMap.movePlayer(res);
+    }
   }
-}
+  
+  setInterval(gameLoop, 1000 / 60);
+});
 
 function getKey() {
   var keys = Object.keys(movementDirection);
@@ -36,4 +40,3 @@ function getKey() {
   return filtered;
 }
 
-setInterval(gameLoop, 1000 / 60);
