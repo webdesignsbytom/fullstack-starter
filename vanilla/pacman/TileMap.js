@@ -44,19 +44,15 @@ export default class TileMap {
       let column = this.player.position.column;
 
       if (movementArray.includes('left')) {
-        console.log('go this way left');
         column--;
       }
       if (movementArray.includes('right')) {
-        console.log('go this way right');
         column++;
       }
       if (movementArray.includes('up')) {
-        console.log('go this way up');
         row--;
       }
       if (movementArray.includes('down')) {
-        console.log('go this way down');
         row++;
       }
 
