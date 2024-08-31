@@ -36,6 +36,7 @@ A list of programs, libraries and compoents along with quick installs and web li
     - [Update running container ???](#update-running-container-)
     - [Terminology](#terminology)
   - [React updates](#react-updates)
+    - [useRef](#useref)
 
 ## React App
 
@@ -305,3 +306,7 @@ const [isPending, startTransition] = useTransition();
 
 - useOptimistic()
 - useActionState()
+
+### useRef
+
+- Can hold state but does not trigger a rerender.

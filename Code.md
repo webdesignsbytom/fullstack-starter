@@ -9,6 +9,7 @@
   - [Getters and Setters](#getters-and-setters)
   - [Arrow Functions](#arrow-functions)
   - [Function Currying](#function-currying)
+  - [THIS](#this)
 
 ## OOP Object Orientated Programming
 
@@ -187,7 +188,7 @@ const total = numbers.reduce((accumulator, element) => accumulator + element)
 ## Function Currying
 
 The process in Functional programming. Coverting multiple arguments in to nested functions
-function f(a, b, c)  will become function f(a)(b)(c)
+function f(a, b, c) will become function f(a)(b)(c)
 
 ```javascript
 function addUp(a, b, c) {
@@ -200,12 +201,28 @@ function curry(fn) {
   return function (a) {
     return function (b) {
       return function (c) {
-        return fn()
-      }
-    }
-  }
+        return fn();
+      };
+    };
+  };
 }
 
-const curriedFunction = curry(addup())
+const curriedFunction = curry(addup());
 console.log('curriedFunction', curriedFunction(5)(4)(3));
+```
+
+## THIS
+
+A keyword and reference to an object.
+If you are inside the context of a object THIS can refer to it.
+It does not work in arrow functions.
+i.e
+
+```javascript
+const person {
+  name: Tom
+  sayName: function() console.log("${this.name}")
+
+  person.name = this.name
+}
 ```
