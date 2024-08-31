@@ -1,4 +1,4 @@
-# AI 
+# AI
 
 ## Jupyter
 
@@ -7,6 +7,9 @@ Project Jupyter is a project to develop open-source software, open standards, an
 Jupyter create 'IPython' which is a Python REPL
 
 ## Jupyter Notebook
+
+`jupter notebook` to start
+`pip install --upgrade notebook` update
 
 Jupyter notebook is a open source web for sharing code online for AI projects.
 It was part of IPython project until it branched out onto a standard data science tool. Supporting over 40 languages.
@@ -20,11 +23,14 @@ It was part of IPython project until it branched out onto a standard data scienc
 
 ## Jupyter Labs
 
+`jupter lab` to start
+`pip install --upgrade jupyterlab` update
+
 A next generation interface for Project Jupyter and designed for a more powerful and flexible environment.
 It using notebooks with a modern UI experience.
 Essentially an IDE.
 
-### Key Features
+### Key Featuress
 
 1. Multiple document interface. Many notebooks, terminals and files in one display.
 2. Flexible layouts. Customize your workspace.
