@@ -36,3 +36,10 @@ Essentially an IDE.
 2. Flexible layouts. Customize your workspace.
 3. Intergrated tools. Built in file manager, terminals and text editor.
 4. Extensibility. Modular architecture and extensions.
+
+
+## Labs Commands
+
+the ip is the address of the main machine sharing code.
+The port is the port to check for a lab
+`jupyter-lab --ip=192.168.1.150 --port=8888` allow another device on the next work to view the lab

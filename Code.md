@@ -11,8 +11,11 @@
   - [Function Currying](#function-currying)
   - [THIS](#this)
   - [Arrays](#arrays)
-  - [2D Array](#2d-array)
+    - [2D Array](#2d-array)
   - [Spread operator](#spread-operator)
+    - [Destucturing](#destucturing)
+    - [Filter Methods](#filter-methods)
+    - [Reduce](#reduce)
 
 ## OOP Object Orientated Programming
 
@@ -233,43 +236,41 @@ const person {
 ## Arrays
 
 ```javascript
+const fruits = ['apple', 'orange', 'banana'];
 
-const fruits = ['apple', 'orange', 'banana']
+let apple = fruits.indexOf('apple');
+fruits.push('mango');
+fruits.unshift('orange');
 
-let apple = fruits.indexOf('apple')
-fruits.push('mango')
-fruits.unshift('orange')
-
-fruits.forEach(fruit => {
+fruits.forEach((fruit) => {
   console.log('fruits:', fruit);
-})
+});
 
-for(fruit in fruits) {
-  console.log('fruits:', fruit);
-}
-for(let fruit of fruits) {
+for (fruit in fruits) {
   console.log('fruits:', fruit);
 }
+for (let fruit of fruits) {
+  console.log('fruits:', fruit);
+}
 
-fruits.sort()
-fruits.sort().reverse()
+fruits.sort();
+fruits.sort().reverse();
 ```
 
-## 2D Array
+### 2D Array
 
 A 2D array is a element that stores a matrix of data in rows and columns.
 Useful for games and spreadsheets.
 
 ```javascript
 const matrix = [
-  [1,2,3],
-  [4,5,6],
-  [7,8,9]
-]
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
 
-for(let row of matrix) {
+for (let row of matrix) {
   console.log('row', row);
-
 }
 ```
 
@@ -279,16 +280,131 @@ Represented by 3 dots ...
 Allows and array or string to be unpacked into seperate elements
 
 ```javascript
-const numbers = [1,2,3,4,5,6]
+const numbers = [1, 2, 3, 4, 5, 6];
 
-let maximum = Math.max(...numbers)
-let minimum = Math.min(...numbers)
+let maximum = Math.max(...numbers);
+let minimum = Math.min(...numbers);
 
 console.log(maximum); // = 6
 
 // You can do it with strings
-let username = 'tomuscode'
-let letters = [...username]
+let username = 'tomuscode';
+let letters = [...username];
 
 console.log('letters', letters); // ['t', 'o', ...]
+```
+
+### Destucturing
+
+Used to break down arrays or objects in to values
+[] = to perform array destructuring
+{} = to perform object destructuring
+
+```javascript
+// Swap variables
+let a = 1;
+let b = ((2)[(a, b)] = [b, a]);
+
+// Swap elemetns
+const colours = (['red', 'green', 'blue', 'black', 'white'][ // index 0 - 4
+  (colours[0], colours[4])
+] = [colours[4], colours[0]]); // swaps the colours around
+
+const [firstColour, secondColour, thirdColour] = colours;
+console.log('firstColour', firstColour); // RED
+
+const [firstColour, secondColour, thirdColour, ...extraColours] = colours;
+console.log('extraColours', extraColours); // New array of []"black", "white"]
+
+// With objects
+
+const person1 = {
+  firstName: 'spongebob',
+  lastName: 'SquarePants',
+  age: 30,
+  job: 'Fry cook',
+};
+
+const person1 = {
+  firstName: 'Patric',
+  lastName: 'Star',
+  age: 60,
+};
+
+const { firstName, lastName, age, job } = person1;
+console.log('firstName', firstName);
+console.log('lastName', lastName);
+console.log('age', age);
+console.log('job', job);
+
+const { firstName, lastName, age, job = 'Unemployed' } = person2; // Add a default value for missing keys
+console.log('firstName', firstName);
+console.log('lastName', lastName);
+console.log('age', age);
+console.log('job', job);
+
+function displayPerson({ firstName, lastName, age, job }) { // Destructure a person as an argument into parameters
+
+  console.log('firstName', firstName);
+  console.log('lastName', lastName);
+  console.log('age', age);
+  console.log('job', job);
+}
+```
+
+### Filter Methods
+
+Creates a new array by filtering out numbers.
+
+```javascript
+let numbers = [1,2,3,4,5]
+
+let eventNums = numbers.filter(isEven)
+
+function isEven(element) {
+  return element % 2 === 0; // take any true elements and add to new array
+}
+
+
+// New thing
+const ages = [16,17,18,18,19,20,60]
+
+const adults = ages.filter(isAdult);
+
+function isAdult(element) {
+  return element >= 18;
+}
+
+// Words array
+const words = ["apple", "orange", "banana", "kiwi", "Coconut", "Mango"]
+
+const shortWords = words.filter(getShortWords)
+
+function getShortWords(element) {
+  return element.length <= 6; // return true or false
+}
+```
+
+### Reduce
+
+Reduce the elements of an array into a single value
+
+```javascript
+const prices = [, 30, 10, 25, 15, 20]
+
+const total = prices.reduce(sum) // return total
+
+function sum(accumlator, element) {
+  return accumulator + element
+}
+
+// Maxiumun value
+
+const grades = [75, 84, 94, 34, 45, 76]
+
+const maximum = grades.reduce(getMax)  // returns 94 as highest number in the array
+
+function getMax(accumulator, element) {
+  return Math.Max(accumulator, element)
+}
 ```
