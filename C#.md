@@ -305,10 +305,11 @@ In this example, the internal representation of temperature is in Celsius, but t
    Getters and setters can help ensure that data is accessed and modified consistently throughout your application. If you need to add logging, debugging, or modify behavior later, you can do so in one place (in the getter or setter) rather than tracking down every direct access to the field.
 
 Summary
-Encapsulation: Protects the internal state of the object and provides controlled access.
-Data Validation: Ensures that data being set is valid.
-Read-Only/Write-Only Access: Controls how properties are accessed or modified.
-Computed Properties: Allows dynamic calculation of property values.
-Internal Implementation Flexibility: Allows changing internal details without affecting external code.
-Consistency and Debugging: Centralizes access to fields, making it easier to maintain and debug.
-In essence, getters and setters provide a powerful and flexible way to manage access to an object's data, ensuring that the object remains in a valid state and that changes to its internal workings don’t break external code.
+
+- Encapsulation: Protects the internal state of the object and provides controlled access.
+- Data Validation: Ensures that data being set is valid.
+- Read-Only/Write-Only Access: Controls how properties are accessed or modified.
+- Computed Properties: Allows dynamic calculation of property values.
+- Internal Implementation Flexibility: Allows changing internal details without affecting external code.
+- Consistency and Debugging: Centralizes access to fields, making it easier to maintain and debug.
+- In essence, getters and setters provide a powerful and flexible way to manage access to an object's data, ensuring that the object remains in a valid state and that changes to its internal workings don’t break external code.

@@ -18,6 +18,8 @@
     - [Reduce](#reduce)
   - [Keywords](#keywords)
     - [Static](#static)
+  - [Callback Hell](#callback-hell)
+  - [Promises](#promises)
 
 ## OOP Object Orientated Programming
 
@@ -345,7 +347,8 @@ console.log('lastName', lastName);
 console.log('age', age);
 console.log('job', job);
 
-function displayPerson({ firstName, lastName, age, job }) { // Destructure a person as an argument into parameters
+function displayPerson({ firstName, lastName, age, job }) {
+  // Destructure a person as an argument into parameters
 
   console.log('firstName', firstName);
   console.log('lastName', lastName);
@@ -359,17 +362,16 @@ function displayPerson({ firstName, lastName, age, job }) { // Destructure a per
 Creates a new array by filtering out numbers.
 
 ```javascript
-let numbers = [1,2,3,4,5]
+let numbers = [1, 2, 3, 4, 5];
 
-let eventNums = numbers.filter(isEven)
+let eventNums = numbers.filter(isEven);
 
 function isEven(element) {
   return element % 2 === 0; // take any true elements and add to new array
 }
 
-
 // New thing
-const ages = [16,17,18,18,19,20,60]
+const ages = [16, 17, 18, 18, 19, 20, 60];
 
 const adults = ages.filter(isAdult);
 
@@ -378,9 +380,9 @@ function isAdult(element) {
 }
 
 // Words array
-const words = ["apple", "orange", "banana", "kiwi", "Coconut", "Mango"]
+const words = ['apple', 'orange', 'banana', 'kiwi', 'Coconut', 'Mango'];
 
-const shortWords = words.filter(getShortWords)
+const shortWords = words.filter(getShortWords);
 
 function getShortWords(element) {
   return element.length <= 6; // return true or false
@@ -392,22 +394,22 @@ function getShortWords(element) {
 Reduce the elements of an array into a single value
 
 ```javascript
-const prices = [, 30, 10, 25, 15, 20]
+const prices = [, 30, 10, 25, 15, 20];
 
-const total = prices.reduce(sum) // return total
+const total = prices.reduce(sum); // return total
 
 function sum(accumlator, element) {
-  return accumulator + element
+  return accumulator + element;
 }
 
 // Maxiumun value
 
-const grades = [75, 84, 94, 34, 45, 76]
+const grades = [75, 84, 94, 34, 45, 76];
 
-const maximum = grades.reduce(getMax)  // returns 94 as highest number in the array
+const maximum = grades.reduce(getMax); // returns 94 as highest number in the array
 
 function getMax(accumulator, element) {
-  return Math.Max(accumulator, element)
+  return Math.Max(accumulator, element);
 }
 ```
 
@@ -421,13 +423,13 @@ You do not need to create an object in order to access a property or method.
 
 ```javascript
 class MathUtils {
-  static PI = 3.14159
+  static PI = 3.14159;
 
   static getDiameter(radius) {
-    return radius * 2
+    return radius * 2;
   }
   static getCercumference(radius) {
-    return 2 * this.PI * radius
+    return 2 * this.PI * radius;
   }
 }
 
@@ -457,4 +459,189 @@ console.log('count', user1.userCount); // undefined becuase its a class variable
 console.log('count', User.userCount); // 1
 
 User.getUserCount(); // 1 user
+```
+
+## Callback Hell
+
+A situation where callbacks are nested too much causing callback hell.
+Thesse days we have promises and async/await to protect us.
+
+Adding `callback()` as a function makes sure all tasks are completed before the code can move on.
+These tasks are in order but the delay will make them execute out of order.
+If you add the callback function you can make sure this doesnt happen.
+
+```javascript
+// Function task1 accepts a callback function as a parameter
+function task1(callback) {
+  // setTimeout is a built-in function that delays the execution of its callback function
+  setTimeout(() => {
+    console.log('task1 completed'); // This message is logged after the delay
+    callback(); // After task1 is complete, the callback function is invoked
+  }, 5000); // Delay of 5000 milliseconds (5 seconds)
+}
+
+// Function task2 also accepts a callback function as a parameter
+function task2(callback) {
+  setTimeout(() => {
+    console.log('task2 completed'); // This message is logged after the delay
+    callback(); // After task2 is complete, the callback function is invoked
+  }, 2000); // Delay of 2000 milliseconds (2 seconds)
+}
+
+// Function task3 also accepts a callback function as a parameter
+function task3(callback) {
+  setTimeout(() => {
+    console.log('task3 completed'); // This message is logged after the delay
+    callback(); // After task3 is complete, the callback function is invoked
+  }, 4000); // Delay of 4000 milliseconds (4 seconds)
+}
+
+// Function task4 also accepts a callback function as a parameter
+function task4(callback) {
+  setTimeout(() => {
+    console.log('task4 completed'); // This message is logged after the delay
+    callback(); // After task4 is complete, the callback function is invoked
+  }, 3000); // Delay of 3000 milliseconds (3 seconds)
+}
+
+// The below code would execute tasks in parallel (out of order) because the functions don't wait for each other
+// task1()
+// task2()
+// task3()
+// task4()
+// console.log('all tasks completed'); // This would run immediately, even before the tasks are complete
+
+// Instead, to ensure tasks run sequentially, callbacks are used. Each task calls the next task in its callback function.
+// A callback is a function passed as an argument to another function, to be executed after the first function is done.
+
+task1(() => {
+  // task1 starts, and after it completes, it runs the following callback
+  task2(() => {
+    // task2 starts, and after it completes, it runs the following callback
+    task3(() => {
+      // task3 starts, and after it completes, it runs the following callback
+      task4(() => {
+        // task4 starts, and after it completes, it runs the following callback
+        console.log('all tasks completed'); // This is logged after all tasks are completed in sequence
+      });
+    });
+  });
+});
+
+// In this structure:
+// 1. The function `task1` is called and passed an anonymous function `() => { ... }` as a callback.
+// 2. After `task1` completes (after 5 seconds), `task2` is called inside the callback.
+// 3. This pattern continues until all tasks are complete, ensuring they run sequentially.
+```
+
+## Promises
+
+A PROMISE is a OBJECT.
+Its an object that manages asyncronous operations.
+Such as:
+
+1. Querying a database
+2. Fetching files
+3. Gathering data
+4. Processing images
+
+They can take an indeterminate amount of time.
+You can wrap a promise object around Asyncronous code.
+The promise object promises to return a value.
+The promise will be 'resolved' or 'rejected'
+
+A promise is an object so can be created using `new Promise((resolve, reject) => {async code})`
+
+Do these takes in order
+// 1. walk dog
+// 2. clean kitchen
+
+```javascript
+function walkDog() {
+  setTimeout(() => {
+    console.log('waled the dog');
+  }, 2000)
+}
+
+function cleanKitchen() {
+  setTimeout(() => {
+    console.log('cleaning the kitchen');
+  }, 1000)
+}
+
+walkDog(() => {
+  cleanKitchen(() => {
+    console.log('finished');
+  });
+})
+
+// This code would require callbacks to create the desired output
+// Instead we can use Promises which return a promise of resolve or reject
+
+function walkDog() {
+
+  return new Promise((resolve, reject) = {
+    setTimeout(() => {
+      // console.log('waled the dog'); // This become a resolve condition
+      resolve('walked the dog'); // the message is the value of resolving the function
+    }, 4000)
+  })
+}
+
+function cleanKitchen() {
+
+  return new Promise((resolve, reject) = {
+    setTimeout(() => {
+      resolve('cleaning the kitchen'); // the message is the value of resolving the function
+    }, 2000)
+  })
+}
+
+function takeTrash() {
+
+  return new Promise((resolve, reject) = {
+    setTimeout(() => {
+      resolve('trash done'); // the message is the value of resolving the function
+    }, 1000)
+  })
+}
+
+// Instead of callback hell we will use message chaining
+
+walkDog().then(value => {
+  console.log('value'); /// Prints 'walked the dog'
+  return cleanKitchen()
+})
+.then(value => {
+  console.log('value');
+  return takeTrash()
+})
+.then(value => {
+  console.log('vlaue');
+  console.log('finished');
+})
+.catch(error => console.error(error)) // for reject 
+
+
+// The task may fail and you dont want to resolve the promise
+// 
+
+function walkDog() {
+
+  return new Promise((resolve, reject) = {
+    setTimeout(() => {
+      const walkedDog = true
+
+      if (waledDog) {
+        resolve('walked the dog'); // the message is the value of resolving the function
+      } else {
+        reject('You failed to walk the dog') // this will difplsay instead
+      }
+    }, 4000)
+  })
+}
+
+.catch(error => console.error(error)) // for reject 
+// If the first promise is rejected then no more code will run.
+// Then will be pending until the complete with a resolve or reject.
 ```
