@@ -5,6 +5,7 @@
 - [Code](#code)
   - [Table of contents](#table-of-contents)
   - [OOP Object Orientated Programming](#oop-object-orientated-programming)
+  - [The DOM](#the-dom)
   - [Closures](#closures)
   - [Getters and Setters](#getters-and-setters)
   - [Arrow Functions](#arrow-functions)
@@ -59,6 +60,25 @@ class Hawk extends Animal {
 
 const hawk = new Hawk('hawk', 2, 55);
 hawk.fly();
+```
+
+## The DOM
+
+The Document Object Model.
+Its a javascript object {} that represents the page you see in the browser.
+It provides an API to interact with it. The dom methods. {} = document
+Its created when a page loads html.
+It structures all the elements in a tree structure.
+Going from head, body, so on.
+
+Javascript can access the dom dynamically after the page loads.
+
+```javascript
+document.getElementById('#id');
+
+console.dir(document); // log the document as a directory tree .dir  returns things like title
+document.title = 'my site';
+document.body.style.backgroundColor = 'black'; // change properties
 ```
 
 ## Closures
@@ -620,11 +640,11 @@ walkDog().then(value => {
   console.log('vlaue');
   console.log('finished');
 })
-.catch(error => console.error(error)) // for reject 
+.catch(error => console.error(error)) // for reject
 
 
 // The task may fail and you dont want to resolve the promise
-// 
+//
 
 function walkDog() {
 
@@ -641,7 +661,7 @@ function walkDog() {
   })
 }
 
-.catch(error => console.error(error)) // for reject 
+.catch(error => console.error(error)) // for reject
 // If the first promise is rejected then no more code will run.
 // Then will be pending until the complete with a resolve or reject.
 ```
