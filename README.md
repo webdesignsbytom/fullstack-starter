@@ -15,6 +15,7 @@ A list of programs, libraries and compoents along with quick installs and web li
     - [Vanilla](#vanilla)
     - [React](#react)
     - [Tailwind notes](#tailwind-notes)
+  - [SCSS -](#scss--)
   - [Using a Local database](#using-a-local-database)
   - [Steps to create backend](#steps-to-create-backend)
   - [NPM Install Dependencies](#npm-install-dependencies)
@@ -91,6 +92,10 @@ A list of programs, libraries and compoents along with quick installs and web li
 ### Tailwind notes
 
 - center `absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`
+
+## SCSS - 
+
+`npm install sass --save-dev`
 
 ## Using a Local database
 
