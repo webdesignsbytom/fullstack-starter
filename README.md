@@ -6,40 +6,40 @@ A list of programs, libraries and compoents along with quick installs and web li
 
 - [Fullstack Starter](#fullstack-starter)
   - [Table of contents](#table-of-contents)
-  - [React App](#react-app)
-  - [Vue JS APP](#vue-js-app)
-  - [NEXT JS APP](#next-js-app)
-  - [Icons / Libraries](#icons--libraries)
-  - [Google Add ons](#google-add-ons)
-  - [Tailwind CSS](#tailwind-css)
-    - [Vanilla](#vanilla)
-    - [React](#react)
-    - [Tailwind notes](#tailwind-notes)
-  - [SCSS -](#scss--)
-  - [Using a Local database](#using-a-local-database)
-  - [Steps to create backend](#steps-to-create-backend)
-  - [NPM Install Dependencies](#npm-install-dependencies)
-    - [Socket io](#socket-io)
+  - [Creating Projects](#creating-projects)
+    - [React App](#react-app)
+    - [Vue JS APP](#vue-js-app)
+    - [NEXT JS APP](#next-js-app)
+    - [Icons / Libraries](#icons--libraries)
+    - [Google Add ons](#google-add-ons)
+  - [Styles](#styles)
+    - [Tailwind CSS](#tailwind-css)
+    - [SCSS](#scss)
   - [Node](#node)
-  - [Seeding/prisma](#seedingprisma)
-  - [Errors](#errors)
+    - [NPM Install Dependencies](#npm-install-dependencies)
+    - [Socket io](#socket-io)
+  - [Databases](#databases)
+    - [Using a Local database](#using-a-local-database)
+    - [Seeding/prisma](#seedingprisma)
+    - [PostgreSQL](#postgresql)
+    - [Errors](#errors)
   - [Completing projects](#completing-projects)
   - [Github](#github)
     - [General Comanads](#general-comanads)
     - [Git SSH Keygen](#git-ssh-keygen)
   - [Vercel](#vercel)
-  - [PostgreSQL](#postgresql)
   - [Docker](#docker)
     - [Prune all unused Docker objects](#prune-all-unused-docker-objects)
     - [Prune dangling volumes](#prune-dangling-volumes)
     - [Prune Docker builder cache](#prune-docker-builder-cache)
     - [Prune unused Docker networks](#prune-unused-docker-networks)
     - [Update running container ???](#update-running-container-)
-    - [Terminology](#terminology)
-  - [React updates](#react-updates)
-    - [useRef](#useref)
+  - [Terminology](#terminology)
+  - [Updates](#updates)
 
-## React App
+## Creating Projects
+
+### React App
 
 - `npx create-react-app my-app`
 - `npm install react-router-dom` in index.js `import { BrowserRouter } from 'react-router-dom'`
@@ -49,9 +49,9 @@ A list of programs, libraries and compoents along with quick installs and web li
 - Quick uninstall `npm uninstall @testing-library/jest-dom @testing-library/react @testing-library/user-event web-vitals`
 - Quick install `npm install react-router-dom axios jwt-decode uuid`
 
-## Vue JS APP
+### Vue JS APP
 
-## NEXT JS APP
+### NEXT JS APP
 
 `npx create-next-app@latest next-app-one`
 `npm run dev`
@@ -59,18 +59,20 @@ A list of programs, libraries and compoents along with quick installs and web li
 `npx shadcn-ui@latest init` tailwind update library for next `const inter = Inter({ subsets: ["latin"], variable: "--font-sans",});`
 `https://ui.shadcn.com/docs/installation/next` link to installation doc
 
-## Icons / Libraries
+### Icons / Libraries
 
 - `npm i react-icons` or `npm install react-icons --save`
 - `npm i swiper`
 
-## Google Add ons
+### Google Add ons
 
 - `npm i react-ga -S` install google analytics
 
-## Tailwind CSS
+## Styles
 
-### Vanilla
+### Tailwind CSS
+
+1. Vanilla install
 
 - requires node JS and npm package installed `npm init -y`
 - `npm install tailwindcss` to install tailwind dependancy
@@ -80,7 +82,7 @@ A list of programs, libraries and compoents along with quick installs and web li
 - `"scripts": { "build-css": "tailwindcss build -i src/styles.css -o public/styles.css"},`
 - `"prettier": "npx prettier --write **/*.html"` inbuild to tailwind - add to scripts
 
-### React
+2. React install
 
 - create react app with npx
 - `npm install -D tailwindcss`
@@ -89,24 +91,21 @@ A list of programs, libraries and compoents along with quick installs and web li
 - `npm install @heroicons/react` icons library `https://heroicons.com/#gh-light-mode-only`
 - `npm install @headlessui/react` component library
 
-### Tailwind notes
+3.  Tailwind notes
 
 - center `absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2`
 
-## SCSS - 
+### SCSS
+
+CSS with super powers.
+Having functions, loops and variables.
+Requires node.
 
 `npm install sass --save-dev`
 
-## Using a Local database
+## Node
 
-- In the terminal of your app run `npm install -g json-server`
-- create a folder called `database`
-- add the file db.json
-- in a second terminal run `npx json-server -p 4000 database/db.json`
-
-## Steps to create backend
-
-## NPM Install Dependencies
+### NPM Install Dependencies
 
 - `npm init -y` to start dependencies and node
 - run `npm start`
@@ -136,19 +135,24 @@ A list of programs, libraries and compoents along with quick installs and web li
 - `npm install swagger-ui-react` use swagger display
 - `npm install react-codemirror2 codemirror` code display
 - `npm install codemirror/mode/yaml/yaml` yaml code display
-- ``
+- `npm install -g npm@latest` update node
+- `nvm install node` install latest
 
 ### Socket io
 
 - Client Install `npm i socket.io-client`
 - Server install `npm i socket.io`
 
-## Node
+## Databases
 
-- `npm install -g npm@latest` update node
-- `nvm install node` install latest
+### Using a Local database
 
-## Seeding/prisma
+- In the terminal of your app run `npm install -g json-server`
+- create a folder called `database`
+- add the file db.json
+- in a second terminal run `npx json-server -p 4000 database/db.json`
+
+### Seeding/prisma
 
 - links to tech info [https://pris.ly/d/prisma-schema]
   - For admin roles use `enum Role { ADMIN, USER }` and attached `role Role` to the user in schema.
@@ -159,7 +163,19 @@ A list of programs, libraries and compoents along with quick installs and web li
 - `npm i prisma --save-dev` isntall prisma as dev
 - `npx prisma init --datasource-provider sqlite` create a database type
 
-## Errors
+### PostgreSQL
+
+`sudo apt install postgresql postgresql-contrib`
+`sudo -i -u postgres`
+
+`\l` list databases
+`\d` list tables
+`\d <name>` list table of name
+`\dn` list scema
+`\du` list users and roles
+`createdb <name>` create database
+
+### Errors
 
 - `HTTP_HEADER_SENT` You are trying to return two headers. Add a `return` to any `res.` parts towards the end.
 - `P002` means the field has a `@unique` it shouldnt - unique id issue
@@ -211,18 +227,6 @@ Connect code to server
 - Set deploy from server file.
 - use 'vercel.json' template for deploy - must have src/server.js or whatever starting connection is.
 - drag and drop .env into the environment variables section in settings.
-
-## PostgreSQL
-
-`sudo apt install postgresql postgresql-contrib`
-`sudo -i -u postgres`
-
-`\l` list databases
-`\d` list tables
-`\d <name>` list table of name
-`\dn` list scema
-`\du` list users and roles
-`createdb <name>` create database
 
 ## Docker
 
@@ -284,7 +288,7 @@ By using the -it flags, you are opening an interactive terminal session within t
 `sudo docker run -d --name moncards-instance2 -p 5002:5000 techdesigntavistock/trading-card-game:latest`
 `sudo docker run -d --name myproject-instance3 -p 5003:5000 techdesigntavistock/trading-card-game:latest`
 
-### Terminology
+## Terminology
 
 In the last section, we used a lot of Docker-specific jargon which might be confusing to some. So before we go further, let me clarify some terminology that is used frequently in the Docker ecosystem.
 
@@ -294,7 +298,7 @@ In the last section, we used a lot of Docker-specific jargon which might be conf
 - Docker Client - The command line tool that allows the user to interact with the daemon. More generally, there can be other forms of clients too - such as Kitematic which provide a GUI to the users.
 - Docker Hub - A registry of Docker images. You can think of the registry as a directory of all available Docker images. If required, one can host their own Docker registries and can use them for pulling images.
 
-## React updates
+## Updates
 
 - useTransition()
 
@@ -311,7 +315,3 @@ const [isPending, startTransition] = useTransition();
 
 - useOptimistic()
 - useActionState()
-
-### useRef
-
-- Can hold state but does not trigger a rerender.
