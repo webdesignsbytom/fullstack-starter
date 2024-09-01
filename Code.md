@@ -16,6 +16,8 @@
     - [Destucturing](#destucturing)
     - [Filter Methods](#filter-methods)
     - [Reduce](#reduce)
+  - [Keywords](#keywords)
+    - [Static](#static)
 
 ## OOP Object Orientated Programming
 
@@ -407,4 +409,52 @@ const maximum = grades.reduce(getMax)  // returns 94 as highest number in the ar
 function getMax(accumulator, element) {
   return Math.Max(accumulator, element)
 }
+```
+
+## Keywords
+
+### Static
+
+They keyword defines any properties or methods owned by the class not the object
+
+You do not need to create an object in order to access a property or method.
+
+```javascript
+class MathUtils {
+  static PI = 3.14159
+
+  static getDiameter(radius) {
+    return radius * 2
+  }
+  static getCercumference(radius) {
+    return 2 * this.PI * radius
+  }
+}
+
+console.log('PI', MathUtils.PI); // 3.14159
+console.log('Diameter', MathUtils.getDiameter(10)); // 20
+console.log('Cercumference', MathUtils.getCercumference(10)); // 62...
+
+// Tracking user
+class User {
+  static userCount = 0;
+
+  constructor(username) {
+    this.username = username;
+    // Increment the user count in the static class variable
+    User.userCount++;
+  }
+
+  static getUserCount() {
+    console.log(`There are ${User.userCount} users`);
+  }
+}
+
+const user1 = new User('tom');
+
+console.log('name', user1.username);
+console.log('count', user1.userCount); // undefined becuase its a class variable not for the object.
+console.log('count', User.userCount); // 1
+
+User.getUserCount(); // 1 user
 ```
