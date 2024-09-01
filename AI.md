@@ -38,8 +38,23 @@ Essentially an IDE.
 4. Extensibility. Modular architecture and extensions.
 
 
+## Libraries
+
+1. Numpy - Bath math for python
+2. Pandas - Provides a data frame like an excel spradsheet in rows and columns
+3. Matplotlib - 2D matrix plotting library
+4. Scikit-learn - provides common algortythums like decision trees.
+
 ## Labs Commands
 
 the ip is the address of the main machine sharing code.
 The port is the port to check for a lab
 `jupyter-lab --ip=192.168.1.150 --port=8888` allow another device on the next work to view the lab
+
+
+## Datasets
+
+`www.kaggle.com` for datasets
+Sign in and go to 'dataset's
+download the zip file and use inside you project with the path and
+`pd.read_csv('path')`
