@@ -10,6 +10,9 @@
   - [Arrow Functions](#arrow-functions)
   - [Function Currying](#function-currying)
   - [THIS](#this)
+  - [Arrays](#arrays)
+  - [2D Array](#2d-array)
+  - [Spread operator](#spread-operator)
 
 ## OOP Object Orientated Programming
 
@@ -225,4 +228,67 @@ const person {
 
   person.name = this.name
 }
+```
+
+## Arrays
+
+```javascript
+
+const fruits = ['apple', 'orange', 'banana']
+
+let apple = fruits.indexOf('apple')
+fruits.push('mango')
+fruits.unshift('orange')
+
+fruits.forEach(fruit => {
+  console.log('fruits:', fruit);
+})
+
+for(fruit in fruits) {
+  console.log('fruits:', fruit);
+}
+for(let fruit of fruits) {
+  console.log('fruits:', fruit);
+}
+
+fruits.sort()
+fruits.sort().reverse()
+```
+
+## 2D Array
+
+A 2D array is a element that stores a matrix of data in rows and columns.
+Useful for games and spreadsheets.
+
+```javascript
+const matrix = [
+  [1,2,3],
+  [4,5,6],
+  [7,8,9]
+]
+
+for(let row of matrix) {
+  console.log('row', row);
+
+}
+```
+
+## Spread operator
+
+Represented by 3 dots ...
+Allows and array or string to be unpacked into seperate elements
+
+```javascript
+const numbers = [1,2,3,4,5,6]
+
+let maximum = Math.max(...numbers)
+let minimum = Math.min(...numbers)
+
+console.log(maximum); // = 6
+
+// You can do it with strings
+let username = 'tomuscode'
+let letters = [...username]
+
+console.log('letters', letters); // ['t', 'o', ...]
 ```
