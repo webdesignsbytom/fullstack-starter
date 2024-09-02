@@ -6,6 +6,7 @@
   - [Table of contents](#table-of-contents)
   - [OOP Object Orientated Programming](#oop-object-orientated-programming)
   - [The DOM](#the-dom)
+    - [DOM Navigation](#dom-navigation)
   - [Closures](#closures)
   - [Getters and Setters](#getters-and-setters)
   - [Arrow Functions](#arrow-functions)
@@ -17,10 +18,14 @@
     - [Destucturing](#destucturing)
     - [Filter Methods](#filter-methods)
     - [Reduce](#reduce)
+  - [Array Methods](#array-methods)
   - [Keywords](#keywords)
     - [Static](#static)
   - [Callback Hell](#callback-hell)
   - [Promises](#promises)
+    - [Elements](#elements)
+    - [Element selectors](#element-selectors)
+    - [Element Properties](#element-properties)
 
 ## OOP Object Orientated Programming
 
@@ -79,6 +84,82 @@ document.getElementById('#id');
 console.dir(document); // log the document as a directory tree .dir  returns things like title
 document.title = 'my site';
 document.body.style.backgroundColor = 'black'; // change properties
+```
+
+### DOM Navigation
+
+The process of navigating throught the structure of a html document using javascript.
+
+.firstElementChild
+.lastElementChild
+.nextElementSibling
+.prevElementSibling
+.parentElement
+.children
+
+```javascript
+<ul id="fruits">
+  <li id="apple">apple</li>
+  <li id="orange">orange</li>
+  <li id="banana">banana</li>
+</ul>
+<ul id="veg">
+  <li id="carrots">carrots</li>
+  <li id="onions">onions</li>
+  <li id="potatoes">potatoes</li>
+</ul>
+<ul id="desserts">
+  <li id="cake">cake</li>
+  <li id="pie">pie</li>
+  <li id="icecream">ice cream</li>
+</ul>
+
+// FirstElementChild
+const element = document.getElementById('fruits');
+const firstChild = element.firstElementChild; // apple
+firstChild.style.backgroundColor = 'yellow'
+
+const ulElements = document.querySelectorAll('ul') // returna a nodelist
+ulElements.forEach(element => {
+  const firstChild = element.firstElementChild;
+  firstChild.style.backgroundColor = 'blue' // apple, carrots
+})
+
+cosnt element2 = document.getElementById('fruits')
+const lastChild = element.lastElementChild
+lastChild.style.backgroundColor = 'green' // any last element - banana/potoes/ice cream
+
+const ulItems = document.querySelectorAll('ul') // returns a nodelist with built in methods likes foreach
+ulitems.forEach(el => {
+  const lastChild = el.lastElementChild
+  lastChild.style.backgroundColor = ' black' // all last items in list
+})
+
+// Next sibling
+const element3 = document.getElementById('apple')
+const nextSibling = element3.nextSiblingElement // get the next li in the list or null if its the last item already
+
+const element4 = document.getElementById('fruits')
+const nextSibling2 = element4.nextSiblingElement // get the next UL element 
+
+// Previous Element Sibling
+const element5 = document.getElementById('orange')
+const prevSibling = element5.previousElementSibling // apple will be selected
+
+// Parent Element
+const element6 = document.getELementById('apple')
+const parent = element6.parentElement // fruits
+
+// Children
+const element7 = document.getElementById('fruits')
+const children = element.children // Returns a html collection with the LI elements inside
+
+Array.from(children).forEach(child => {
+  child.style.backgroundColor. = 'red' // all li inside frutis are effects
+})
+
+children[0].style.backgroundColor = 'green' // get first element 
+
 ```
 
 ## Closures
@@ -433,6 +514,18 @@ function getMax(accumulator, element) {
 }
 ```
 
+## Array Methods
+
+1. `Array.from()` using the class Array create a shallow copy of any array
+
+```javascript
+const set = new Set(["foo", "bar", "baz", "foo"]);
+
+Array.from(set).where(() => {
+  set[0] === "b"
+});
+```
+
 ## Keywords
 
 ### Static
@@ -665,3 +758,21 @@ function walkDog() {
 // If the first promise is rejected then no more code will run.
 // Then will be pending until the complete with a resolve or reject.
 ```
+
+### Elements
+
+### Element selectors
+
+1. `document.getElementById()` Returns element or null
+2. `document.getElementsClassName()` Return a HTML collection of classes
+3. `document.getElementsByTagName()` Returns a HTML collection of tags
+4. `document.querySelector()` Returns a element or null
+5. `document.querySelectorAll()` Returns a NodeList of all elements
+
+### Element Properties
+
+`.style` - backgorundColour and other style properties
+`.textContent`
+`.title`
+`.role`
+
