@@ -54,6 +54,14 @@ Used to prevent Cross Site Scripting attacks XSS
    - FTP passive mode: true
    - password: password
 
+### CDN 
+
+Content Delivery Networks. 
+They host your website on world wide servers. Providing a local server for each country to download the website from.
+Reducing latency for distant servers around the world. 
+They also provide security for DDoS attacks. 
+
+- Cloudflare 
 
 ## BACKEND HOSTING
 
