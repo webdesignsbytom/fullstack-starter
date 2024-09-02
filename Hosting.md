@@ -2,10 +2,30 @@
 
 ## Table of contents
 
-- [Fullstack Starter](#fullstack-starter)
+- [Hosting website and server](#hosting-website-and-server)
   - [Table of contents](#table-of-contents)
   - [FRONTEND HOSTING](#frontend-hosting)
+    - [Where to host](#where-to-host)
+    - [Hosting platforms](#hosting-platforms)
+    - [Hosting software](#hosting-software)
+    - [PreLaunch Steps](#prelaunch-steps)
+    - [Factors](#factors)
+    - [Build](#build)
+    - [Blazor Hosting](#blazor-hosting)
+    - [CDN](#cdn)
   - [BACKEND HOSTING](#backend-hosting)
+    - [Create instance](#create-instance)
+    - [Set up](#set-up)
+    - [Logs](#logs)
+    - [Pm2](#pm2)
+    - [Security](#security)
+    - [PostgreSQL](#postgresql)
+    - [Nginx](#nginx)
+    - [Fancy text](#fancy-text)
+    - [Load Balancing](#load-balancing)
+    - [Double hosting servers](#double-hosting-servers)
+  - [Docker hosting](#docker-hosting)
+  - [JUNK](#junk)
 
 ## FRONTEND HOSTING
 
@@ -54,14 +74,14 @@ Used to prevent Cross Site Scripting attacks XSS
    - FTP passive mode: true
    - password: password
 
-### CDN 
+### CDN
 
-Content Delivery Networks. 
+Content Delivery Networks.
 They host your website on world wide servers. Providing a local server for each country to download the website from.
-Reducing latency for distant servers around the world. 
-They also provide security for DDoS attacks. 
+Reducing latency for distant servers around the world.
+They also provide security for DDoS attacks.
 
-- Cloudflare 
+- Cloudflare
 
 ## BACKEND HOSTING
 
