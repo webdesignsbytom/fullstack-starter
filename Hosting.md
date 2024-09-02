@@ -7,11 +7,12 @@
 
 ## Where to host
 
-Inmotion
+- Inmotion
+- Kyrstal
 
 ## Hosting platforms
 
-cpanel
+cpanel - cpanel is an appache server UI
 
 ## Hosting software
 
@@ -35,6 +36,20 @@ Used to prevent Cross Site Scripting attacks XSS
 ## Build
 
 - `npm run build`
+
+### Blazor Hosting
+
+1. Create an FTP account on your host.
+2. Download the config file.
+3. Go to Visual Studio and click 'Publish' on your project.
+4. Select a new profile and select FTP.
+5. Add the following to the file
+   - Server: Will the the host record - ftp.xxx.com
+   - Site path: blank
+   - username: username or email from ftp config 'user'
+   - FTP passive mode: true
+   - password: password
+
 
 ## BACKEND
 
