@@ -1,24 +1,28 @@
-# Hosting
+# Hosting website and server
+
+## Table of contents
 
 - [Fullstack Starter](#fullstack-starter)
   - [Table of contents](#table-of-contents)
+  - [FRONTEND HOSTING](#frontend-hosting)
+  - [BACKEND HOSTING](#backend-hosting)
 
-## FRONTEND
+## FRONTEND HOSTING
 
-## Where to host
+### Where to host
 
 - Inmotion
 - Kyrstal
 
-## Hosting platforms
+### Hosting platforms
 
 cpanel - cpanel is an appache server UI
 
-## Hosting software
+### Hosting software
 
 FTP manager - uploading files directly to the host server
 
-## PreLaunch Steps
+### PreLaunch Steps
 
 1. Create a sitemap.xml
 2. Create a robots.txt file
@@ -27,13 +31,13 @@ FTP manager - uploading files directly to the host server
 5. Update meta data in index.html
 6. Update the site manifest
 
-## Factors
+### Factors
 
 1. Content Security Policy CSP
 
 Used to prevent Cross Site Scripting attacks XSS
 
-## Build
+### Build
 
 - `npm run build`
 
@@ -51,7 +55,7 @@ Used to prevent Cross Site Scripting attacks XSS
    - password: password
 
 
-## BACKEND
+## BACKEND HOSTING
 
 1. AWS
 
@@ -166,20 +170,20 @@ CREATE USER myuser WITH PASSWORD 'mypassword';
 CREATE DATABASE mydatabase;
 GRANT ALL PRIVILEGES ON DATABASE mydatabase TO myuser;
 
-## Nginx
+### Nginx
 
 Nginx is a reverse proxy that can communicate with the system and the outside world through por
 
 `-s` to use a nginx command
 `nginx -s start`
 
-## Fancy text
+### Fancy text
 
 `apt-get install -y figlet`
 Edit the .bashrc file and add: `figlet serverpi` replace serverpi with text
 `source ~/.bashrc`
 
-## Load Balancing
+### Load Balancing
 
 Servers can be load balanced with nginx using several methods such as
 
@@ -187,7 +191,7 @@ Servers can be load balanced with nginx using several methods such as
 
 With Nginx you must define a group of servers with the `upstream` directive placed in the http context
 
-## Double hosting servers
+### Double hosting servers
 
 1. Normal set up
 2. Cloned streaming app on local:3000 api.webdesignsbytom.com
@@ -281,7 +285,7 @@ listen 80;
 `sudo ln -s /etc/nginx/sites-available/docker.webdesignsbytom.com.conf /etc/nginx/sites-enabled/`
 `systemctl restart nginx`
 
-### JUNK
+## JUNK
 
 server {
 server_name api.webdesignsbytom.com www.api.webdesignsbytom.com;
