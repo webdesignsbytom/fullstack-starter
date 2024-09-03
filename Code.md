@@ -7,8 +7,9 @@
   - [OOP Object Orientated Programming](#oop-object-orientated-programming)
   - [The DOM](#the-dom)
     - [DOM Navigation](#dom-navigation)
-    - [Event Listeners](#event-listeners)
-  - [Closures](#closures)
+  - [Types](#types)
+  - [Type Conversion](#type-conversion)
+- [# Closures](#-closures)
   - [Getters and Setters](#getters-and-setters)
   - [Arrow Functions](#arrow-functions)
   - [Function Currying](#function-currying)
@@ -27,6 +28,8 @@
     - [Elements](#elements)
     - [Element selectors](#element-selectors)
     - [Element Properties](#element-properties)
+  - [Errors](#errors)
+    - [Error Types](#error-types)
 
 ## OOP Object Orientated Programming
 
@@ -180,7 +183,41 @@ There are many different event listeners
 
 ```
 
-## Closures
+### Event Listeners
+
+There are many different event listeners
+
+- onclick
+- load
+- keydown - the event includes was the shirt or cntrl key pressed as well.
+- keyup
+
+// You can find an element and then apply an event listener to it
+
+```javascript
+ const el = document.getElementById('thing');
+ el.addEventListener('keydown', () => { 'code' })
+
+```
+
+## Types
+
+Types are data types of elements.
+
+- String
+- Number
+- Boolean
+- Array
+- Object
+
+## Type Conversion
+
+You may want to convert a type to clean up user input
+
+x = "21"
+age = Number(x)
+
+# # Closures
 
 closure = A function defined inside of another function.
 the inner function has access to the variables and scope of the outer function.
@@ -794,3 +831,14 @@ function walkDog() {
 `.title`
 `.role`
 
+
+## Errors 
+
+An Object {} that is created to represent a problem that has occurred.
+
+### Error Types
+
+- TypeError - incorrect type or syntax. Spelling mistakes maybe. 'console.logg('error')'
+- Reference Error - A reference does not exist or cannot be accessed. x does not exist because you didnt create it.
+
+ 
