@@ -42,6 +42,26 @@ cpanel - cpanel is an appache server UI
 
 FTP manager - uploading files directly to the host server
 
+### Records
+
+- DNS - Domain name system record
+  - A, MX, NS, CNAME
+  - The A record links your IP to a Domain name
+  - MX link domains to email addresses
+  - 
+- NameServer - a physical server that stores the DNS records for a domain.
+  - An NS record will usualy start as a subdomain ns2.dreamhost.com
+  - A second nameserver is used for redudancy
+- A Records
+  - Maps a domain to an IP address
+  - CNAME, maps domain name to other domain names
+
+* CloudFlare is where you give both your host and domain the same cloudflair NS records.
+1. Visit a site
+   - www.site.com is a A record pointing to 8.8.8.8
+   - site.com is a A record pointing to 8.8.8.8
+2. The sites NameServes Ns1. will point to where to find the A records 
+
 ### PreLaunch Steps
 
 1. Create a sitemap.xml
