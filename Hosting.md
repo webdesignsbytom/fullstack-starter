@@ -76,7 +76,13 @@ FTP manager - uploading files directly to the host server
   - Maps one domain name to another and must always be a name not an ip
   - Not great for subdomaining becuase it has to do two DNS lookups.
   - Create record and enter subdomain or full domain including sub 
- 
+
+
+### Sub Domains
+
+To create a sub domain:
+1. Go to DNS settings
+2. Create a New A record. Enter the subdomain name you want. For the IP value add the record for the web hosting IP address.
   
 ### PreLaunch Steps
 
