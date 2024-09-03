@@ -37,6 +37,14 @@
 ### Hosting platforms
 
 cpanel - cpanel is an appache server UI
+Apache handles the HTTP requests
+Runs on a linux machines
+
+- Runs using Perl
+Perl is a high perfomance, cross platform text processing.
+The code is compiled at run time.
+Its used for automated scripting tasks.
+It was created to dynamic web pages simuilar to python and php. 
 
 ### Hosting software
 
