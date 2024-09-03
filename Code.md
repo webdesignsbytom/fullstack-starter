@@ -7,6 +7,7 @@
   - [OOP Object Orientated Programming](#oop-object-orientated-programming)
   - [The DOM](#the-dom)
     - [DOM Navigation](#dom-navigation)
+    - [Event Listeners](#event-listeners)
   - [Closures](#closures)
   - [Getters and Setters](#getters-and-setters)
   - [Arrow Functions](#arrow-functions)
@@ -159,6 +160,23 @@ Array.from(children).forEach(child => {
 })
 
 children[0].style.backgroundColor = 'green' // get first element 
+
+```
+
+### Event Listeners
+
+There are many different event listeners
+
+- onclick
+- load
+- keydown - the event includes was the shirt or cntrl key pressed as well.
+- keyup
+
+// You can find an element and then apply an event listener to it
+
+```javascript
+ const el = document.getElementById('thing');
+ el.addEventListener('keydown', () => { 'code' })
 
 ```
 
