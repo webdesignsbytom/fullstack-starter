@@ -7,9 +7,11 @@
   - [OOP Object Orientated Programming](#oop-object-orientated-programming)
   - [The DOM](#the-dom)
     - [DOM Navigation](#dom-navigation)
+    - [Event Listeners](#event-listeners)
+    - [Event Listeners](#event-listeners-1)
   - [Types](#types)
   - [Type Conversion](#type-conversion)
-- [# Closures](#-closures)
+  - [Closures](#closures)
   - [Getters and Setters](#getters-and-setters)
   - [Arrow Functions](#arrow-functions)
   - [Function Currying](#function-currying)
@@ -144,7 +146,7 @@ const element3 = document.getElementById('apple')
 const nextSibling = element3.nextSiblingElement // get the next li in the list or null if its the last item already
 
 const element4 = document.getElementById('fruits')
-const nextSibling2 = element4.nextSiblingElement // get the next UL element 
+const nextSibling2 = element4.nextSiblingElement // get the next UL element
 
 // Previous Element Sibling
 const element5 = document.getElementById('orange')
@@ -162,7 +164,7 @@ Array.from(children).forEach(child => {
   child.style.backgroundColor. = 'red' // all li inside frutis are effects
 })
 
-children[0].style.backgroundColor = 'green' // get first element 
+children[0].style.backgroundColor = 'green' // get first element
 
 ```
 
@@ -178,9 +180,10 @@ There are many different event listeners
 // You can find an element and then apply an event listener to it
 
 ```javascript
- const el = document.getElementById('thing');
- el.addEventListener('keydown', () => { 'code' })
-
+const el = document.getElementById('thing');
+el.addEventListener('keydown', () => {
+  'code';
+});
 ```
 
 ### Event Listeners
@@ -195,9 +198,10 @@ There are many different event listeners
 // You can find an element and then apply an event listener to it
 
 ```javascript
- const el = document.getElementById('thing');
- el.addEventListener('keydown', () => { 'code' })
-
+const el = document.getElementById('thing');
+el.addEventListener('keydown', () => {
+  'code';
+});
 ```
 
 ## Types
@@ -217,7 +221,7 @@ You may want to convert a type to clean up user input
 x = "21"
 age = Number(x)
 
-# # Closures
+## Closures
 
 closure = A function defined inside of another function.
 the inner function has access to the variables and scope of the outer function.
@@ -574,10 +578,10 @@ function getMax(accumulator, element) {
 1. `Array.from()` using the class Array create a shallow copy of any array
 
 ```javascript
-const set = new Set(["foo", "bar", "baz", "foo"]);
+const set = new Set(['foo', 'bar', 'baz', 'foo']);
 
 Array.from(set).where(() => {
-  set[0] === "b"
+  set[0] === 'b';
 });
 ```
 
@@ -831,8 +835,7 @@ function walkDog() {
 `.title`
 `.role`
 
-
-## Errors 
+## Errors
 
 An Object {} that is created to represent a problem that has occurred.
 
@@ -840,5 +843,3 @@ An Object {} that is created to represent a problem that has occurred.
 
 - TypeError - incorrect type or syntax. Spelling mistakes maybe. 'console.logg('error')'
 - Reference Error - A reference does not exist or cannot be accessed. x does not exist because you didnt create it.
-
- 
