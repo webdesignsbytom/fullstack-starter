@@ -1,3 +1,4 @@
+import Background from './classes/Background.js';
 import Player from './classes/Player.js';
 
 class Game {
@@ -9,10 +10,28 @@ class Game {
     this.baseHeight = 720;
     this.ratio = this.height / this.baseHeight;
     this.player = new Player(this);
-    this.gravity;
+    this.background = new Background(this)
+    this.gravity = 0.15 * this.ratio;
+    this.speed = 3;
 
     window.addEventListener('resize', (e) => {
       this.resize(e.currentTarget.innerWidth, e.currentTarget.innerHeight);
+    });
+
+    // Mouse controls
+    this.canvas.addEventListener('mousedown', (e) => {
+      console.log('aaa');
+      this.player.flap();
+    });
+    // Keyboard controls
+    window.addEventListener('keydown', (e) => {
+      if (e.key === ' ' || e.key === 'Enter') {
+        this.player.flap();
+      }
+    });
+    // Touch controls
+    this.canvas.addEventListener('touchstart', (e) => {
+      this.player.flap();
     });
   }
 
@@ -24,15 +43,23 @@ class Game {
     this.height = this.canvas.height;
     this.ratio = this.height / this.baseHeight;
 
+    this.speed = 3;
+    this.gravity = 0.15 * this.ratio;
+
+    this.background.resize();
     this.player.resize();
   }
 
   render() {
-    this.gravity = 0.15 * this.ratio;
     this.ctx.fillStyle = 'red';
 
+    this.background.update();
+    this.background.draw();
     this.player.update();
     this.player.draw();
+
+    let speedWindow = document.getElementById('speed_container');
+    speedWindow.innerText = this.player.speedY;
   }
 }
 

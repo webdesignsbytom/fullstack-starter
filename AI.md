@@ -45,12 +45,18 @@ Essentially an IDE.
 3. Matplotlib - 2D matrix plotting library
 4. Scikit-learn - provides common algortythums like decision trees.
 
+
+## Algorithms
+
+1. Neural networks
+
 ## Labs Commands
 
 the ip is the address of the main machine sharing code.
 The port is the port to check for a lab
 `jupyter-lab --ip=192.168.1.150 --port=8888` allow another device on the next work to view the lab
 
+.describe() // describe a dataset
 
 ## Datasets
 
@@ -58,3 +64,10 @@ The port is the port to check for a lab
 Sign in and go to 'dataset's
 download the zip file and use inside you project with the path and
 `pd.read_csv('path')`
+
+## Process
+
+**Normalization** 
+Rescaling data so one feature cant dominate the data set.
+Can improve convergence speed and better model performance.
+Scaling data from 1-100 to 0-1 so all dataset are treated the same without bias of size.
