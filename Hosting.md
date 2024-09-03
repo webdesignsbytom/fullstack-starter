@@ -55,6 +55,7 @@ FTP manager - uploading files directly to the host server
 - A Records
   - Maps a domain to an IP address
   - CNAME, maps domain name to other domain names
+  - Can be used to create subdomains
 
 * CloudFlare is where you give both your host and domain the same cloudflair NS records.
 1. Visit a site
@@ -62,6 +63,13 @@ FTP manager - uploading files directly to the host server
    - site.com is a A record pointing to 8.8.8.8
 2. The sites NameServes Ns1. will point to where to find the A records 
 
+- CNAME - map domain names to other domain names
+  - Also know as a canonnical record
+  - Maps one domain name to another and must always be a name not an ip
+  - Not great for subdomaining becuase it has to do two DNS lookups.
+  - Create record and enter subdomain or full domain including sub 
+ 
+  
 ### PreLaunch Steps
 
 1. Create a sitemap.xml
