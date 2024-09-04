@@ -8,11 +8,14 @@
     - [Where to host](#where-to-host)
     - [Hosting platforms](#hosting-platforms)
     - [Hosting software](#hosting-software)
+    - [Records](#records)
+    - [Sub Domains](#sub-domains)
     - [PreLaunch Steps](#prelaunch-steps)
     - [Factors](#factors)
     - [Build](#build)
     - [Blazor Hosting](#blazor-hosting)
     - [CDN](#cdn)
+    - [Cloudflare](#cloudflare)
   - [BACKEND HOSTING](#backend-hosting)
     - [Create instance](#create-instance)
     - [Set up](#set-up)
@@ -41,10 +44,10 @@ Apache handles the HTTP requests
 Runs on a linux machines
 
 - Runs using Perl
-Perl is a high perfomance, cross platform text processing.
-The code is compiled at run time.
-Its used for automated scripting tasks.
-It was created to dynamic web pages simuilar to python and php. 
+  Perl is a high perfomance, cross platform text processing.
+  The code is compiled at run time.
+  Its used for automated scripting tasks.
+  It was created to dynamic web pages simuilar to python and php.
 
 ### Hosting software
 
@@ -56,7 +59,7 @@ FTP manager - uploading files directly to the host server
   - A, MX, NS, CNAME
   - The A record links your IP to a Domain name
   - MX link domains to email addresses
-  - 
+  -
 - NameServer - a physical server that stores the DNS records for a domain.
   - An NS record will usualy start as a subdomain ns2.dreamhost.com
   - A second nameserver is used for redudancy
@@ -66,24 +69,25 @@ FTP manager - uploading files directly to the host server
   - Can be used to create subdomains
 
 * CloudFlare is where you give both your host and domain the same cloudflair NS records.
+
 1. Visit a site
    - www.site.com is a A record pointing to 8.8.8.8
    - site.com is a A record pointing to 8.8.8.8
-2. The sites NameServes Ns1. will point to where to find the A records 
+2. The sites NameServes Ns1. will point to where to find the A records
 
 - CNAME - map domain names to other domain names
   - Also know as a canonnical record
   - Maps one domain name to another and must always be a name not an ip
   - Not great for subdomaining becuase it has to do two DNS lookups.
-  - Create record and enter subdomain or full domain including sub 
-
+  - Create record and enter subdomain or full domain including sub
 
 ### Sub Domains
 
 To create a sub domain:
+
 1. Go to DNS settings
 2. Create a New A record. Enter the subdomain name you want. For the IP value add the record for the web hosting IP address.
-  
+
 ### PreLaunch Steps
 
 1. Create a sitemap.xml
@@ -123,9 +127,36 @@ They host your website on world wide servers. Providing a local server for each 
 Reducing latency for distant servers around the world.
 They also provide security for DDoS attacks.
 
-- Cloudflare
+### Cloudflare
 
+Traffic will run though cloudflare and check it for dangers and cache files for quick access.
 
+Steps:
+
+1. Host a site as normal
+2. Connect a domain to CloudFlare
+   1. Enter details into cloudflare
+   2. Update nameservers on domain provider
+3. Ensure that the a cetifcate points to the hosting providers ip address for your site
+
+`A - webdesignsbytom.com - 144.0.0.0 - Proxied - Auto` Point to host and have a cloud saying proxied.
+
+These redirect rules in .htaccess will confilt with cloudflare and cause too many redirects.
+Comment them out or remove them.
+
+<!-- # # Redirect to HTTPS
+# RewriteEngine On
+# RewriteCond %{HTTPS} !on
+# RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+# RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+# RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301] -->
+
+- Argo Smart Routing 
+
+This can speed up loading times and bandwidth costs.
+
+- Basic Load Balancing
+Allows you to load balance & failover across up to 2 endpoints from 1 geographic region. Cloudflare will automatically check the health of your servers every 60 seconds.
 
 ## BACKEND HOSTING
 
