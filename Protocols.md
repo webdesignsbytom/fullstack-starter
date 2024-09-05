@@ -45,3 +45,6 @@
 
 File Transfer Protocol
 
+## SSH
+
+**SSH is found in the shell file**
