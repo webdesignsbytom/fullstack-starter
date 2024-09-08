@@ -137,6 +137,7 @@ Requires node.
 - `npm install codemirror/mode/yaml/yaml` yaml code display
 - `npm install -g npm@latest` update node
 - `nvm install node` install latest
+- `npm i google-auth-library` google oauth - needs dotenv
 
 ### Socket io
 
