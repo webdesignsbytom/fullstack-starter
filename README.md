@@ -48,7 +48,7 @@ A list of programs, libraries and compoents along with quick installs and web li
 - `npm install --save-dev @babel/plugin-proposal-private-property-in-object` general udpate needed
 - Quick uninstall `npm uninstall @testing-library/jest-dom @testing-library/react @testing-library/user-event web-vitals`
 - Quick install `npm install react-router-dom axios jwt-decode uuid`
-- `npm i react-helmet`
+- `npm i --save-dev @types/react-helmet`
 
 ### Vue JS APP
 
