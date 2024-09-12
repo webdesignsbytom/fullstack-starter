@@ -66,7 +66,7 @@ A list of programs, libraries and compoents along with quick installs and web li
 
 ### Google Add ons
 
-- `npm i react-ga -S` install google analytics
+- `npm i react-ga4` install google analytics
 
 ## Styles
 
