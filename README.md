@@ -8,6 +8,7 @@ A list of programs, libraries and compoents along with quick installs and web li
   - [Table of contents](#table-of-contents)
   - [Creating Projects](#creating-projects)
     - [React App](#react-app)
+    - [TypeScript React](#typescript-react)
     - [Vue JS APP](#vue-js-app)
     - [NEXT JS APP](#next-js-app)
     - [Icons / Libraries](#icons--libraries)
@@ -39,6 +40,8 @@ A list of programs, libraries and compoents along with quick installs and web li
 
 ## Creating Projects
 
+`npm install -g create-react-app` global react install
+
 ### React App
 
 - `npx create-react-app my-app`
@@ -48,6 +51,10 @@ A list of programs, libraries and compoents along with quick installs and web li
 - `npm install --save-dev @babel/plugin-proposal-private-property-in-object` general udpate needed
 - Quick uninstall `npm uninstall @testing-library/jest-dom @testing-library/react @testing-library/user-event web-vitals`
 - Quick install `npm install react-router-dom axios jwt-decode uuid`
+
+### TypeScript React
+
+`npx create-react-app my-app --template typescript`
 
 ### Vue JS APP
 
