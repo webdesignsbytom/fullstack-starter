@@ -22,3 +22,10 @@ div{
   /_ scale will start after 1s and opacity after 2s (1s after the scale)_/
 }
 ```
+
+
+## Relationships
+
+Spacing Rules for Text
+
+![alt text](images/spacing_rules.png)
