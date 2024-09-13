@@ -51,6 +51,7 @@ A list of programs, libraries and compoents along with quick installs and web li
 - `npm install --save-dev @babel/plugin-proposal-private-property-in-object` general udpate needed
 - Quick uninstall `npm uninstall @testing-library/jest-dom @testing-library/react @testing-library/user-event web-vitals`
 - Quick install `npm install react-router-dom axios jwt-decode uuid`
+- `npm i --save-dev @types/react-helmet`
 
 ### TypeScript React
 
@@ -73,7 +74,7 @@ A list of programs, libraries and compoents along with quick installs and web li
 
 ### Google Add ons
 
-- `npm i react-ga -S` install google analytics
+- `npm i react-ga4` install google analytics
 
 ## Styles
 
