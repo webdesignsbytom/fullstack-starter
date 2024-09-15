@@ -3,6 +3,7 @@
 ## Computer
 
 - IDE. Intergrated development environment. Provides facilites to run and develop code easily. Visual Studio Code is an examples.
+- SCP. Secure Copy Protocol. Copt between devices
 
 ## Extensions
 

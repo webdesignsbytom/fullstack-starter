@@ -43,7 +43,7 @@ Use you can log into using a keygen or a password
 
 ```sh
 Host github.com
-  HostName github.com
+  HostName github.com 
   PreferredAuthentications publickey
   IdentityFile ~/.ssh/githubkeys
 
@@ -51,3 +51,7 @@ Host camerapi
   User camerapi
   HostName 192.168.1.8
 ```
+
+### SSH Tunnels
+
+  
