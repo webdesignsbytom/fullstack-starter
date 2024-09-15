@@ -30,6 +30,7 @@
     - [Elements](#elements)
     - [Element selectors](#element-selectors)
     - [Element Properties](#element-properties)
+  - [Request Response](#request-response)
   - [Errors](#errors)
     - [Error Types](#error-types)
 
@@ -834,6 +835,23 @@ function walkDog() {
 `.textContent`
 `.title`
 `.role`
+
+## Request Response
+
+`res.end()` no header type sent
+`res.send("<div>")` send returns data html, json, file.
+`res.sendFile("./img/image.png", err => console.log("error"))` send a file and detect the header content type
+`res.json()` send back explicitly json object string
+`res.redirect(301, "/other-route")` 301 is perminentlly moved and redireect the to make a new request to the next route.
+`res.format({})` browser can ask for versions of a file. plaintext, html, json, xml. // has a default
+
+```js
+res.links({
+  first: "http://example.com",
+  prev: "ht..."
+})
+```
+
 
 ## Errors
 
