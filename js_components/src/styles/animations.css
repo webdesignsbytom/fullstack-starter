@@ -1,0 +1,32 @@
+.animate_open_nav {
+    animation: openNav 1.2s ease forwards;
+  }
+  
+  @keyframes openNav {
+    from {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate_close_nav {
+    animation: closeNav 1.2s ease forwards;
+  }
+  
+  @keyframes closeNav {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+  }
+  
+
+/* CHAT BOT STYLES AND ANIMATIONS */
