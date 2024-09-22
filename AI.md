@@ -1,5 +1,30 @@
 # AI
 
+## Key Terms
+
+1. AI Models: These are algorithms that learn from data to make predictions or perform tasks. For example, a model might learn to play a game by analyzing many game scenarios.
+
+2. Ollama: A platform for running and managing machine learning models easily. It focuses on simplifying the process of using AI tools.
+
+3. Kaggle: A platform for data science competitions, datasets, and a community. You can find many datasets to practice with and participate in challenges to improve your skills.
+
+4. Google Colab: A cloud-based environment that allows you to write and execute Python code in your browser, great for machine learning and data analysis. It comes with many libraries pre-installed.
+
+5. Jupyter Notebook: An open-source web application that allows you to create and share documents containing live code, equations, visualizations, and narrative text. It’s widely used for data analysis and teaching.
+
+## Coding languages
+
+1. Python
+2. C#
+3. javascript
+4. Ruby
+
+## Libraries (Python)
+
+1. Pandas
+2. Matplotlib
+3. Numpy
+
 ## Jupyter
 
 Project Jupyter is a project to develop open-source software, open standards, and services for interactive computing across multiple programming languages.
@@ -37,14 +62,12 @@ Essentially an IDE.
 3. Intergrated tools. Built in file manager, terminals and text editor.
 4. Extensibility. Modular architecture and extensions.
 
-
 ## Libraries
 
 1. Numpy - Bath math for python
 2. Pandas - Provides a data frame like an excel spradsheet in rows and columns
 3. Matplotlib - 2D matrix plotting library
 4. Scikit-learn - provides common algortythums like decision trees.
-
 
 ## Algorithms
 
@@ -67,7 +90,7 @@ download the zip file and use inside you project with the path and
 
 ## Process
 
-**Normalization** 
+**Normalization**
 Rescaling data so one feature cant dominate the data set.
 Can improve convergence speed and better model performance.
 Scaling data from 1-100 to 0-1 so all dataset are treated the same without bias of size.
