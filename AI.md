@@ -19,11 +19,7 @@
 3. javascript
 4. Ruby
 
-## Libraries (Python)
-
-1. Pandas
-2. Matplotlib
-3. Numpy
+## Tools
 
 ## Jupyter
 
@@ -68,6 +64,13 @@ Essentially an IDE.
 2. Pandas - Provides a data frame like an excel spradsheet in rows and columns
 3. Matplotlib - 2D matrix plotting library
 4. Scikit-learn - provides common algortythums like decision trees.
+
+## MindStudio
+
+Codeless AI trainer
+Pre train you models with out code
+
+`https://app.mindstudio.ai/`
 
 ## Algorithms
 
