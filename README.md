@@ -174,6 +174,7 @@ Requires node.
 
 ### PostgreSQL
 
+- Linux
 `sudo apt install postgresql postgresql-contrib`
 `sudo -i -u postgres`
 
@@ -184,6 +185,13 @@ Requires node.
 `\du` list users and roles
 `createdb <name>` create database
 
+- Windows
+Install PgAdmin and Postgres
+Create env variable on system.
+Search env variables in start menu
+Add new System Variable with path to postgres `C:\Program Files\PostgreSQL\<version>\bin`
+login as user `psql -U postgres`
+  
 ### Errors
 
 - `HTTP_HEADER_SENT` You are trying to return two headers. Add a `return` to any `res.` parts towards the end.
