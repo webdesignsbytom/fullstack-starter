@@ -305,7 +305,7 @@ By using the -it flags, you are opening an interactive terminal session within t
 `sudo docker run -d --name moncards-instance2 -p 5002:5000 techdesigntavistock/trading-card-game:latest`
 `sudo docker run -d --name myproject-instance3 -p 5003:5000 techdesigntavistock/trading-card-game:latest`
 
-## Terminology
+### Terminology
 
 In the last section, we used a lot of Docker-specific jargon which might be confusing to some. So before we go further, let me clarify some terminology that is used frequently in the Docker ecosystem.
 
@@ -315,20 +315,8 @@ In the last section, we used a lot of Docker-specific jargon which might be conf
 - Docker Client - The command line tool that allows the user to interact with the daemon. More generally, there can be other forms of clients too - such as Kitematic which provide a GUI to the users.
 - Docker Hub - A registry of Docker images. You can think of the registry as a directory of all available Docker images. If required, one can host their own Docker registries and can use them for pulling images.
 
-## Updates
+## Headless Browser
 
-- useTransition()
-
-```js
-const [isPending, startTransition] = useTransition();
-
-  function navigate(url) {
-    startTransition(() => {
-      setPage(url);
-    });
-  }
-  {isPending && <div>Loading...<div>}
-```
-
-- useOptimistic()
-- useActionState()
+Firefox 
+Navigate to the filefox directory in Program Files
+`./firefox.exe -headless` to run
