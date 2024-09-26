@@ -320,3 +320,4 @@ In the last section, we used a lot of Docker-specific jargon which might be conf
 Firefox 
 Navigate to the filefox directory in Program Files
 `./firefox.exe -headless` to run
+`"/c/Program Files/Mozilla Firefox/firefox.exe" -headless`
