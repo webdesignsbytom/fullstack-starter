@@ -239,6 +239,7 @@ Connect code to server
 
 ## Docker
 
+`-d` detached mode so it runs in background
 `docker pull <name>` pull an Image
 `docker run <name>` run the Container
 `docker run --rm` run the container and delete when exited

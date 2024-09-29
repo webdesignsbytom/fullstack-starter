@@ -29,6 +29,8 @@
     - [Double hosting servers](#double-hosting-servers)
   - [Docker hosting](#docker-hosting)
   - [JUNK](#junk)
+  - [Setting up a server](#setting-up-a-server)
+    - [Steps](#steps)
 
 ## FRONTEND HOSTING
 
@@ -451,3 +453,24 @@ listen 80;
     }
 
 }
+
+
+## Setting up a server
+
+Laptop using docker for the code
+
+### Steps
+
+for testing im installing `sudo apt install timeshift` for a restore backup
+`sudo timeshift --create`
+`sudo timeshift --restore`
+
+1. install headless ubunutu on the laptop
+2. update and upgrade the system
+3. install vim, docker, docker-compose, git and bash
+    - `sudo apt install vim`
+    - `sudo apt-get install docker.io` + `sudo systemctl enable docker` - test `sudo docker run hello-world`
+    - `sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose` 
+    - `sudo chmod +x /usr/local/bin/docker-compose` test - `docker-compose --version`
+    - `sudo apt install git`
+4. 
