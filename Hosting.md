@@ -177,14 +177,19 @@ Allows you to load balance & failover across up to 2 endpoints from 1 geographic
 2. `apt-get update`
 3. `apt-get upgrade`
    1. `apt-get update && upgrade -y`
-4. `apt install nodejs` // this line installs node
-5. `apt install npm`
-6. `apt-get install nginx`
-7. `npm install pm2@latest -g` to keep server alive
-8. `git clone 'your repo link'`
-9. cd into and `npm ci`
-10. `nano /etc/nginx/sites-available/api.cat-app.app`
-11. `ln -s /etc/nginx/sites-available/api.cat-app.app /etc/nginx/sites-enabled/`
+4. change root user password `sudo passwd`
+5. set up a non root user - principle of least priviledges `adduser tom`
+6. set password different to the root user
+7. add the user to the sudo group `usermod -aG sudo tom` - check with `groups tom` 
+8. Generate an ssh key on your main machine not server
+9. `apt install nodejs` // this line installs node
+10. `apt install npm`
+11. `apt-get install nginx`
+12. `npm install pm2@latest -g` to keep server alive
+13. `git clone 'your repo link'`
+14. cd into and `npm ci`
+15. `nano /etc/nginx/sites-available/api.cat-app.app`
+16. `ln -s /etc/nginx/sites-available/api.cat-app.app /etc/nginx/sites-enabled/`
 
     ```md
     server {
@@ -203,15 +208,15 @@ Allows you to load balance & failover across up to 2 endpoints from 1 geographic
     }
     ```
 
-12. `nginx -t` check syntax
-13. `service nginx restart`
-14. `systemctl restart nginx`
-15. `systemctl status nginx`
-16. Go to your server `http://3.9.178.161` and it will have your node home page
-17. `apt install certbot python3-certbot-nginx`
-18. `certbot --nginx -d api.myecoapp.org`
-19. `cat /etc/nginx/sites-enabled/default`
-20. `pm2 start src/server.js --name server`
+17. `nginx -t` check syntax
+18. `service nginx restart`
+19. `systemctl restart nginx`
+20. `systemctl status nginx`
+21. Go to your server `http://3.9.178.161` and it will have your node home page
+22. `apt install certbot python3-certbot-nginx`
+23. `certbot --nginx -d api.myecoapp.org`
+24. `cat /etc/nginx/sites-enabled/default`
+25. `pm2 start src/server.js --name server`
 
 Custom api folder
 

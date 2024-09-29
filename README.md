@@ -35,8 +35,9 @@ A list of programs, libraries and compoents along with quick installs and web li
     - [Prune Docker builder cache](#prune-docker-builder-cache)
     - [Prune unused Docker networks](#prune-unused-docker-networks)
     - [Update running container ???](#update-running-container-)
-  - [Terminology](#terminology)
-  - [Updates](#updates)
+    - [Terminology](#terminology)
+  - [Headless Browser](#headless-browser)
+  - [sudo chown tomus:tomus /home/tomus/one\_server/](#sudo-chown-tomustomus-hometomusone_server)
 
 ## Creating Projects
 
@@ -322,3 +323,6 @@ Firefox
 Navigate to the filefox directory in Program Files
 `./firefox.exe -headless` to run
 `"/c/Program Files/Mozilla Firefox/firefox.exe" -headless`
+
+
+## sudo chown tomus:tomus /home/tomus/one_server/
