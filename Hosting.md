@@ -478,4 +478,6 @@ for testing im installing `sudo apt install timeshift` for a restore backup
     - `sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose` 
     - `sudo chmod +x /usr/local/bin/docker-compose` test - `docker-compose --version`
     - `sudo apt install git`
-4. 
+
+
+root@computer:/home/tom# sudo chown tom:tom CatApp/

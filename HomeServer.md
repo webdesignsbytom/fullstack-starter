@@ -11,6 +11,7 @@
     - [Initializing](#initializing)
     - [SSH and Security Setup](#ssh-and-security-setup)
     - [Securing Connection](#securing-connection)
+    - [Node](#node)
 
 ## Equipment
 
@@ -38,6 +39,12 @@
 1. Run update and upgrade
 2. `sudo nano /etc/systemd/logind.conf` turn off screen
 3. `sudo bash -c "echo 1 > /sys/class/backlight/*/bl_power"` or `sudo bash -c "echo 0 > /sys/class/backlight/*/bl_power"`
+4. install vim, docker, docker-compose, git and bash
+   - `sudo apt install vim`
+   - `sudo apt-get install docker.io` + `sudo systemctl enable docker` - test `sudo docker run hello-world`
+   - `sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose`
+   - `sudo chmod +x /usr/local/bin/docker-compose` test - `docker-compose --version`
+   - `sudo apt install git`
 
 ### SSH and Security Setup
 
@@ -47,3 +54,13 @@
    2. Disable root login `sudo nano /etc/ssh/sshd_config` `PermitRootLogin no`
 
 ### Securing Connection
+
+### Node
+
+1. `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash`
+2. `source ~/.bashrc`
+3. `nvm --version`
+4. `apt install nodejs` // this line installs node
+5. `apt install npm`
+6. `nvm install 22`
+7. `nvm use 22`
