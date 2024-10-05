@@ -38,6 +38,7 @@ A list of programs, libraries and compoents along with quick installs and web li
     - [Terminology](#terminology)
   - [Headless Browser](#headless-browser)
   - [sudo chown tomus:tomus /home/tomus/one\_server/](#sudo-chown-tomustomus-hometomusone_server)
+  - [Power](#power)
 
 ## Creating Projects
 
@@ -326,3 +327,9 @@ Navigate to the filefox directory in Program Files
 
 
 ## sudo chown tomus:tomus /home/tomus/one_server/
+
+
+## Power
+
+`sudo bash -c "echo 1 > /sys/class/backlight/*/bl_power"`
+`sudo bash -c "echo 0 > /sys/class/backlight/*/bl_power"`
