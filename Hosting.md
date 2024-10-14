@@ -482,3 +482,4 @@ for testing im installing `sudo apt install timeshift` for a restore backup
 
 root@computer:/home/tom# sudo chown tom:tom CatApp/
 sudo chown -R tom:tom /home/tom/PERN-STACK-DEPLOYMENT
+C:\minio.exe server C:\MinIOData --console-address ":9001"
