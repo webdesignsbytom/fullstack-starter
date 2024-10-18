@@ -189,7 +189,8 @@ Allows you to load balance & failover across up to 2 endpoints from 1 geographic
 13. `git clone 'your repo link'`
 14. cd into and `npm ci`
 15. `nano /etc/nginx/sites-available/api.cat-app.app`
-16. `ln -s /etc/nginx/sites-available/api.cat-app.app /etc/nginx/sites-enabled/`
+16. Delete the default file in sites-available
+17. `ln -s /etc/nginx/sites-available/api.cat-app.app /etc/nginx/sites-enabled/`
 
     ```md
     server {
@@ -208,15 +209,15 @@ Allows you to load balance & failover across up to 2 endpoints from 1 geographic
     }
     ```
 
-17. `nginx -t` check syntax
-18. `service nginx restart`
-19. `systemctl restart nginx`
-20. `systemctl status nginx`
-21. Go to your server `http://3.9.178.161` and it will have your node home page
-22. `apt install certbot python3-certbot-nginx`
-23. `certbot --nginx -d api.myecoapp.org`
-24. `cat /etc/nginx/sites-enabled/default`
-25. `pm2 start src/server.js --name server`
+18. `nginx -t` check syntax
+19. `service nginx restart`
+20. `systemctl restart nginx`
+21. `systemctl status nginx`
+22. Go to your server `http://3.9.178.161` and it will have your node home page
+23. `apt install certbot python3-certbot-nginx`
+24. `certbot --nginx -d api.myecoapp.org`
+25. `cat /etc/nginx/sites-enabled/default`
+26. `pm2 start src/server.js --name server`
 
 Custom api folder
 
