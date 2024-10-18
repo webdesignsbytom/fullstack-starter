@@ -288,6 +288,8 @@ maxretry = 5
 - DATABASE_URL='postgres://admin:Srt3@localhost:5432/portal?schema=prisma'
 - SHADOW_DATABASE_URL="postgres://admin:Srt3@localhost:5432/shadow_db?schema=shadow"
 
+- `query_engine-windows.dll.node` you may need to remove this from node_modules/.prisma/client
+
 ### Nginx
 
 Nginx is a reverse proxy that can communicate with the system and the outside world through por
