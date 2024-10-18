@@ -275,10 +275,14 @@ maxretry = 5
 `sudo -i -u postgres`
 `psql`
 
-CREATE USER myuser WITH PASSWORD 'mypassword';
+`CREATE USER myuser WITH PASSWORD 'mypassword';`
 
-CREATE DATABASE mydatabase;
-GRANT ALL PRIVILEGES ON DATABASE mydatabase TO myuser;
+`CREATE DATABASE mydatabase;`
+`GRANT ALL PRIVILEGES ON DATABASE mydatabase TO myuser;`
+
+`CREATE DATABASE shadow_db;`
+
+`npx prisma studio` get a UI
 
 ### Nginx
 
