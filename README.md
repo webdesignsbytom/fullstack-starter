@@ -149,6 +149,8 @@ Requires node.
 - `npm install -g npm@latest` update node
 - `nvm install node` install latest
 - `npm i google-auth-library` google oauth - needs dotenv
+- `npm i helmet` add header controller
+- `npm i express-rate-limit` limits server requests
 
 ### Socket io
 
