@@ -285,8 +285,8 @@ maxretry = 5
 
 `npx prisma studio` get a UI
 
-- DATABASE_URL='postgres://admin:Srt%21%40%23p0rtalD233@localhost:5432/portal?schema=prisma'
-- SHADOW_DATABASE_URL="postgres://admin:Srt%21%40%23p0rtalD233@localhost:5432/shadow_db?schema=shadow"
+- DATABASE_URL='postgres://admin:Srt3@localhost:5432/portal?schema=prisma'
+- SHADOW_DATABASE_URL="postgres://admin:Srt3@localhost:5432/shadow_db?schema=shadow"
 
 ### Nginx
 
