@@ -215,9 +215,10 @@ Allows you to load balance & failover across up to 2 endpoints from 1 geographic
 21. `systemctl status nginx`
 22. Go to your server `http://3.9.178.161` and it will have your node home page
 23. `apt install certbot python3-certbot-nginx`
-24. `certbot --nginx -d api.myecoapp.org`
-25. `cat /etc/nginx/sites-enabled/default`
-26. `pm2 start src/server.js --name server`
+24. Create an SSL certifcate using your api subdomain
+25. `certbot --nginx -d api.myecoapp.org` // set up a subdomain in dns settings with your domain host or web host
+26. `cat /etc/nginx/sites-enabled/...` // your site name 
+27. `pm2 start src/server.js --name server`
 
 Custom api folder
 
