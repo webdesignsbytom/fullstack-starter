@@ -193,6 +193,8 @@ Create env variable on system.
 Search env variables in start menu
 Add new System Variable with path to postgres `C:\Program Files\PostgreSQL\<version>\bin`
 login as user `psql -U postgres`
+`CREATE USER admin WITH PASSWORD 'admin';`
+`ALTER USER admin CREATEDB;` give access to create databases to user
   
 ### Errors
 
