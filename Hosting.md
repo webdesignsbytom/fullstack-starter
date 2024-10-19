@@ -23,6 +23,8 @@
     - [Pm2](#pm2)
     - [Security](#security)
     - [PostgreSQL](#postgresql)
+    - [FIles](#files)
+    - [Removal](#removal)
     - [Nginx](#nginx)
     - [Fancy text](#fancy-text)
     - [Load Balancing](#load-balancing)
@@ -297,6 +299,42 @@ maxretry = 5
 
 - `query_engine-windows.dll.node` you may need to remove this from node_modules/.prisma/client
 
+### FIles
+
+Postgres has 2 config files.
+
+1. postgresql.conf  - `/etc/postgresql/16/main/postgresql.conf`
+2. pg_hba.conf - `/etc/postgresql/16/main/pg_hba.conf`
+
+### Removal
+
+`sudo systemctl stop postgresql`
+
+```sh
+sudo apt-get --purge remove postgresql postgresql-* -y
+sudo apt-get autoremove -y
+sudo apt-get autoclean -y
+```
+
+`sudo rm -rf /var/lib/postgresql/`
+
+```sh
+sudo rm -rf /etc/postgresql/
+sudo rm -rf /etc/postgresql-common/
+sudo rm -rf /etc/pgbouncer/
+sudo rm -rf /etc/pgpool2/
+```
+
+`sudo rm -rf /var/log/postgresql/`
+
+```sh
+sudo deluser postgres
+sudo delgroup postgres
+```
+
+`dpkg -l | grep postgres` verify
+
+
 ### Nginx
 
 Nginx is a reverse proxy that can communicate with the system and the outside world through por
@@ -380,7 +418,7 @@ server_name tom.cat-app.app www.tom.cat-app.app;
 
 ## Docker hosting
 
-1. `apt get install docker.io`
+1. `apt-get install docker.io`
 2. `docker pull techdesigntavistock/trading-card-game`
 3. `docker run -d --name moncards-instance1 --restart unless-stopped -p 5001:5000 techdesigntavistock/trading-card-game:latest`
    `docker run -d --name moncards-instance2 --restart unless-stopped -p 5002:5000 techdesigntavistock/trading-card-game:latest`

@@ -23,6 +23,7 @@
 5. Checked the ports
 6. `alias lsports='lsof -i -P -n'` added to bashrc so `lsports` list all ports
 7. Installed minio and created a user account set as service on startup
+8. Installed docker to run files without install node js or others
 
 ## Potentially install
 
