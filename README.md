@@ -28,6 +28,7 @@ A list of programs, libraries and compoents along with quick installs and web li
   - [Github](#github)
     - [General Comanads](#general-comanads)
     - [Git SSH Keygen](#git-ssh-keygen)
+  - [Minio](#minio)
   - [Vercel](#vercel)
   - [Docker](#docker)
     - [Prune all unused Docker objects](#prune-all-unused-docker-objects)
@@ -148,6 +149,8 @@ Requires node.
 - `npm install -g npm@latest` update node
 - `nvm install node` install latest
 - `npm i google-auth-library` google oauth - needs dotenv
+- `npm i helmet` add header controller
+- `npm i express-rate-limit` limits server requests
 
 ### Socket io
 
@@ -242,6 +245,18 @@ Connect code to server
 1. Create ssh key `ssh-keygen -t rsa` || `ssh-keygen -t rsa -b 4096 -C "cat-app"`
 2. find .pub file
 3. copy key and add to github then use `git clone ssh..`
+
+## Minio
+
+`wget https://dl.min.io/server/minio/release/linux-amd64/minio` install
+`chmod +x minio`make executable
+`sudo mv minio /usr/local/bin/` move here
+`mkdir -p /data/minio` store files here
+`minio server /data/minio` start server
+`mc --version` check minio client version
+`nohup minio server /data/minio > minio.log 2>&1 &` run in background
+`pkill minio` manually stop
+`mc ls myminio` list all buckets
 
 ## Vercel
 

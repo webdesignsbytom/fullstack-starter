@@ -12,6 +12,8 @@ Used for
 2. Tunneling
 3. Executing commands
 
+A replacement for telnet which was unencrypted
+
 ### SSH Key Components
 
 SSH Client: A software that initiates the SSH connection (e.g., OpenSSH client).
@@ -54,4 +56,10 @@ Host camerapi
 
 ### SSH Tunnels
 
-  
+A method of creating a encrypted SSH connection between a client and a machine with ports.
+
+Why would we use it?
+
+1. The router does not have port forwarding
+2. Circumvent firewall security 
+3. Hide identity
