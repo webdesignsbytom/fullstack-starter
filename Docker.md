@@ -43,3 +43,11 @@ Then there are official and user images, which can be both base and child images
 6. `docker pull [hubname]/[projectname]` pull to device
 7. `docker run [hubname]/[projectname]` - but more likely `docker run -d --name project-instance1 -p 50:50 [hubname]/[projectname]:latest`
 8. Remove when done with `rm project-instance1`
+
+## Remove docker image
+
+`docker stop 3c8f23826c9f` name or id
+`docker rm 3c8f23826c9f` name or id
+`docker rmi dummyserver:latest` remove image
+`docker container prune`
+`docker image prune`
