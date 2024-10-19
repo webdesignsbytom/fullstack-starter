@@ -219,6 +219,7 @@ Allows you to load balance & failover across up to 2 endpoints from 1 geographic
 25. `certbot --nginx -d api.myecoapp.org` // set up a subdomain in dns settings with your domain host or web host
 26. `cat /etc/nginx/sites-enabled/...` // your site name 
 27. `pm2 start src/server.js --name server`
+28. `sudo apt install fail2ban` secure from dodgy ip
 
 Custom api folder
 
@@ -236,6 +237,10 @@ Custom api folder
 
 `sudo tail -f /var/log/nginx/access.log`
 `sudo tail -f /var/log/nginx/error.log`
+
+Check ports
+`lsof -i -P -n`
+`ss -tuln`
 
 ### Pm2
 
