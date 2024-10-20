@@ -20,6 +20,7 @@
     - [Create instance](#create-instance)
     - [Set up](#set-up)
     - [Logs](#logs)
+    - [Node](#node)
     - [Pm2](#pm2)
     - [Security](#security)
     - [PostgreSQL](#postgresql)
@@ -243,6 +244,15 @@ Custom api folder
 Check ports
 `lsof -i -P -n`
 `ss -tuln`
+
+### Node
+
+`curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash` install nvm
+`source ~/.bashrc`
+`nvm list-remote` list node version 
+`nvm install 22.8.0` install version selected
+`nvm alias default 22.8.0` set default version
+`node -v` test
 
 ### Pm2
 
