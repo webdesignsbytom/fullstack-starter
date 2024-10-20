@@ -24,7 +24,8 @@
 6. `alias lsports='lsof -i -P -n'` added to bashrc so `lsports` list all ports
 7. Installed minio and created a user account set as service on startup
 8. Installed docker to run files without install node js or others
-
+9. Installed netstat `sudo apt install net-tools`
+10. 
 ## Potentially install
 
 1. `sudo apt install fail2ban` secure from dodgy ip

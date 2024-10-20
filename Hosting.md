@@ -33,6 +33,7 @@
   - [JUNK](#junk)
   - [Setting up a server](#setting-up-a-server)
     - [Steps](#steps)
+  - [Tools](#tools)
 
 ## FRONTEND HOSTING
 
@@ -283,6 +284,8 @@ maxretry = 5
 `sudo systemctl enable postgresql`
 `sudo -i -u postgres`
 `psql`
+
+`ALTER USER postgres WITH PASSWORD 'xxxx';` set password for default user
 
 `CREATE USER myuser WITH PASSWORD 'mypassword';`
 
@@ -535,6 +538,14 @@ for testing im installing `sudo apt install timeshift` for a restore backup
     - `sudo apt install git`
 
 
+
+## Tools
+
+1. Netstat network tools `sudo apt install net-tools`
+
+
 root@computer:/home/tom# sudo chown tom:tom CatApp/
 sudo chown -R tom:tom /home/tom/PERN-STACK-DEPLOYMENT
 C:\minio.exe server C:\MinIOData --console-address ":9001"
+
+
