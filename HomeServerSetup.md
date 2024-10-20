@@ -29,6 +29,24 @@
 11. Installed pm2
 12. Installed DummyServer and ran exposed 4000 on ufw
 13. Can connect to dummy server database but am getting errors
+14. Set my UWF firewall to
+
+```sh
+To                         Action      From
+--                         ------      ----
+22/tcp                     ALLOW       Anywhere
+80/tcp                     ALLOW       Anywhere
+443                        ALLOW       Anywhere
+5432                       ALLOW       192.168.1.0/24
+9000                       ALLOW       192.168.1.0/24
+4000                       ALLOW       192.168.1.0/24
+4001                       ALLOW       192.168.1.0/24
+22/tcp (v6)                ALLOW       Anywhere (v6)
+80/tcp (v6)                ALLOW       Anywhere (v6)
+443 (v6)                   ALLOW       Anywhere (v6)
+```
+
+15.
 
 ## Notes
 
