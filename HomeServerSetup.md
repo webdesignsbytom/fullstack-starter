@@ -19,7 +19,7 @@
 1. apt update
 2. apt upgrade
 3. apt install figlet for fancy text intro
-4. installed postgres and set up user 
+4. installed postgres and set up user
 5. Checked the ports
 6. `alias lsports='lsof -i -P -n'` added to bashrc so `lsports` list all ports
 7. Installed minio and created a user account set as service on startup
@@ -27,6 +27,12 @@
 9. Installed node 22.8 and nvm
 10. Installed netstat `sudo apt install net-tools`
 11. Installed pm2
+12. Installed DummyServer and ran exposed 4000 on ufw
+13. Can connect to dummy server database but am getting errors
+
+## Notes
+
+1. Docker doesnt connect to localhost
 
 ## Potentially install
 
