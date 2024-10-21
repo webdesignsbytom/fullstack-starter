@@ -46,7 +46,9 @@ To                         Action      From
 443 (v6)                   ALLOW       Anywhere (v6)
 ```
 
-15.
+15. Added a tunnel on buckets
+16. Installed mc
+17. 
 
 ## Notes
 

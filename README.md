@@ -255,8 +255,16 @@ Connect code to server
 `minio server /data/minio` start server
 `mc --version` check minio client version
 `nohup minio server /data/minio > minio.log 2>&1 &` run in background
+`nohup minio server --address "0.0.0.0:9000" /data/minio > minio.log 2>&1 &` 
 `pkill minio` manually stop
 `mc ls myminio` list all buckets
+
+
+/etc/systemd/system/multi-user.target.wants/minio.service - route to files
+`ls -ld /data/minio/.minio.sys` 
+
+export MINIO_ROOT_USER=
+export MINIO_ROOT_PASSWORD=
 
 ## Vercel
 
