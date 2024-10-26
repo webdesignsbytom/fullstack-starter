@@ -268,6 +268,7 @@ Check ports
 ### Security
 
 DDOS protection
+`sudo ufw allow from 192.168.1.0/24 to any port 22` secure ssh trafic to local
 `sudo apt install fail2ban -y`
 `sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local` create local config
 `sudo systemctl restart fail2ban` reset
