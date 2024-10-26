@@ -9,3 +9,5 @@ How to use Pi and it moduels
 `libcamera-jpeg -o test.jpg` test picture
 
 `scp camerapi@192.168.1.10:/home/camerapi/test.jpg C:\Users\YourUserName\Downloads` transfer file from computers.
+
+scp C:\Users\tom_b\Documents\code\javascript\fullstack-starter\other\DockerFile tomadmin@192.168.1.227:~

@@ -21,6 +21,11 @@ Then there are official and user images, which can be both base and child images
 
 - User images are images created and shared by users like you and me. They build on base images and add additional functionality. Typically, these are formatted as user/image-name.
 
+## install
+
+1. `apt-get install docker.io`
+
+
 ## Commands
 
 `-t` tag a docker project

