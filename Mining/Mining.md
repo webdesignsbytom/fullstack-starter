@@ -16,7 +16,7 @@ cmake ..
 
 make
 
-`./xmrig -o gulf.moneroocean.stream:10128 -u 49YzZ75Vq1Q5fYtPVn7uA8VMdN7aaByKfadPyfeBiJw5GHuD1vKkb2GjeeuApT2wu4AMpT4TBsfWuRsYEBDZNT9NVWCqwoz -p pi4-4gb`
+`./xmrig -o gulf.moneroocean.stream:10128 -u 49YzZ75Vq1Q5fYtPVn7uA8VMdN7aaByKfadPyfeBiJw5GHuD1vKkb2GjeeuApT2wu4AMpT4TBsfWuRsYEBDZNT9NVWCqwoz -p dist1nodocker`
 
 
 ## Mining xmrig 
