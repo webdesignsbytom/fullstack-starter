@@ -1,5 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 
+.special_1 {
+  transform: perspective(1000px) rotateX(50deg) rotateY(0deg) rotateZ(-45deg);
+}
+
 function GridAnimationComponent() {
   const canvasRef = useRef(null);
 
