@@ -35,6 +35,7 @@ jobs:                 -- Jobs
 ```
 
 The event runs the jobs which run the rest
+
 ## YAML Lines
 
 `on: push` - Trigger the workflow to run the jobs on push
