@@ -87,3 +87,30 @@
 `-x` - Enables debugging or excludes certain items.
 `-y` - Answers "yes" to all prompts automatically.
 `-z` - Tests for an empty string or compresses data.
+
+## Commads
+
+`uname` - get machine name 'Linux'
+`uname -a` get all machine name data
+`mount` get list of mounted library files
+`date` get date
+`uptime` get time used
+`echo` print whats after echo `echo tom` = `tom`
+`echo "some text" > file.txt` add text to file 
+`info=$(uname -a)` set info as command `echo $info`
+`cd ../../..` path travesal 
+`tree` get directory tree
+`cat` concatinate docuemnt
+`touch` create file
+`mv file1.txt ../` move a filecd .
+`mv file1.txt file2.txt` move and rename
+`find / -oerm -u=x` find all where permision for user = x
+`find / -type f -perm -u=x` find files with user x permissions
+`chmod` change mode
+`deluser johnsmith` delete user
+`groupdel johnsmith` delete group user is in
+
+
+## Linux Stuff
+
+1. Volumes - hard memory drives, attached storage - `mount [Name of device]`
