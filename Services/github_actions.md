@@ -23,6 +23,12 @@ Marketplace: A platform to find and share reusable actions, enhancing workflow c
 
 A ARTIFACT is a
 
+Schedual events: schedule
+```
+on: schedual:
+    - cron 0 5 5 5 5 
+```
+
 ## How To Use
 
 `on: push` - Event
