@@ -21,6 +21,7 @@ Runs: Instances of workflow execution triggered by events, representing the comp
 Runners: Servers that host the environment where the jobs are executed
 Marketplace: A platform to find and share reusable actions, enhancing workflow capabilities with community developed tools.
 Caller: A workflow that uses another workflow if reffered to as a caller.
+Path: A
 
 A ARTIFACT is a
 
@@ -31,12 +32,55 @@ A WebHook Event is a HTTP request sent from your application to another applicat
 - Sponsored webhooks
 - App webhooks
 
+Strategy:
+Matrix: 
+on: trigger workflow || on: ['thing, 'thing2']
+
+
 ## Code 
 
 Schedual events: schedule
 ```
 on: schedual:
     - cron 0 5 5 5 5 
+```
+
+```
+strategy:
+  matrix:
+    node-version: ['18.x', '20.x']
+```
+
+```
+on:
+  pull_request:
+    # Sequence of patterns matched against refs/heads
+    branches:
+      - main
+      - 'mona/octocat'
+      - 'releases/**'
+```
+
+```
+on:
+  push:
+    # Sequence of patterns matched against refs/heads
+    branches-ignore:
+      - 'mona/octocat'
+      - 'releases/**-alpha'
+    # Sequence of patterns matched against refs/tags
+    tags-ignore:
+      - v2
+      - v1.*
+```
+
+```
+jobs:
+  job1:
+  job2:
+    needs: job1
+  job3:
+    needs: [job1, job2]
 ```
 
 ## How To Use
@@ -56,3 +100,27 @@ The event runs the jobs which run the rest
 
 `on: push` - Trigger the workflow to run the jobs on push
 `runs-on: ubuntu-latest` set the machine to run on
+
+## CI/CD Pipeline
+
+0. Precommit checks
+
+1. 'SOURCE STAGE' - Getting your code from a repo like github
+Define branch protection rules. A review before merging to main branch.
+Linting - Checking code for syntax errors. Have a github action to check the linting
+
+2. 'BUILD STAGE' - Creating an Artifact you can test and release
+Compiling the code and building container images of application
+Build docker image first then compile code if required.
+The output is a container image we can run tests on.
+
+3. 'CONTAINER IMAGE' The built version of your application
+Run unit test
+Check for code coverage (80-90%)
+
+4. 'TESTING STAGE' where the real heavy testing starts to fully test the application
+Intergration test - test the functionality - can a user post a message/upload photos/sign up
+
+5. 'RELEASE STAGE' release the application so servers can use it
+Ship the image to the registery, you can run the application for QA testing
+Staging and production evnironments get the iamge
