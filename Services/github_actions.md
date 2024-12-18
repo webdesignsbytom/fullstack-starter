@@ -7,7 +7,6 @@ A CI CD Pipeline
 A WORKFLOW is a YAML file with a collection.
 A workflow is a YAML file that configures the tests and what happens when an event triggers.
 
-
 - EVENTS
 - JOBS
 - RUNNERS
