@@ -131,6 +131,8 @@ Create another repo called 'Config Repo' and can have docker compose files or ku
 
 ![image](https://github.com/user-attachments/assets/48929bab-272b-4aff-9662-55032593d6c4)
 ![image](https://github.com/user-attachments/assets/1a528b09-8286-4753-9839-afec56abab5e)
+![image](https://github.com/user-attachments/assets/e2d86e14-bfa5-44f2-a16e-0cc3d49ff288)
+
 
 7. 'STAGING AND PRODUCTION'
 Staging is the prerelease of the main file
