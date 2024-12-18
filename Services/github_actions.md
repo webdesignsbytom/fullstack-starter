@@ -124,3 +124,18 @@ Intergration test - test the functionality - can a user post a message/upload ph
 5. 'RELEASE STAGE' release the application so servers can use it
 Ship the image to the registery, you can run the application for QA testing
 Staging and production evnironments get the iamge
+
+6. 'OUTPUT' - This will normally be an image
+You need the continuous deployment aspect for this to be deployed from the registry.
+Create another repo called 'Config Repo' and can have docker compose files or kubernetes manifest files
+
+![image](https://github.com/user-attachments/assets/48929bab-272b-4aff-9662-55032593d6c4)
+![image](https://github.com/user-attachments/assets/1a528b09-8286-4753-9839-afec56abab5e)
+
+7. 'STAGING AND PRODUCTION'
+Staging is the prerelease of the main file
+Push to production env
+Manually or auto trigger the update to production
+
+
+
