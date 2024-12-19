@@ -28,6 +28,12 @@ Then there are official and user images, which can be both base and child images
 
 ## Commands
 
+`docker init` init repo
+`docker run`
+`docker compose up --build` run a project locally with exposed ports
+
+### Tags
+
 `-t` tag a docker project
 `-d` detach when running
 `-it` flag specifies an interactive terminal which makes it easier to kill the container with Ctrl+C
