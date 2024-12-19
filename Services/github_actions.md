@@ -15,7 +15,7 @@ A workflow is a YAML file that configures the tests and what happens when an eve
 
 Workflows: Autoomated processes defined in your repo that coordinate jobs, triggered by events or scheduals
 Actions: Reusable tasks that perform jobs within a workflow
-Jobs: Groups of steps that execute on the same runner, typically runnning in parallel
+Jobs: Groups of steps that execute on the same runner, typically runnning in parallel. Jobs run on a server which is the `runs-on: ubuntu-latest`.
 Steps: Individual tasks within a job that run commands or actions sequentailly.
 Runs: Instances of workflow execution triggered by events, representing the complete run-though of a workflow
 Runners: Servers that host the environment where the jobs are executed
@@ -33,9 +33,12 @@ A WebHook Event is a HTTP request sent from your application to another applicat
 - App webhooks
 
 Strategy:
-Matrix: 
+Matrix: having a array of values to use in your pipeline
+
 on: trigger workflow || on: ['thing, 'thing2']
 
+`-uses: actions/chekout@v2` actions/checkout is a repo on the github actions repository that handles checking out to the branch uploaded.
+`uses: actions/setup-node@v2` github actions repo has various code languages you can deploy with the setup repos.
 
 ## Code 
 
