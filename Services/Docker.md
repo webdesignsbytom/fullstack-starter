@@ -35,7 +35,6 @@ Then there are official and user images, which can be both base and child images
 
 1. `apt-get install docker.io`
 
-
 ## Commands
 
 `docker init` init repo
