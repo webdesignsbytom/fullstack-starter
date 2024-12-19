@@ -14,7 +14,7 @@ A workflow is a YAML file that configures the tests and what happens when an eve
 - ACTIONS
 
 Workflows: Autoomated processes defined in your repo that coordinate jobs, triggered by events or scheduals
-Actions: Reusable tasks that perform jobs within a workflow
+Actions: Reusable tasks that perform jobs within a workflow - Github provide premade actions such as 'actions/checkout@v4' which are from the action repo. 
 Jobs: Groups of steps that execute on the same runner, typically runnning in parallel. Jobs run on a server which is the `runs-on: ubuntu-latest`.
 Steps: Individual tasks within a job that run commands or actions sequentailly.
 Runs: Instances of workflow execution triggered by events, representing the complete run-though of a workflow
@@ -32,13 +32,46 @@ A WebHook Event is a HTTP request sent from your application to another applicat
 - Sponsored webhooks
 - App webhooks
 
-Strategy:
+Secrets
+Secrets are variables that you can create in your repo, and can be accessed by the workflow. 
+A workflow job cannot access environment secrets until approval is granted by required approvers.
+You can have secrets for reps, environments and organizations.
+To make a secret available to an action, you must set the secret as an input or environment variable in the workflow file. 
+The following rules apply to secret names:
+- Names can only contain alphanumeric characters ([a-z], [A-Z], [0-9]) or underscores (_). Spaces are not allowed.
+- Names must not start with the GITHUB_ prefix.
+- Names must not start with a number.
+- Names are case insensitive.
+- Names must be unique at the level they are created at.
+
+To create secrets:
+1. Go to the repo and click settings
+2. In the security section go to secrets and variables
+3. Click the secrets tab
+4. Create a new repository secret with name and value.
+
+To access secrets in the workflow
+`super_secret: ${{ secrets.SuperSecret }}`
+
+Strategy: Used to set up what versions of source software you will run on. Having a matrix of node versions is a strategy.
 Matrix: having a array of values to use in your pipeline
 
 on: trigger workflow || on: ['thing, 'thing2']
 
 `-uses: actions/chekout@v2` actions/checkout is a repo on the github actions repository that handles checking out to the branch uploaded.
 `uses: actions/setup-node@v2` github actions repo has various code languages you can deploy with the setup repos.
+
+Fast fail,
+Continue on error
+These two value can set whats happens when tests are running. 
+
+```
+  test:
+    runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.experimental }}
+    strategy:
+      fail-fast: true
+```
 
 ## Code 
 
