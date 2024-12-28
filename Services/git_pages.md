@@ -1,5 +1,7 @@
 # Git Pages
 
+Github pages offers a free static website.
+
 ## How to host
 
 1. Create and populate a repository on github
