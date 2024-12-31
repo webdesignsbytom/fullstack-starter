@@ -29,6 +29,7 @@ It records the changes made over time to a repository. It records who and when c
 `git clean -f` remove local changes
 `git tag 1.0.0` add a tag
 `git push origin --tags` push tags
+`git push origin --delete launch-portfolio-version` delete tag from origin
 
 ## Workflow
 
