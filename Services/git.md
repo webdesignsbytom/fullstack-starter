@@ -27,6 +27,8 @@ It records the changes made over time to a repository. It records who and when c
 `git show HEAD~1:[folderpath]` see changes in a file
 `git ls-tree HEAD~1` see what files are in a commit 
 `git clean -f` remove local changes
+`git tag 1.0.0` add a tag
+`git push origin --tags` push tags
 
 ## Workflow
 
