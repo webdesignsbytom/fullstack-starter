@@ -2,6 +2,12 @@
 
 A CI CD Pipeline
 
+## Basics
+
+Trigger - Set the process going
+Stage - What happens when running, made up of jobs
+Jobs - A series of steps that defines how to build and test your product.
+Environment - A physical machine, kubernetes or a serverless environment
 ## Terminology
 
 A WORKFLOW is a YAML file with a collection.
@@ -23,7 +29,10 @@ Marketplace: A platform to find and share reusable actions, enhancing workflow c
 Caller: A workflow that uses another workflow if reffered to as a caller.
 Path: A
 
-A ARTIFACT is a 
+A ARTIFACT is the output of a CI/CD pipeline
+
+https://github.com/actions/upload-artifact
+
 It allows you to take the Job and use it in different Jobs or to view the data.
 You can upload a artifact using https://github.com/actions/upload-artifact workflow.
 ```
