@@ -40,6 +40,9 @@ Name the artifact
 6. Ansible
 7. Nagios
 
+Maven is an automation tool which helps to build and manage software projects - managed using a POM file. Checking dependencies and installing.
+Selenium is a testing platform that can run in parallel. Its main focus is testing web applications.
+Jenkins 
 
 ## Workflows
 
