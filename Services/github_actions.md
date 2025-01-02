@@ -23,7 +23,18 @@ Marketplace: A platform to find and share reusable actions, enhancing workflow c
 Caller: A workflow that uses another workflow if reffered to as a caller.
 Path: A
 
-A ARTIFACT is a
+A ARTIFACT is a 
+It allows you to take the Job and use it in different Jobs or to view the data.
+You can upload a artifact using https://github.com/actions/upload-artifact workflow.
+```
+- name Upload artifcat
+  uses: actions/upload-artifact@v
+  with:
+    name: myartifactupload
+    path: myapp/**
+    if-no-files-found: error
+    retention-days: 90
+```
 
 A WebHook Event is a HTTP request sent from your application to another application. 
 - Repository webhooks. A series of webhooks in your repo, with a max of 20 hooks individual events
