@@ -4,6 +4,11 @@
 
 https://learn.microsoft.com/en-us/azure/devops/pipelines/yaml-schema/pool?view=azure-pipelines
 
+## Why DevOps
+
+To continuiously test the code and test the code in environments.
+To prevent code working in a development env but not a Operation env.
+
 ## About DevOps
 
 You can create a Pipeline using 3 methods.
@@ -19,10 +24,22 @@ Reports or results can be output.
 
 1. `Publish Pipeline Artifact` package can be searched for in azure.
 2. By default artifacts are downloaded at Pipeline Workspace
+
 ![image](https://github.com/user-attachments/assets/54915fc3-a544-4eeb-ab81-f658750b1115)
 
 Give the 'targetPath' location as the 'packDestination'
 Name the artifact
+
+## Tools in DevOps
+
+1. Git
+2. Maven
+3. Selenium
+4. Jenkins
+5. Docker
+6. Ansible
+7. Nagios
+
 
 ## Workflows
 
