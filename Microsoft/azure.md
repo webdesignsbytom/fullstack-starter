@@ -1,6 +1,10 @@
 # Azure
 
+## Glossary
+
 https://learn.microsoft.com/en-us/azure/devops/pipelines/yaml-schema/pool?view=azure-pipelines
+
+## About DevOps
 
 You can create a Pipeline using 3 methods.
 
@@ -19,6 +23,8 @@ Reports or results can be output.
 
 Give the 'targetPath' location as the 'packDestination'
 Name the artifact
+
+## Workflows
 
 YAML Workflow
 
@@ -44,7 +50,7 @@ pool:
 ![image](https://github.com/user-attachments/assets/af85cb09-20b6-4f88-9973-1e88993a96b6)
 ![image](https://github.com/user-attachments/assets/daeb704b-aa03-4374-ba81-20daa53a4dda)
 
-## Examples
+## Workflow Examples
 
 ### Build
 
@@ -72,7 +78,7 @@ pool:
               appName: '$(WebAppName)'
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
 ```
-## Publish 
+### Publish 
 
 ```
 trigger:
