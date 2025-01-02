@@ -1,5 +1,7 @@
 # Azure
 
+https://learn.microsoft.com/en-us/azure/devops/pipelines/yaml-schema/pool?view=azure-pipelines
+
 You can create a Pipeline using 3 methods.
 
 1. YAML
