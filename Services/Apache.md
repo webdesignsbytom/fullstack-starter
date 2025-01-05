@@ -22,3 +22,6 @@ you can now follow your ip to the Apache default page
 
 `sudo mkdir /var/www/your_domain`
 `sudo chown -R $USER:$USER /var/www/your_domain`
+
+
+![alt text](image.png)
