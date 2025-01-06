@@ -2,11 +2,6 @@
 
 ## Google Analytics
 
-- `npm i react-ga4` install
-
-- `import ReactGA from 'react-ga4'`
-- `ReactGA.initialize(process.env.REACT_APP_ANALYTICS_ID);`
-
 Acquisition - Where we are getting visitors from, traffic sources.
 Traffic - Breaks down into 'channels'
 - Paid
@@ -22,3 +17,6 @@ Engagement - How well pages are performing, views, user, time.
 
 - 1. React
 
+- `npm i react-ga4` install
+- `import ReactGA from 'react-ga4'`
+- `ReactGA.initialize(process.env.REACT_APP_ANALYTICS_ID);`
