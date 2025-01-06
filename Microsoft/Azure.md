@@ -30,6 +30,28 @@ Reports or results can be output.
 Give the 'targetPath' location as the 'packDestination'
 Name the artifact
 
+## Artifacts
+
+1. Build Artifacts
+2. Azure Artifacts
+3. Pipeline Artifacts
+
+An artifact is any type of file that your build produces and you may want to use in another job.
+You can save the output of a pipeline as an artifact
+
+Build Artifacts are the oldest type, they use the Publish Artifact (Publish build artifacts) task. 
+Pipeline artifacts can only be used within yaml pipelines. Quicker upload and download. It has up and download tasks.  ![image](https://github.com/user-attachments/assets/2e6d4e63-aaf8-4024-8d1c-bb98cd136519)
+Azure artifacts are different. Type package repository. Supports net and npm
+![image](https://github.com/user-attachments/assets/fec392a7-3f4f-4fdb-80ba-4a11c350ef15)
+
+## Environments
+
+Part of the release and deploying process.
+You can use kubernetes and VMs.
+
+Why?
+They unlock history, tracability, apporvals and dyagnostics.
+
 ## Tools in DevOps
 
 1. Git
