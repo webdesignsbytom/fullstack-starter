@@ -20,3 +20,5 @@ Engagement - How well pages are performing, views, user, time.
 - `npm i react-ga4` install
 - `import ReactGA from 'react-ga4'`
 - `ReactGA.initialize(process.env.REACT_APP_ANALYTICS_ID);`
+
+Google analytics should now say 'Your data collection is active'.
