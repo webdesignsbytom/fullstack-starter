@@ -14,7 +14,6 @@
 - `sudo passwd tom` change password if needed
 - `sudo usermod -aG sudo tom` grant privileges to sudo
 
-
 ## Bash script
 
 `--all` - Includes all items or options, without excluding any.
