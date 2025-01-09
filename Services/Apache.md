@@ -8,6 +8,8 @@ Apache2 is a webserver
 `sudo apt install apache2-doc`
 `sudo apt install apache2-utils`
 
+`sudo apt install apache2 apache2-doc apache2-utils` quick instal
+
 ## Firewall
 
 `sudo ufw allow 'Apache'`
