@@ -116,6 +116,37 @@
 `deluser johnsmith` delete user
 `groupdel johnsmith` delete group user is in
 
+## UFW
+
+Uncomplicated FireWall
+
+`sudo ufw status`
+`sudo ufw status verbose`
+`sudo ufw enable`
+`sudo ufw disable`
+`sudo ufw reset`
+
+`sudo ufw allow http`
+`sudo ufw allow https`
+`sudo ufw allow 8080`
+`sudo ufw deny 8080`
+`sudo ufw allow 443/tcp`
+`sudo ufw allow in ssh`
+`sudo ufw deny out 80`
+
+`sudo ufw allow from 192.168.1.100`
+`sudo ufw allow from 192.168.1.100 to any port 22`
+`sudo ufw deny from 192.168.1.100`
+`sudo ufw allow from 192.168.1.0/24`
+`sudo ufw deny from 192.168.1.0/24`
+
+- Delete Rules
+`sudo ufw status numbered`
+`sudo ufw delete 1`
+
+- Loggin Rules
+`sudo ufw logging on`
+`sudo ufw logging off`
 
 ## Linux Stuff
 

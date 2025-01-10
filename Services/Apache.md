@@ -49,9 +49,15 @@ Activate the config sudo a2ensite example.com
 
 ```
 
+## SSL
+
+`sudo apt install certbot python3-certbot-apache` install certbot
+`sudo certbot --apache -d cat-app.app` create certificate
+
+
 ## Firewall
 
-`sudo ufw allow 'Apache'`
+`sudo ufw allow 'Apache Full'`
 
 you can now follow your ip to the Apache default page
 
