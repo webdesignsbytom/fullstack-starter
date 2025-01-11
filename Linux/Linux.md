@@ -8,11 +8,12 @@
 
 ## Ubuntu 
 
-### Create User
+### Create User / User
 
 - `sudo adduser tom` add user
 - `sudo passwd tom` change password if needed
 - `sudo usermod -aG sudo tom` grant privileges to sudo
+- `cat /etc/passwd` get all users in a awkward way as root
 
 ## Bash script
 
@@ -119,6 +120,8 @@
 ## UFW
 
 Uncomplicated FireWall
+
+`sudo ufw app list` list apps that use ports
 
 `sudo ufw status`
 `sudo ufw status verbose`
