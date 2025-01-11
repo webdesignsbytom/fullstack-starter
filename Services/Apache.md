@@ -21,11 +21,11 @@ Activate the config sudo a2ensite example.com
         ServerAdmin webmaster@localhost
         DocumentRoot /var/www/cat-app.app
         ServerName cat-app.app
+        ServerAlias www.cat-app.app
 
         ErrorLog ${APACHE_LOG_DIR}/error.log
         CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
-
 ```
 
 ## SSL
