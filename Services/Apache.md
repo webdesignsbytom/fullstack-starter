@@ -16,6 +16,9 @@ Add DocumentRoot /var/www/NAME
 Add ServerName example.com
 Activate the config sudo a2ensite example.com
 
+`sudo a2ensite your_domain.conf`
+`sudo apache2ctl configtest`
+
 ```py
 <VirtualHost *:80>
         ServerAdmin webmaster@localhost
@@ -47,6 +50,8 @@ you can now follow your ip to the Apache default page
 `sudo systemctl reload apache2`
 `sudo systemctl disable apache2`
 `sudo systemctl enable apache2`
+
+`sudo apache2ctl configtest` test syntax of conf file
 
 `sudo a2ensite 000-default.conf` enable default connection
 `sudo cp -r /etc/apache2 /etc/apache2.bak` backup apache
