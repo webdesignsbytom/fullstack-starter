@@ -41,9 +41,25 @@
 ![alt text](./images/image.png)
 ![alt text](./images/image-1.png)
 
-## FTP
+## FTP SFTP
 
 File Transfer Protocol
+Port 21
+
+SFTP Port 22
+Open Terminal, Start an SFTP session:
+`sftp <username>@<your-server-ip-or-domain>`
+
+Navigate to the target folder on the server:
+`cd /var/www/html/cat-app.app/public_html`
+
+Navigate to the local directory:
+`lcd C:\Users\Tom\Documents\code\javascript\Cat-App-Website\client\build`
+
+Upload files: `put <filename>`
+Or upload all files: `mput *`
+`put -r diname` add folders
+Exit: `bye`
 
 ## SSH
 
