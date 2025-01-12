@@ -63,4 +63,6 @@ Exit: `bye`
 
 ## SSH
 
+Secure Shell
+
 **SSH is found in the shell file**

@@ -1,12 +1,14 @@
-# Linux Information
+# Linux Ubuntu
 
-## General 
+## Install
+
+### WSL
 
 `wsl --install` Will install the latest Ubuntu package on windows via the termial
 `wsl --list --online` check versions installed
 `wsl --set-default-version <Version>`
 
-## Ubuntu 
+## Processes 
 
 ### Create User / User
 
@@ -15,7 +17,30 @@
 - `sudo usermod -aG sudo tom` grant privileges to sudo
 - `cat /etc/passwd` get all users in a awkward way as root
 
-## Bash script
+
+## Commads
+
+`uname` - get machine name 'Linux'
+`uname -a` get all machine name data
+`mount` get list of mounted library files
+`date` get date
+`uptime` get time used
+`echo` print whats after echo `echo tom` = `tom`
+`echo "some text" > file.txt` add text to file 
+`info=$(uname -a)` set info as command `echo $info`
+`cd ../../..` path travesal 
+`tree` get directory tree
+`cat` concatinate docuemnt
+`touch` create file
+`mv file1.txt ../` move a filecd .
+`mv file1.txt file2.txt` move and rename
+`find / -oerm -u=x` find all where permision for user = x
+`find / -type f -perm -u=x` find files with user x permissions
+`chmod` change mode
+`deluser johnsmith` delete user
+`groupdel johnsmith` delete group user is in
+
+### Script
 
 `--all` - Includes all items or options, without excluding any.
 `--archive` - Archives files, preserving their attributes and structure.
@@ -94,28 +119,6 @@
 `-x` - Enables debugging or excludes certain items.
 `-y` - Answers "yes" to all prompts automatically.
 `-z` - Tests for an empty string or compresses data.
-
-## Commads
-
-`uname` - get machine name 'Linux'
-`uname -a` get all machine name data
-`mount` get list of mounted library files
-`date` get date
-`uptime` get time used
-`echo` print whats after echo `echo tom` = `tom`
-`echo "some text" > file.txt` add text to file 
-`info=$(uname -a)` set info as command `echo $info`
-`cd ../../..` path travesal 
-`tree` get directory tree
-`cat` concatinate docuemnt
-`touch` create file
-`mv file1.txt ../` move a filecd .
-`mv file1.txt file2.txt` move and rename
-`find / -oerm -u=x` find all where permision for user = x
-`find / -type f -perm -u=x` find files with user x permissions
-`chmod` change mode
-`deluser johnsmith` delete user
-`groupdel johnsmith` delete group user is in
 
 ## UFW
 

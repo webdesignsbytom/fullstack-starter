@@ -35,6 +35,8 @@ Activate the config sudo a2ensite example.com
 
 `sudo apt install certbot python3-certbot-apache` install certbot
 `sudo certbot --apache -d cat-app.app` create certificate
+`sudo certbot certificates` verify certificates
+`sudo systemctl status certbot.timer` set timer for reset
 
 ## Firewall
 
