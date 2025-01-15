@@ -158,6 +158,34 @@ Uncomplicated FireWall
   `sudo ufw logging on`
   `sudo ufw logging off`
 
+## Fail2Ban
+
+Prevents and bans dodgy ips
+
+`sudo apt update`
+`sudo apt install fail2ban`
+`sudo systemctl start fail2ban`
+`sudo systemctl enable fail2ban`
+`sudo systemctl status fail2ban`
+
+
+`sudo fail2ban-client status`
+`sudo fail2ban-client set sshd unbanip <IP_ADDRESS>`
+
+```md
+[sshd]
+enabled = true
+port = ssh
+logpath = /var/log/auth.log
+maxretry = 3
+bantime = 600
+findtime = 600
+mode = aggressive
+backend = auto
+allowipv6 = false
+```
+
+
 ## Linux Stuff
 
 1. Volumes - hard memory drives, attached storage - `mount [Name of device]`
