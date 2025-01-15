@@ -31,6 +31,30 @@ Activate the config sudo a2ensite example.com
 </VirtualHost>
 ```
 
+### Custom logs
+
+`sudo touch /var/www/cat-app.app/log/error.log`
+`sudo touch /var/www/cat-app.app/log/access.log`
+`sudo chown -R www-data:www-data /var/www/cat-app.app/log`
+
+<VirtualHost *:443>
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/cat-app.app
+    ServerName cat-app.app
+    ServerAlias www.cat-app.app
+
+    ErrorLog /var/www/cat-app.app/log/error.log
+    CustomLog /var/www/cat-app.app/log/access.log combined
+
+    SSLEngine on
+    SSLCertificateFile /etc/letsencrypt/live/cat-app.app/fullchain.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/cat-app.app/privkey.pem
+</VirtualHost>
+
+`sudo apache2ctl configtest`
+`sudo systemctl restart apache2`
+
+
 ## SSL
 
 `sudo apt install certbot python3-certbot-apache` install certbot
