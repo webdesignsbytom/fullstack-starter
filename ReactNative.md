@@ -5,6 +5,8 @@
 `npx create-expo-app myApp` creates a template
 Remake the /app/index.tsx as a App file exporting App.
 
+`npx expo-doctor`
+
 Reset your project
 You can remove the boilerplate code and start fresh with a new project. Run the following command to reset your project:
 `npm run reset-project`
@@ -40,6 +42,10 @@ Create an ad hoc provisioning profile for an iOS device
 To use EAS CLI, you need to install it globally on your local machine by running the command:
 
 `npm install -g eas-cli`
+`eas build`
+`eas build --platform android`
+`eas build:list`
+
 
 ## Splash and Icons
 
