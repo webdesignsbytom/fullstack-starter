@@ -46,6 +46,9 @@ To use EAS CLI, you need to install it globally on your local machine by running
 `eas build --platform android`
 `eas build:list`
 
+## APK
+
+`eas build --profile development --platform android`
 
 ## Splash and Icons
 
