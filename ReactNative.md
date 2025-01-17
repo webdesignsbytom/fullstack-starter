@@ -46,10 +46,6 @@ To use EAS CLI, you need to install it globally on your local machine by running
 `eas build --platform android`
 `eas build:list`
 
-## APK
-
-`eas build --profile development --platform android`
-
 ## Splash and Icons
 
 Are controlled in `app.json`
@@ -66,3 +62,24 @@ Image
 TextInput
 Scrollview
 Stylesheet
+
+## APK
+
+`eas build --profile development --platform android`
+
+## IOS
+
+Apple Developer membership is required to create and install a development build on an iOS device.
+To register any iOS device you'd like to develop onto your ad hoc provisioning profile, run the following command:
+
+`eas device:create`
+After registering your iOS device, you can create the development build by running the command:
+
+`eas build --profile development --platform ios`
+Devices running iOS 16 and above require enabling a special OS-level Developer Mode to install development builds. If you don't have this setting enabled or are installing your first development build on your device, see iOS Developer Mode to enable it.
+
+After the build is complete, you can download it on your iOS device by scanning the QR code from the device's camera from the Expo CLI. The QR code is provided when the eas build command has finished running.
+
+You can also find this QR code on the build page in the Expo dashboard. Click the Install button and scan the QR code using the system's camera.
+
+
