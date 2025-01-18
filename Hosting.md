@@ -192,17 +192,17 @@ Allows you to load balance & failover across up to 2 endpoints from 1 geographic
 12. `npm install pm2@latest -g` to keep server alive
 13. `git clone 'your repo link'`
 14. cd into and `npm ci`
-15. `nano /etc/nginx/sites-available/api.cat-app.app`
+15. `nano /etc/nginx/sites-available/appapi.bytetoast-studio.co.uk`
 16. Delete the default file in sites-available
-17. `ln -s /etc/nginx/sites-available/api.cat-app.app /etc/nginx/sites-enabled/`
+17. `ln -s /etc/nginx/sites-available/appapi.bytetoast-studio.co.uk /etc/nginx/sites-enabled/`
 
     ```md
     server {
     listen 80;
-    server_name <name>;
+    server_name appapi.bytetoast-studio.co.uk;
 
         location / {
-        proxy_pass http://localhost:3000;
+        proxy_pass http://localhost:8888;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';

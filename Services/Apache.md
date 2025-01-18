@@ -12,7 +12,7 @@ Apache2 is a webserver
 
 Create a folder for your site in /var/www or var/www/html
 Create a config file for you site in /etc/apache2/sites-available/
-Add DocumentRoot /var/www/NAME
+Add DocumentRoot /var/www/NAME/public_html
 Add ServerName example.com
 Activate the config sudo a2ensite example.com
 
@@ -22,7 +22,7 @@ Activate the config sudo a2ensite example.com
 ```py
 <VirtualHost *:80>
         ServerAdmin webmaster@localhost
-        DocumentRoot /var/www/cat-app.app
+        DocumentRoot /var/www/cat-app.app/public_html
         ServerName cat-app.app
         ServerAlias www.cat-app.app
 
@@ -39,7 +39,7 @@ Activate the config sudo a2ensite example.com
 
 <VirtualHost *:443>
     ServerAdmin webmaster@localhost
-    DocumentRoot /var/www/cat-app.app
+    DocumentRoot /var/www/cat-app.app/public_html
     ServerName cat-app.app
     ServerAlias www.cat-app.app
 
