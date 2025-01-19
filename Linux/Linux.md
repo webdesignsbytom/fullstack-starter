@@ -203,6 +203,14 @@ Keep servers alive
 `pm2 logs <name|id>` logs for a specified file
 `pm2 start/stop/reload all` do x to all
 
+PM2 can automatically restart your application when a file is modified in the current directory or its subdirectories:
+`pm2 start app.js --watch`
+
+Launch on start up of server
+`pm2 startup` get command to run start up
+`run command` run that commands
+`pm2 save` save after starting all the servers you want
+
 ## Linux Stuff
 
 1. Volumes - hard memory drives, attached storage - `mount [Name of device]`
