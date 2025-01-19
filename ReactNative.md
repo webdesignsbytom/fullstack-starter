@@ -82,4 +82,35 @@ After the build is complete, you can download it on your iOS device by scanning 
 
 You can also find this QR code on the build page in the Expo dashboard. Click the Install button and scan the QR code using the system's camera.
 
+## Example Code
 
+```js
+const app = () => {
+  return (
+    <View style={styles.container}>
+      <ImageBackground source={ByteToastLogo} style={styles.image}>
+        <Text style={styles.title}>App</Text>
+        <Link href={'/explore'} style={styles.link}>
+          Explore
+        </Link>
+      </ImageBackground>
+    </View>
+  );
+};
+```
+
+Add your layout pages
+
+```js
+<ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+  <Stack>
+    {/* <Stack.Screen name="(tabs)" options={{ headerShown: false }} /> */}
+    <Stack.Screen
+      name='index'
+      options={{ title: 'Home', headerShown: false }}
+    />
+    <Stack.Screen name='+not-found' />
+  </Stack>
+  <StatusBar style='auto' />
+</ThemeProvider>
+```
