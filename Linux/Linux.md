@@ -185,6 +185,23 @@ backend = auto
 allowipv6 = false
 ```
 
+## PM2
+
+Keep servers alive
+
+`npm install pm2@latest -g`
+
+`pm2 start <app.js>` start
+`pm2 start <app.js> --name <name>` start with custom name
+`pm2 restart <app.js|name|id>` restart
+`pm2 stop <app.js|name|id>` stop
+`pm2 delete <app.js|name|id>` delete
+
+`pm2 list` list all
+`pm2 monit` monitor logs and metrics
+`pm2 logs` view logs
+`pm2 logs <name|id>` logs for a specified file
+`pm2 start/stop/reload all` do x to all
 
 ## Linux Stuff
 
