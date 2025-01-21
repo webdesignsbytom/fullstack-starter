@@ -21,3 +21,13 @@
   - Google play store
 
 ![image](https://github.com/user-attachments/assets/ef9943c2-638a-4479-8b4d-b032b3afeb9f)
+
+
+## Signing A App
+
+key.properties file?
+
+## Release
+
+You can use a 'Privacy policy generator'
+
