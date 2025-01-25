@@ -26,3 +26,9 @@ Commands
 `h` show hash rate
 `s` check results
 `c` show connection data
+
+## Windows
+
+1. Windows 10 or 11 
+2. Disable screensavers and sleeps
+3. 
