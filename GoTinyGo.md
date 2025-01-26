@@ -94,7 +94,7 @@ If you have compiled your Go application into a binary, you can run the binary d
 
 Build the binary:
 `go build -o web-server-status-checker main.go`
-
+`chmod +x ./web-server-status-checker/web-server-status-checker` add permissions
 Start the binary with PM2:
 `pm2 start ./web-server-status-checker --name web-server-status-checker`
 `pm2 start ./web-server-status-checker --name web-server-status-checker --cwd /home/tom/web-server-status-checker`
