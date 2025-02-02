@@ -75,6 +75,7 @@ import './tailwind.css'; // <-- Import Tailwind CSS here
 `ionic capacitor sync android`
 `cd android`
 `./gradlew assembleDebug`
+`./gradlew assembleRelease`
 
 ### Rebuild apk
 
@@ -86,6 +87,7 @@ import './tailwind.css'; // <-- Import Tailwind CSS here
 `./gradlew assembleRelease`
 
 `cd .. && ionic build && ionic capacitor copy android && cd android && ./gradlew assembleDebug`
+`cd .. && ionic build && ionic capacitor copy android && cd android && ./gradlew assembleRelease`
 
 ## Analytics
 
