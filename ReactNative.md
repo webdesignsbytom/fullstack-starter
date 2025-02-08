@@ -3,6 +3,7 @@
 ## Create App
 
 `npx create-expo-app myApp` creates a template
+`npx create-expo-app@latest testApp --template blank-typescript` ts set up
 Remake the /app/index.tsx as a App file exporting App.
 
 `npx expo-doctor`
@@ -24,6 +25,7 @@ declare module "_.jpg";
 ## Commands
 
 `npx expo start` Starts the development server (whether you are using a development build or Expo Go).
+`npx expo start --clear`
 `npx expo prebuild` Generates native Android and iOS directories using Prebuild.
 `npx expo run:android` Compiles native Android app locally.
 `npx expo run:ios` Compiles native iOS app locally.
