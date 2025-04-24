@@ -52,8 +52,10 @@ API server and postgres database
 
 ## Create new database
 
+`CREATE DATABASE ms_chelle OWNER tomadmin;`
+
 -- Grant access to the database
-`GRANT CONNECT, CREATE ON DATABASE missjenny_db TO tomadmin;`
+`GRANT CONNECT, CREATE ON DATABASE ms_chelle TO tomadmin;`
 
 -- Grant privileges on the public schema
 `GRANT USAGE, CREATE ON SCHEMA public TO tomadmin;`
