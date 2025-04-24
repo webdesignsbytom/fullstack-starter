@@ -75,3 +75,8 @@ API server and postgres database
 -- Optional: Grant privileges on future tables and sequences
 `ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON TABLES TO tomadmin;`
 `ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL PRIVILEGES ON SEQUENCES TO tomadmin;`
+
+-- Connection strings
+
+- DATABASE_URL="postgresql://name:yourpassword@192.168.1.227:5432/shadow_db?schema=public"
+- postgres://<username>:<password>@<hostname>/<dbname>?schema=<schema>

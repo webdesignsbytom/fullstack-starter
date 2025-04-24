@@ -162,7 +162,7 @@ psql -h 192.168.1.227 -U name -d shadow_db
 Ensure that your connection string in applications like Node.js or Prisma is configured correctly:
 
 ```sh
-DATABASE_URL="postgresql://name:yourpassword@192.168.1.227:5432/shadow_db"
+DATABASE_URL="postgresql://name:yourpassword@192.168.1.227:5432/shadow_db?schema=public"
 ```
 
 - postgres://<username>:<password>@<hostname>/<dbname>?schema=<schema>
