@@ -47,7 +47,7 @@ API server and postgres database
 34. `sudo ufw status verbose` check
 
 
-1. Change postgres port
+1. Allow all postgres access for pg_hba.conf
 
 
 ## Create new database
