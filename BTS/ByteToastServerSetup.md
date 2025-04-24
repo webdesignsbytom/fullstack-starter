@@ -31,6 +31,9 @@ API server and postgres database
 23. Reset postgres `sudo systemctl restart postgresql`
 24. Open firewall `sudo ufw allow 5432/tcp`
 25. `sudo ufw status` allow all on postgres port
+26. `sudo ufw allow ssh` allow ssh
+27. `sudo ufw enable`
+28. `sudo ufw status verbose` check
 
 
 1. Change postgres port
