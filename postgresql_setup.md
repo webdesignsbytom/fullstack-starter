@@ -60,8 +60,8 @@ Once inside the PostgreSQL shell, you can change the `postgres` user password an
 Create a new database and assign ownership to the new user:
 
 ```sql
-CREATE DATABASE shadow_db OWNER tomadmin;
-GRANT ALL PRIVILEGES ON DATABASE shadow_db TO tomadmin;
+CREATE DATABASE dummy_db OWNER tomadmin;
+GRANT ALL PRIVILEGES ON DATABASE dummy_db TO tomadmin;
 ```
 
 ## 5. Configure PostgreSQL for Remote Access
