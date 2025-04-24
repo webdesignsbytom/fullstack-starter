@@ -36,7 +36,7 @@ API server and postgres database
 23. We adjusted the pg_hba.conf file to allow remote connections `host    dummy_db    tomadmin    0.0.0.0/0    md5`
 24. Reset postgres `sudo systemctl restart postgresql`
 25. Open firewall `sudo ufw allow 5432/tcp`
-26. Ensure all permissions are granted 
+26. Ensure all permissions are granted
 27. `GRANT CONNECT, CREATE ON DATABASE shadow_db TO tomadmin;`
 28. `GRANT USAGE, CREATE ON SCHEMA public TO tomadmin;`
 29. `GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO tomadmin;`
@@ -45,10 +45,14 @@ API server and postgres database
 32. `sudo ufw allow ssh` allow ssh
 33. `sudo ufw enable`
 34. `sudo ufw status verbose` check
+35. install fail2ban `sudo apt install fail2ban` `sudo systemctl start fail2ban` `sudo systemctl enable fail2ban`
+36. add postgres backups cronjob `crontab -l`
+37. `0 2 * * 0 pg_dump -U tomadmin dummy_db > /home/tom/db_backups/dummy_db_$(date +\%F).sql` weekly
 
+
+## Updates
 
 1. Allow all postgres access for pg_hba.conf
-
 
 ## Create new database
 
