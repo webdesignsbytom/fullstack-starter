@@ -3,6 +3,11 @@
 Used for BTS1
 API server and postgres database
 
+## Rules
+
+- User: tomadmin
+- postgres port: 4567
+
 ## Install and set up process
 
 1. `apt-get update`
