@@ -60,10 +60,10 @@ API server and postgres database
 
 ## Create new database
 
-`CREATE DATABASE miss_victoria_doll OWNER tomadmin;`
+`CREATE DATABASE lola_faye OWNER tomadmin;`
 
 -- Grant access to the database
-`GRANT CONNECT, CREATE ON DATABASE miss_victoria_doll TO tomadmin;`
+`GRANT CONNECT, CREATE ON DATABASE lola_faye TO tomadmin;`
 
 -- Grant privileges on the public schema
 `GRANT USAGE, CREATE ON SCHEMA public TO tomadmin;`
@@ -80,3 +80,8 @@ API server and postgres database
 
 - DATABASE_URL="postgresql://name:yourpassword@192.168.1.227:5432/shadow_db?schema=public"
 - postgres://<username>:<password>@<hostname>/<dbname>?schema=<schema>
+
+
+
+ffmpeg -i "queen-blaire-dominatrix-and-prodomme-high-heels.jpg" -q:v 5 "compressed-high-heels.jpg"
+ffmpeg -i "queen-blaire-dominatrix-and-prodomme-in-black.jpg" -q:v 5 "compressed-in-black.jpg"
