@@ -12,7 +12,7 @@ Apache2 is a webserver
 
 Create a folder for your site in /var/www or var/www/html
 Create a config file for you site in /etc/apache2/sites-available/
-Add DocumentRoot /var/www/NAME
+Add DocumentRoot /var/www/NAME/public_html
 Add ServerName example.com
 Activate the config sudo a2ensite example.com
 
@@ -22,7 +22,7 @@ Activate the config sudo a2ensite example.com
 ```py
 <VirtualHost *:80>
         ServerAdmin webmaster@localhost
-        DocumentRoot /var/www/cat-app.app
+        DocumentRoot /var/www/cat-app.app/public_html
         ServerName cat-app.app
         ServerAlias www.cat-app.app
 
@@ -30,6 +30,30 @@ Activate the config sudo a2ensite example.com
         CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 ```
+
+### Custom logs
+
+`sudo touch /var/www/cat-app.app/log/error.log`
+`sudo touch /var/www/cat-app.app/log/access.log`
+`sudo chown -R www-data:www-data /var/www/cat-app.app/log`
+
+<VirtualHost *:443>
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/cat-app.app/public_html
+    ServerName cat-app.app
+    ServerAlias www.cat-app.app
+
+    ErrorLog /var/www/cat-app.app/log/error.log
+    CustomLog /var/www/cat-app.app/log/access.log combined
+
+    SSLEngine on
+    SSLCertificateFile /etc/letsencrypt/live/cat-app.app/fullchain.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/cat-app.app/privkey.pem
+</VirtualHost>
+
+`sudo apache2ctl configtest`
+`sudo systemctl restart apache2`
+
 
 ## SSL
 

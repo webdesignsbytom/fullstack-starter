@@ -20,6 +20,7 @@ Android environment
 `setx ANDROID_HOME "C:\Users\Tom\AppData\Local\Android\Sdk"`
 `setx PATH "%PATH%;%ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools"`
 `cd android`
+
 `echo sdk.dir=C:\\Users\\Tom\\AppData\\Local\\Android\\Sdk > local.properties` check installed correctly with 2 slashes
 `echo "include ':app'" > capacitor.settings.gradle`
 
@@ -74,6 +75,7 @@ import './tailwind.css'; // <-- Import Tailwind CSS here
 `ionic capacitor sync android`
 `cd android`
 `./gradlew assembleDebug`
+`./gradlew assembleRelease`
 
 ### Rebuild apk
 
@@ -82,8 +84,10 @@ import './tailwind.css'; // <-- Import Tailwind CSS here
 `ionic capacitor copy android`
 `cd android`
 `./gradlew assembleDebug`
+`./gradlew assembleRelease`
 
 `cd .. && ionic build && ionic capacitor copy android && cd android && ./gradlew assembleDebug`
+`cd .. && ionic build && ionic capacitor copy android && cd android && ./gradlew assembleRelease`
 
 ## Analytics
 

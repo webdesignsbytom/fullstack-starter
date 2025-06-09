@@ -75,3 +75,26 @@ func main() {
     avr.SPSR.SetBits(avr.SPSR_SPI2X)
 }
 ```
+
+## Create File
+
+
+The issue is that Go modules are not initialized in your project directory. Starting with Go 1.16, modules are required for dependency management. Here's how you can resolve the issue:
+
+1. Initialize a Go Module
+Navigate to your project directory and initialize a module:
+
+
+`go mod init web-server-status-checker`
+This creates a go.mod file in your project directory, which tracks your dependencies.
+
+## Production Build
+
+If you have compiled your Go application into a binary, you can run the binary directly.
+
+Build the binary:
+`go build -o web-server-status-checker main.go`
+`chmod +x ./web-server-status-checker/web-server-status-checker` add permissions
+Start the binary with PM2:
+`pm2 start ./web-server-status-checker --name web-server-status-checker`
+`pm2 start ./web-server-status-checker --name web-server-status-checker --cwd /home/tom/web-server-status-checker`

@@ -192,17 +192,17 @@ Allows you to load balance & failover across up to 2 endpoints from 1 geographic
 12. `npm install pm2@latest -g` to keep server alive
 13. `git clone 'your repo link'`
 14. cd into and `npm ci`
-15. `nano /etc/nginx/sites-available/api.cat-app.app`
+15. `nano /etc/nginx/sites-available/stream.cat-app.app`
 16. Delete the default file in sites-available
-17. `ln -s /etc/nginx/sites-available/api.cat-app.app /etc/nginx/sites-enabled/`
+17. `ln -s /etc/nginx/sites-available/stream.cat-app.app /etc/nginx/sites-enabled/`
 
     ```md
     server {
     listen 80;
-    server_name <name>;
+    server_name stream.cat-app.app;
 
         location / {
-        proxy_pass http://localhost:3000;
+        proxy_pass http://localhost:5000;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
@@ -220,7 +220,7 @@ Allows you to load balance & failover across up to 2 endpoints from 1 geographic
 22. Go to your server `http://3.9.178.161` and it will have your node home page
 23. `apt install certbot python3-certbot-nginx`
 24. Create an SSL certifcate using your api subdomain
-25. `certbot --nginx -d api.myecoapp.org` // set up a subdomain in dns settings with your domain host or web host
+25. `certbot --nginx -d stream.cat-app.app` // set up a subdomain in dns settings with your domain host or web host
 26. `cat /etc/nginx/sites-enabled/...` // your site name 
 27. `pm2 start src/server.js --name server`
 28. `sudo apt install fail2ban` secure from dodgy ip

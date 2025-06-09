@@ -60,8 +60,8 @@ Once inside the PostgreSQL shell, you can change the `postgres` user password an
 Create a new database and assign ownership to the new user:
 
 ```sql
-CREATE DATABASE shadow_db OWNER tomadmin;
-GRANT ALL PRIVILEGES ON DATABASE shadow_db TO tomadmin;
+CREATE DATABASE dummy_db OWNER tomadmin;
+GRANT ALL PRIVILEGES ON DATABASE dummy_db TO tomadmin;
 ```
 
 ## 5. Configure PostgreSQL for Remote Access
@@ -162,7 +162,7 @@ psql -h 192.168.1.227 -U name -d shadow_db
 Ensure that your connection string in applications like Node.js or Prisma is configured correctly:
 
 ```sh
-DATABASE_URL="postgresql://name:yourpassword@192.168.1.227:5432/shadow_db"
+DATABASE_URL="postgresql://name:yourpassword@192.168.1.227:5432/shadow_db?schema=public"
 ```
 
 - postgres://<username>:<password>@<hostname>/<dbname>?schema=<schema>

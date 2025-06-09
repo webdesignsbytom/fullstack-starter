@@ -8,7 +8,7 @@
 `wsl --list --online` check versions installed
 `wsl --set-default-version <Version>`
 
-## Processes 
+## Processes
 
 ### Create User / User
 
@@ -16,7 +16,6 @@
 - `sudo passwd tom` change password if needed
 - `sudo usermod -aG sudo tom` grant privileges to sudo
 - `cat /etc/passwd` get all users in a awkward way as root
-
 
 ## Commads
 
@@ -26,9 +25,9 @@
 `date` get date
 `uptime` get time used
 `echo` print whats after echo `echo tom` = `tom`
-`echo "some text" > file.txt` add text to file 
+`echo "some text" > file.txt` add text to file
 `info=$(uname -a)` set info as command `echo $info`
-`cd ../../..` path travesal 
+`cd ../../..` path travesal
 `tree` get directory tree
 `cat` concatinate docuemnt
 `touch` create file
@@ -39,6 +38,11 @@
 `chmod` change mode
 `deluser johnsmith` delete user
 `groupdel johnsmith` delete group user is in
+
+`tail [options] <file>` tail is used to show the last lines of a file `tail /var/log/apache2/access.log`
+`tail -n 20 /var/log/apache2/access.log` for extra lines us 20
+`tail -f /var/log/apache2/error.log` to follow updates as they happen
+`tail -f /var/log/apache2/access.log /var/log/apache2/error.log` multiple files followed
 
 ### Script
 
@@ -147,12 +151,65 @@ Uncomplicated FireWall
 `sudo ufw deny from 192.168.1.0/24`
 
 - Delete Rules
-`sudo ufw status numbered`
-`sudo ufw delete 1`
+  `sudo ufw status numbered`
+  `sudo ufw delete 1`
 
 - Loggin Rules
-`sudo ufw logging on`
-`sudo ufw logging off`
+  `sudo ufw logging on`
+  `sudo ufw logging off`
+
+## Fail2Ban
+
+Prevents and bans dodgy ips
+
+`sudo apt update`
+`sudo apt install fail2ban`
+`sudo systemctl start fail2ban`
+`sudo systemctl enable fail2ban`
+`sudo systemctl status fail2ban`
+
+
+`sudo fail2ban-client status`
+`sudo fail2ban-client set sshd unbanip <IP_ADDRESS>`
+
+```md
+[sshd]
+enabled = true
+port = ssh
+logpath = /var/log/auth.log
+maxretry = 3
+bantime = 600
+findtime = 600
+mode = aggressive
+backend = auto
+allowipv6 = false
+```
+
+## PM2
+
+Keep servers alive
+
+`npm install pm2@latest -g`
+
+`pm2 start <app.js>` start
+`pm2 start <app.js> --name <name>` start with custom name
+`pm2 restart <app.js|name|id>` restart
+`pm2 stop <app.js|name|id>` stop
+`pm2 delete <app.js|name|id>` delete
+
+`pm2 list` list all
+`pm2 monit` monitor logs and metrics
+`pm2 logs` view logs
+`pm2 logs <name|id>` logs for a specified file
+`pm2 start/stop/reload all` do x to all
+
+PM2 can automatically restart your application when a file is modified in the current directory or its subdirectories:
+`pm2 start app.js --watch`
+
+Launch on start up of server
+`pm2 startup` get command to run start up
+`run command` run that commands
+`pm2 save` save after starting all the servers you want
 
 ## Linux Stuff
 
