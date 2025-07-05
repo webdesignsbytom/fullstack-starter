@@ -214,3 +214,8 @@ Launch on start up of server
 ## Linux Stuff
 
 1. Volumes - hard memory drives, attached storage - `mount [Name of device]`
+
+
+## New Server Essentials
+
+1. 
