@@ -1,5 +1,11 @@
 # React Native
 
+## New set up
+
+`npx create-expo-app grounded-and-healing --template expo-template-blank-typescript`
+`npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar`
+Delete index and app
+
 ## Create App
 
 `npx create-expo-app myApp` creates a template

@@ -54,16 +54,22 @@ API server and postgres database
 25. add postgres backups cronjob `crontab -l`
 26. `0 2 * * 0 pg_dump -U tomadmin dummy_db > /home/tom/db_backups/dummy_db_$(date +\%F).sql` weekly
 
+## PgBouncer
+
+1. `sudo apt install pgbouncer`
+2. `sudo nano /etc/pgbouncer/pgbouncer.ini` configure
+3. 
+
 ## Updates
 
 1. Allow all postgres access for pg_hba.conf
 
 ## Create new database
 
-`CREATE DATABASE lola_faye OWNER tomadmin;`
+`CREATE DATABASE grounded_healing_web OWNER admin;`
 
 -- Grant access to the database
-`GRANT CONNECT, CREATE ON DATABASE lola_faye TO tomadmin;`
+`GRANT CONNECT, CREATE ON DATABASE grounded_healing_web TO admin;`
 
 -- Grant privileges on the public schema
 `GRANT USAGE, CREATE ON SCHEMA public TO tomadmin;`
